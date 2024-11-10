@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    height: 70px;
+    background-color: #EADBC8;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 90px;
+    height: 70px;
+    margin: 0 auto;
+    display: block;
+}
+
+.menuContainer {
+    display: flex;
+    margin-left: auto;
+    margin-right: 50px;
+}
+
+.menu {
+    display: flex;
+    margin-left: auto;
+}
+
+.menuElement {
+    text-decoration: none;
+    list-style-type: none;
+    font-weight: bold;
+    color: #FEFAF6;
+    font-size: 20px;
+}
+
+.menuElementContainer {
+    padding: 10px 10px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuElementContainer:hover, .menuElementContainer.active {
+    background-color: #FEFAF6;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.menuElementContainer:hover .menuElement, .menuElementContainer.active .menuElement {
+    color: #102C57;
+}
+
+.profilContainer {
+    display: flex;
+    margin-right: 20px;
+}
+
+.profil {
+    width: 45px;
+    height: 45px;
+    margin-left: auto;
+    display: block;
+    border-radius: 50px;
+}
