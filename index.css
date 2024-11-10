@@ -80,7 +80,7 @@ body {
     border-radius: 50px;
 }
 
-.map{
+.map {
     width: 100%;
-    height: 695px;
+    height: calc(100vh - 70px);
 }
