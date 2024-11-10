@@ -28,6 +28,7 @@ body {
 .menu {
     display: flex;
     margin-left: auto;
+    user-select: none;
 }
 
 .menuElement {
@@ -36,6 +37,7 @@ body {
     font-weight: bold;
     color: #FEFAF6;
     font-size: 20px;
+    user-select: none;
 }
 
 .menuElementContainer {
