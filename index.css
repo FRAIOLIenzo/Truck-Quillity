@@ -9,7 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    /* overflow-y: hidden; */
+    overflow-y: hidden;
 }
 
 .navbar {
@@ -50,7 +50,7 @@ body {
 }
 
 .menuElementContainer {
-    padding: 10px 10px;
+    padding: 5px 10px;
     margin-left: 20px;
     display: flex;
     justify-content: center;
@@ -82,5 +82,41 @@ body {
 
 .map {
     width: 100%;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 65px);
+}
+
+.menuGestion {
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    width: 400px;
+    height: calc(100vh - 85px);
+    background-color: #FEFAF6;
+    border-radius: 20px;
+}
+
+.menuGestionHeader {
+    height: 40px;
+    margin: 0px 10px;
+    display: flex;
+    align-items: flex-end;
+    border-bottom: 2px solid #102C57;
+}
+
+.menuGestionHeaderText {
+    font-size: 26px;
+    font-weight: bold;
+    color: #102C57;
+    user-select: none;
+}
+
+.menuGestionHeaderIcon {
+    height: 100%;
+    margin-left: auto;
+    width: 30px;
+    height: 30px;
+}
+
+.menuGestionHeaderIcon:hover {
+    cursor: pointer;
 }

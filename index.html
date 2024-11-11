@@ -1,44 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
     <title>Truck Quillite</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="logoContainer">
-            <img src="pictures/logo.png" alt="logo" class="logo">
-        </div>
-        <div class="menuContainer">
-            <ul class="menu">
-                <div class="menuElementContainer" id="1">
-                    <li class="menuElement"><a>Gestion</a></li>
-                </div>
-                <div class="menuElementContainer" id="2">
-                    <li class="menuElement"><a>Statistiques</a></li>
-                </div>
-                <div class="menuElementContainer" id="3">
-                    <li class="menuElement"><a>Algorithmes</a></li>
-                </div>
-            </ul>
-        </div>
-        <div class="profilContainer">
-            <img src="pictures/profil.png" alt="profil" class="profil">
-        </div>
+      <div class="logoContainer">
+        <img src="pictures/logo.png" alt="logo" class="logo" />
+      </div>
+      <div class="menuContainer">
+        <ul class="menu">
+          <div class="menuElementContainer" id="1">
+            <li class="menuElement"><a>Gestion</a></li>
+          </div>
+          <div class="menuElementContainer" id="2">
+            <li class="menuElement"><a>Statistiques</a></li>
+          </div>
+          <div class="menuElementContainer" id="3">
+            <li class="menuElement"><a>Algorithmes</a></li>
+          </div>
+        </ul>
+      </div>
+      <div class="profilContainer">
+        <img src="pictures/profil.png" alt="profil" class="profil" />
+      </div>
     </nav>
 
     <div class="mainContainer">
-        <div class="map">
-            <iframe src="map.html" width="100%" height="100%" frameborder="0"></iframe>
+      <div class="map">
+        <iframe
+          src="map.html"
+          width="100%"
+          height="100%"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <div class="menuGestion">
+        <div class="menuGestionHeader">
+          <div class="menuGestionHeaderText">
+            <span>Gestion</span>
+          </div>
+
+          <img
+            src="pictures/menu-open.svg"
+            alt="menuOpen"
+            class="menuGestionHeaderIcon"
+          />
         </div>
-        <!-- <div class="popupGestion" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center;">
-            <div class="popupGestionTitle" style="background: white; padding: 20px; border-radius: 10px;">
-            <h1>Gestion</h1>
-            </div>
-        </div> -->
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
