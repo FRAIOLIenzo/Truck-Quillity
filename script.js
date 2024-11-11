@@ -4,6 +4,24 @@ const cityList = [];
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM Loaded");
+  const resetJson = JSON.stringify({ city_name: 'reset' });
+  fetch("http://127.0.0.1:5000/api/reset", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: resetJson,
+  })
+    .then((response) => {
+      if (response.ok) {
+        document.querySelector(".map iframe").src = "map.html";
+      } else {
+        console.error("Erreur lors de l'envoi des données");
+      }
+    })
+    .catch((error) => {
+      console.error("Erreur de réseau:", error);
+    });
 
   const menuElements = document.querySelectorAll(".menuElementContainer");
 
@@ -31,9 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-
   function displaySuggestions(suggestions) {
-    suggestionList.innerHTML = ""; 
+    suggestionList.innerHTML = "";
     suggestions.forEach((city) => {
       const listItem = document.createElement("div");
       listItem.classList.add("suggestion-item");
@@ -41,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       listItem.addEventListener("click", () => {
         inputField.value = city;
-        suggestionList.innerHTML = ""; 
+        suggestionList.innerHTML = "";
       });
 
       suggestionList.appendChild(listItem);
@@ -57,7 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //     suggestionList.innerHTML = "";
   //   }
   // });
-
 });
 
 const menuGestion = document.getElementById("menuGestion");
@@ -129,15 +145,14 @@ function openMenuAlgorithmes() {
   }
 }
 
-
 function handleKeyDown(event) {
   if (event.key === "Enter" && inputField.value.trim() !== "") {
     const city = inputField.value.trim();
     const paragraph = document.createElement("p");
     paragraph.textContent = city + ",\u00A0";
     document.getElementById("popupAjouterVilleFormList").appendChild(paragraph);
-    cityList.push(city); 
-    inputField.value = ""; 
+    cityList.push(city);
+    inputField.value = "";
     console.log(cityList.join(", "));
   }
 }
@@ -158,27 +173,25 @@ function validerPopupAjouterVille() {
   console.log("Villes ajoutées:", cityList);
   document.getElementById("popupAjouterVille").style.display = "none";
   document.getElementById("overlay").style.display = "none";
-  const cityListJson = JSON.stringify({ city_name: cityList[0] });
-  fetch('http://127.0.0.1:5000/api/test', {
-    method: 'POST',
+  const cityListJson = JSON.stringify(cityList.map(city => ({ city_name: city })));
+  fetch("http://127.0.0.1:5000/api/test", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: cityListJson,
   })
-  .then(response => {
-    if (response.ok) {
-      document.querySelector(".map iframe").src = "map.html";
-    } else {
-      console.error("Erreur lors de l'envoi des données");
-    }
-  })
-  .catch(error => {
-    console.error("Erreur de réseau:", error);
-  });
+    .then((response) => {
+      if (response.ok) {
+        document.querySelector(".map iframe").src = "map.html";
+      } else {
+        console.error("Erreur lors de l'envoi des données");
+      }
+    })
+    .catch((error) => {
+      console.error("Erreur de réseau:", error);
+    });
   console.log(cityListJson);
 }
-
-
 
 inputField.addEventListener("keydown", handleKeyDown);

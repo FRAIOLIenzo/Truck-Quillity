@@ -10,18 +10,31 @@ CORS(app)  # This will enable CORS for all routes
 def get_location():
     m = folium.Map(location=[48.8566, 2.3522], zoom_start=6)
     data = request.json
-    city_name = data.get('city_name')
     geolocator = Nominatim(user_agent="city_locator")
-    location = geolocator.geocode(city_name)
-    if location:
-        folium.Marker([location.latitude, location.longitude], popup=city_name).add_to(m)
+    
+    if isinstance(data, list):
+        for city in data:
+            city_name = city.get('city_name')
+            location = geolocator.geocode(city_name)
+            if location:
+                folium.Marker([location.latitude, location.longitude], popup=city_name).add_to(m)
+                if len(data) > 1:
+                    points = [(geolocator.geocode(city.get('city_name')).latitude, geolocator.geocode(city.get('city_name')).longitude) for city in data if geolocator.geocode(city.get('city_name'))]
+                    folium.PolyLine(points, color="blue", weight=2.5, opacity=1).add_to(m)
         m.save('map.html')
-        return jsonify({'latitude': location.latitude, 'longitude': location.longitude})
+        return jsonify({'message': 'Markers added successfully'})
     else:
-        return jsonify({'error': 'Location not found'}), 404
+        city_name = data.get('city_name')
+        location = geolocator.geocode(city_name)
+        if location:
+            folium.Marker([location.latitude, location.longitude], popup=city_name).add_to(m)
+            m.save('map.html')
+            return jsonify({'latitude': location.latitude, 'longitude': location.longitude})
+        else:
+            return jsonify({'error': 'Location not found'}), 404
 
 @app.route('/api/reset', methods=['POST'])
-def get_location():
+def get_reset():
     data = request.json
     city_name = data.get('city_name')
     if city_name == 'reset':
