@@ -16,10 +16,18 @@
           <div class="menuElementContainer" id="1" onclick="openMenuGestion()">
             <li class="menuElement"><a>Gestion</a></li>
           </div>
-          <div class="menuElementContainer" id="2">
+          <div
+            class="menuElementContainer"
+            id="2"
+            onclick="openMenuStatistiques()"
+          >
             <li class="menuElement"><a>Statistiques</a></li>
           </div>
-          <div class="menuElementContainer" id="3">
+          <div
+            class="menuElementContainer"
+            id="3"
+            onclick="openMenuAlgorithmes()"
+          >
             <li class="menuElement"><a>Algorithmes</a></li>
           </div>
         </ul>
@@ -54,11 +62,11 @@
       </div>
       <div class="menuClose" id="menuClose">
         <img
-        src="pictures/menu-close.svg"
-        alt="menuOpen"
-        class="menuCloseIcon"
-        onclick="openMenuGestion()"
-      />
+          src="pictures/menu-close.svg"
+          alt="menuOpen"
+          class="menuCloseIcon"
+          onclick="openMenuGestion()"
+        />
       </div>
     </div>
     <script src="script.js"></script>

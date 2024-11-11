@@ -18,8 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-
 const menuGestion = document.getElementById("menuGestion");
 
 const menuClose = document.getElementById("menuClose");
@@ -41,3 +39,13 @@ function openMenuGestion() {
     console.log("No menuGestion or menuClose found");
   }
 }
+
+function openMenuStatistiques() {
+  menuGestion.style.display = "none";
+  menuClose.style.display = "none";
+}
+
+function openMenuAlgorithmes() {
+    menuGestion.style.display = "none";
+    menuClose.style.display = "none";
+  }
