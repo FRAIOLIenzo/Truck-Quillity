@@ -4,7 +4,7 @@ const cityList = [];
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM Loaded");
-  const resetJson = JSON.stringify({ city_name: 'reset' });
+  const resetJson = JSON.stringify({ city_name: "reset" });
   fetch("http://127.0.0.1:5000/api/reset", {
     method: "POST",
     headers: {
@@ -173,7 +173,9 @@ function validerPopupAjouterVille() {
   console.log("Villes ajoutées:", cityList);
   document.getElementById("popupAjouterVille").style.display = "none";
   document.getElementById("overlay").style.display = "none";
-  const cityListJson = JSON.stringify(cityList.map(city => ({ city_name: city })));
+  const cityListJson = JSON.stringify(
+    cityList.map((city) => ({ city_name: city }))
+  );
   fetch("http://127.0.0.1:5000/api/test", {
     method: "POST",
     headers: {
@@ -184,6 +186,21 @@ function validerPopupAjouterVille() {
     .then((response) => {
       if (response.ok) {
         document.querySelector(".map iframe").src = "map.html";
+        if (cityList.length > 0) {
+          document.getElementById("menuGestionAjouter").classList.add("active");
+          document
+            .getElementById("menuGestionAjouterListeVille")
+            .classList.add("active");
+          document
+            .getElementById("menuGestionAjouterListeVilleText")
+            .classList.add("active");
+          const cityListText = cityList
+            .map((city) => city + ",\u00A0")
+            .join("");
+          document.getElementById(
+            "menuGestionAjouterListeVilleText"
+          ).textContent = cityListText;
+        }
       } else {
         console.error("Erreur lors de l'envoi des données");
       }

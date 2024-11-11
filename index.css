@@ -1,136 +1,149 @@
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow-y: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: hidden;
 }
 
 /* NavBar */
 .navbar {
-    width: 100%;
-    height: 70px;
-    background-color: #EADBC8;
-    display: flex;
-    align-items: center;
+  width: 100%;
+  height: 70px;
+  background-color: #eadbc8;
+  display: flex;
+  align-items: center;
 }
 
 .logo {
-    width: 90px;
-    height: 70px;
-    margin: 0 auto;
-    display: block;
+  width: 90px;
+  height: 70px;
+  margin: 0 auto;
+  display: block;
 }
 
 .menuContainer {
-    display: flex;
-    margin-left: auto;
-    margin-right: 30px;
-    flex-grow: 1;
+  display: flex;
+  margin-left: auto;
+  margin-right: 30px;
+  flex-grow: 1;
 }
 
 .menu {
-    display: flex;
-    margin-left: auto;
-    user-select: none;
+  display: flex;
+  margin-left: auto;
+  user-select: none;
 }
 
 .menuElement {
-    
-    text-decoration: none;
-    list-style-type: none;
-    font-weight: bold;
-    color: #FEFAF6;
-    font-size: 20px;
-    user-select: none;
+  text-decoration: none;
+  list-style-type: none;
+  font-weight: bold;
+  color: #fefaf6;
+  font-size: 20px;
+  user-select: none;
 }
 
 .menuElementContainer {
-    padding: 5px 10px;
-    margin-left: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  padding: 5px 10px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.menuElementContainer:hover, .menuElementContainer.active {
-    background-color: #FEFAF6;
-    cursor: pointer;
-    border-radius: 30px;
+.menuElementContainer:hover,
+.menuElementContainer.active {
+  background-color: #fefaf6;
+  cursor: pointer;
+  border-radius: 30px;
 }
 
-.menuElementContainer:hover .menuElement, .menuElementContainer.active .menuElement {
-    color: #102C57;
+.menuElementContainer:hover .menuElement,
+.menuElementContainer.active .menuElement {
+  color: #102c57;
 }
 
 .profilContainer {
-    display: flex;
-    margin-right: 20px;
+  display: flex;
+  margin-right: 20px;
 }
 
 .profil {
-    width: 45px;
-    height: 45px;
-    margin-left: auto;
-    display: block;
-    border-radius: 50px;
+  width: 45px;
+  height: 45px;
+  margin-left: auto;
+  display: block;
+  border-radius: 50px;
 }
 
 /* Map */
 .map {
-    width: 100%;
-    height: calc(100vh - 65px);
+  width: 100%;
+  height: calc(100vh - 65px);
 }
-
 
 /* Menu Gestion Stat Algo */
-.menuGestion, .menuStatistiques, .menuAlgorithmes {
-    position: absolute;
-    top: 80px;
-    left: 50px;
-    width: 400px;
-    height: calc(100vh - 85px);
-    background-color: #FEFAF6;
-    border-radius: 20px;
-    display: none;
+.menuGestion,
+.menuStatistiques,
+.menuAlgorithmes {
+  position: absolute;
+  top: 80px;
+  left: 50px;
+  width: 400px;
+  height: calc(100vh - 85px);
+  background-color: #fefaf6;
+  border-radius: 20px;
+  display: none;
 }
 
-.menuGestionHeader, .menuStatistiquesHeader, .menuAlgorithmesHeader, .popupAjouterVilleHeader {
-    height: 40px;
-    margin: 0px 10px;
-    display: flex;
-    align-items: center;
-    border-bottom: 2px solid #102C57;
+.menuGestionHeader,
+.menuStatistiquesHeader,
+.menuAlgorithmesHeader,
+.popupAjouterVilleHeader {
+  height: 40px;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #102c57;
 }
 
-.menuGestionHeaderText, .menuStatistiquesHeaderText, .menuAlgorithmesHeaderText, .popupAjouterVilleHeaderText {
-    font-size: 26px;
-    font-weight: bold;
-    color: #102C57;
-    user-select: none;
+.menuGestionHeaderText,
+.menuStatistiquesHeaderText,
+.menuAlgorithmesHeaderText,
+.popupAjouterVilleHeaderText {
+  font-size: 26px;
+  font-weight: bold;
+  color: #102c57;
+  user-select: none;
 }
 
-.menuGestionHeaderIcon, .menuStatistiquesHeaderIcon, .menuAlgorithmesHeaderIcon, .popupAjouterVilleHeaderIcon {
-    margin-left: auto;
-    width: 30px;
-    height: 30px;
-    user-select: none;
+.menuGestionHeaderIcon,
+.menuStatistiquesHeaderIcon,
+.menuAlgorithmesHeaderIcon,
+.popupAjouterVilleHeaderIcon {
+  margin-left: auto;
+  width: 30px;
+  height: 30px;
+  user-select: none;
 }
 
 .popupAjouterVilleHeaderIcon:hover {
-cursor: pointer;
-background-color: #2639556e;
-border-radius: 20px;
+  cursor: pointer;
+  background-color: #2639556e;
+  border-radius: 20px;
 }
 
-.menuGestionHeaderIcon:hover, .menuStatistiquesHeaderIcon:hover, .menuAlgorithmesHeaderIcon:hover {
-    cursor: pointer;
+.menuGestionHeaderIcon:hover,
+.menuStatistiquesHeaderIcon:hover,
+.menuAlgorithmesHeaderIcon:hover {
+  cursor: pointer;
 }
 
 .menuGestionAjouter{
@@ -145,148 +158,177 @@ border-radius: 20px;
     height: 40px;
 }
 
+.menuGestionAjouter.active{
+  margin: 20px 10px 0px 10px;
+  display: flex;
+  align-items: center;
+  background-color: #102c57;
+  color: #fefaf6;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 16px 16px 0px 0px;
+  height: 40px;
+  border-bottom: 2px solid #fefaf6;
+}
+
+.menuGestionAjouterListeVille.active {
+  margin: 0px 10px;
+  display: flex;
+  background-color: #102c57;
+  color: #fefaf6;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 0px 0px 16px 16px;
+  height: 80px;
+}
+
+.menuGestionAjouterListeVilleText.active {
+  margin: 10px 10px;
+  user-select: none;
+  display: table;
+  word-break: break-word;
+}
+
 .menuGestionAjouter:hover {
-    cursor: pointer;
-    background-color: #263955;
+  cursor: pointer;
+  background-color: #263955;
 }
 
 .menuGestionAjouterText {
-    margin-left: 10px;
-    user-select: none;
+  margin-left: 10px;
+  user-select: none;
 }
 
 .menuGestionAjouterIcon {
-    width: 24px;
-    height: 24px;
-    user-select: none;
-    margin-left: auto;
-    margin-right: 10px;
-    transition: transform 0.3s ease;
+  width: 24px;
+  height: 24px;
+  user-select: none;
+  margin-left: auto;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
 }
 
 .menuGestionAjouter:hover .menuGestionAjouterIcon {
-    transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
-
 /* Menu Close */
-.menuClose{
-    position: absolute;
-    top: 80px;
-    left: 50px;
-    background-color: #FEFAF6;
-    border-radius: 20px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: none;
+.menuClose {
+  position: absolute;
+  top: 80px;
+  left: 50px;
+  background-color: #fefaf6;
+  border-radius: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
 }
 
 .menuCloseIcon {
-    width: 30px;
-    height: 30px;
-    user-select: none;
+  width: 30px;
+  height: 30px;
+  user-select: none;
 }
 
 .menuCloseIcon:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /* Popup Ajouter villes */
 
 .popupAjouterVille {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 700px;
-    height: 400px;
-    background-color: #FEFAF6;
-    border-radius: 20px;
-    display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 400px;
+  background-color: #fefaf6;
+  border-radius: 20px;
+  display: none;
 }
 
 .popupAjouterVilleForm {
-    margin: 20px 10px;
-    display: flex;
-    flex-direction: column;
+  margin: 20px 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .popupAjouterVilleFormInput {
-    background-color: #FEFAF6;
-    border: 1px solid #102C57;
-    border-radius: 12px;
-    height: 30px;
-    padding: 0px 10px;
+  background-color: #fefaf6;
+  border: 1px solid #102c57;
+  border-radius: 12px;
+  height: 30px;
+  padding: 0px 10px;
 }
 
 .popupAjouterVilleFormList {
-    margin-top: 10px;
-    width: 100%;
-    max-height: 200px;
-    display: flex;
-    flex-wrap: wrap;
-    overflow-y: auto;
-    color: #102C57;
-    font-weight: bold;
+  margin-top: 10px;
+  width: 100%;
+  max-height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  color: #102c57;
+  font-weight: bold;
 }
 
 .popupAjouterVilleBoutonContainer {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 40%;
-    margin: 20px 20px;
-    display: flex;
-    justify-content: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  margin: 20px 20px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .popupAjouterVilleBoutonAjouter {
-    background-color: #102C57;
-    border: none;
-    color: #FEFAF6;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 16px;
-    height: 40px;
-    width: 120px;
+  background-color: #102c57;
+  border: none;
+  color: #fefaf6;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 16px;
+  height: 40px;
+  width: 120px;
 }
 
 .popupAjouterVilleBoutonAnnuler {
-    background-color: #FEFAF6;
-    border: 1px solid #102C57;
-    color: #102C57;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 16px;
-    height: 40px;
-    width: 120px;
-    margin-right: 20px;
+  background-color: #fefaf6;
+  border: 1px solid #102c57;
+  color: #102c57;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 16px;
+  height: 40px;
+  width: 120px;
+  margin-right: 20px;
 }
 
-.popupAjouterVilleBoutonAjouter:hover, .popupAjouterVilleBoutonAnnuler:hover {
-    cursor: pointer;
+.popupAjouterVilleBoutonAjouter:hover,
+.popupAjouterVilleBoutonAnnuler:hover {
+  cursor: pointer;
 }
 
 .popupAjouterVilleBoutonAjouter:hover {
-    background-color: #263955;
+  background-color: #263955;
 }
 
 .popupAjouterVilleBoutonAnnuler:hover {
-    background-color: #2639556e;
+  background-color: #2639556e;
 }
 
 /* Overlay */
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: calc(100vh + 5px);
-    background-color: #0000006e;
-    display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh + 5px);
+  background-color: #0000006e;
+  display: none;
 }
-
-
