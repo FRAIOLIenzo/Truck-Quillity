@@ -82,3 +82,13 @@ function openMenuAlgorithmes() {
         console.log("No menuAlgorithmes found");
     }
 }
+
+function openPopupAjouterVille() {
+    document.getElementById("popupAjouterVille").style.display = "block";
+    document.getElementById("overlay").style.display = "block";
+}
+
+function closePopupAjouterVille() {
+    document.getElementById("popupAjouterVille").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+}

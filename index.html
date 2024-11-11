@@ -59,6 +59,14 @@
             onclick="closeMenu()"
           />
         </div>
+        <div class="menuGestionAjouter" onclick="openPopupAjouterVille()">
+          <span class="menuGestionAjouterText">Ajouter des villes</span>
+          <img
+            src="pictures/plus.svg"
+            alt="plus"
+            class="menuGestionAjouterIcon"
+          />
+        </div>
       </div>
 
       <div class="menuStatistiques" id="menuStatistiques">
@@ -99,7 +107,37 @@
           onclick="openLastClosedMenu()"
         />
       </div>
+
+      <div class="overlay" id="overlay"></div>
+      <div class="popupAjouterVille" id="popupAjouterVille">
+        <div class="popupAjouterVilleHeader">
+          <span class="popupAjouterVilleHeaderText">Ajouter des villes</span>
+          <img
+            src="pictures/close.svg"
+            alt="close"
+            class="popupAjouterVilleHeaderIcon"
+            onclick="closePopupAjouterVille()"
+          />
+        </div>
+        <div class="popupAjouterVilleForm">
+          <input
+            type="text"
+            id="popupAjouterVilleFormInput"
+            class="popupAjouterVilleFormInput"
+            placeholder="Veuillez écrire le noms de villes"
+          />
+          <div
+            id="popupAjouterVilleFormList"
+            class="popupAjouterVilleFormList"
+          ></div>
+        </div>
+        <div class="popupAjouterVilleBoutonContainer">
+            <button class="popupAjouterVilleBoutonAnnuler" onclick="closePopupAjouterVille()">Annuler</button>
+            <button class="popupAjouterVilleBoutonAjouter" onclick="validerPopupAjouterVille()">Ajouter</button>
+        </div>
+      </div>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>

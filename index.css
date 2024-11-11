@@ -89,7 +89,7 @@ body {
 }
 
 
-/* Menu Gestion */
+/* Menu Gestion Stat Algo */
 .menuGestion, .menuStatistiques, .menuAlgorithmes {
     position: absolute;
     top: 80px;
@@ -101,7 +101,7 @@ body {
     display: none;
 }
 
-.menuGestionHeader, .menuStatistiquesHeader, .menuAlgorithmesHeader {
+.menuGestionHeader, .menuStatistiquesHeader, .menuAlgorithmesHeader, .popupAjouterVilleHeader {
     height: 40px;
     margin: 0px 10px;
     display: flex;
@@ -109,23 +109,65 @@ body {
     border-bottom: 2px solid #102C57;
 }
 
-.menuGestionHeaderText, .menuStatistiquesHeaderText, .menuAlgorithmesHeaderText {
+.menuGestionHeaderText, .menuStatistiquesHeaderText, .menuAlgorithmesHeaderText, .popupAjouterVilleHeaderText {
     font-size: 26px;
     font-weight: bold;
     color: #102C57;
     user-select: none;
 }
 
-.menuGestionHeaderIcon, .menuStatistiquesHeaderIcon, .menuAlgorithmesHeaderIcon {
+.menuGestionHeaderIcon, .menuStatistiquesHeaderIcon, .menuAlgorithmesHeaderIcon, .popupAjouterVilleHeaderIcon {
     margin-left: auto;
     width: 30px;
     height: 30px;
     user-select: none;
 }
 
+.popupAjouterVilleHeaderIcon:hover {
+cursor: pointer;
+background-color: #2639556e;
+border-radius: 20px;
+}
+
 .menuGestionHeaderIcon:hover, .menuStatistiquesHeaderIcon:hover, .menuAlgorithmesHeaderIcon:hover {
     cursor: pointer;
 }
+
+.menuGestionAjouter{
+    margin: 20px 10px;
+    display: flex;
+    align-items: center;
+    background-color: #102C57;
+    color: #FEFAF6;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 16px;
+    height: 40px;
+}
+
+.menuGestionAjouter:hover {
+    cursor: pointer;
+    background-color: #263955;
+}
+
+.menuGestionAjouterText {
+    margin-left: 10px;
+    user-select: none;
+}
+
+.menuGestionAjouterIcon {
+    width: 24px;
+    height: 24px;
+    user-select: none;
+    margin-left: auto;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.menuGestionAjouter:hover .menuGestionAjouterIcon {
+    transform: rotate(45deg);
+}
+
 
 /* Menu Close */
 .menuClose{
@@ -151,3 +193,88 @@ body {
 .menuCloseIcon:hover {
     cursor: pointer;
 }
+
+/* Popup Ajouter villes */
+
+.popupAjouterVille {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 400px;
+    background-color: #FEFAF6;
+    border-radius: 20px;
+    display: none;
+}
+
+.popupAjouterVilleForm {
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.popupAjouterVilleFormInput {
+    background-color: #FEFAF6;
+    border: 1px solid #102C57;
+    border-radius: 12px;
+    height: 30px;
+    padding: 0px 10px;
+}
+
+.popupAjouterVilleBoutonContainer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40%;
+    margin: 20px 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.popupAjouterVilleBoutonAjouter {
+    background-color: #102C57;
+    border: none;
+    color: #FEFAF6;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 16px;
+    height: 40px;
+    width: 120px;
+}
+
+.popupAjouterVilleBoutonAnnuler {
+    background-color: #FEFAF6;
+    border: 1px solid #102C57;
+    color: #102C57;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 16px;
+    height: 40px;
+    width: 120px;
+    margin-right: 20px;
+}
+
+.popupAjouterVilleBoutonAjouter:hover, .popupAjouterVilleBoutonAnnuler:hover {
+    cursor: pointer;
+}
+
+.popupAjouterVilleBoutonAjouter:hover {
+    background-color: #263955;
+}
+
+.popupAjouterVilleBoutonAnnuler:hover {
+    background-color: #2639556e;
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh + 5px);
+    background-color: #0000006e;
+    display: none;
+}
+
