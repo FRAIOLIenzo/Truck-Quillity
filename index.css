@@ -222,6 +222,17 @@ border-radius: 20px;
     padding: 0px 10px;
 }
 
+.popupAjouterVilleFormList {
+    margin-top: 10px;
+    width: 100%;
+    max-height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    color: #102C57;
+    font-weight: bold;
+}
+
 .popupAjouterVilleBoutonContainer {
     position: absolute;
     bottom: 0;
@@ -277,4 +288,5 @@ border-radius: 20px;
     background-color: #0000006e;
     display: none;
 }
+
 
