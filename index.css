@@ -90,7 +90,7 @@ body {
 
 
 /* Menu Gestion */
-.menuGestion {
+.menuGestion, .menuStatistiques, .menuAlgorithmes {
     position: absolute;
     top: 80px;
     left: 50px;
@@ -101,7 +101,7 @@ body {
     display: none;
 }
 
-.menuGestionHeader {
+.menuGestionHeader, .menuStatistiquesHeader, .menuAlgorithmesHeader {
     height: 40px;
     margin: 0px 10px;
     display: flex;
@@ -109,21 +109,21 @@ body {
     border-bottom: 2px solid #102C57;
 }
 
-.menuGestionHeaderText {
+.menuGestionHeaderText, .menuStatistiquesHeaderText, .menuAlgorithmesHeaderText {
     font-size: 26px;
     font-weight: bold;
     color: #102C57;
     user-select: none;
 }
 
-.menuGestionHeaderIcon {
+.menuGestionHeaderIcon, .menuStatistiquesHeaderIcon, .menuAlgorithmesHeaderIcon {
     margin-left: auto;
     width: 30px;
     height: 30px;
     user-select: none;
 }
 
-.menuGestionHeaderIcon:hover {
+.menuGestionHeaderIcon:hover, .menuStatistiquesHeaderIcon:hover, .menuAlgorithmesHeaderIcon:hover {
     cursor: pointer;
 }
 

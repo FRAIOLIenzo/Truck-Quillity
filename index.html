@@ -56,16 +56,47 @@
             src="pictures/menu-open.svg"
             alt="menuOpen"
             class="menuGestionHeaderIcon"
-            onclick="closeMenuGestion()"
+            onclick="closeMenu()"
           />
         </div>
       </div>
+
+      <div class="menuStatistiques" id="menuStatistiques">
+        <div class="menuStatistiquesHeader">
+          <div class="menuStatistiquesHeaderText">
+            <span>Statistiques</span>
+          </div>
+
+          <img
+            src="pictures/menu-open.svg"
+            alt="menuOpen"
+            class="menuStatistiquesHeaderIcon"
+            onclick="closeMenu()"
+          />
+        </div>
+      </div>
+
+      <div class="menuAlgorithmes" id="menuAlgorithmes">
+        <div class="menuAlgorithmesHeader">
+          <div class="menuAlgorithmesHeaderText">
+            <span>Algorithmes</span>
+          </div>
+
+          <img
+            src="pictures/menu-open.svg"
+            alt="menuOpen"
+            class="menuAlgorithmesHeaderIcon"
+            onclick="closeMenu()"
+          />
+        </div>
+      </div>
+
       <div class="menuClose" id="menuClose">
         <img
           src="pictures/menu-close.svg"
           alt="menuOpen"
           class="menuCloseIcon"
-          onclick="openMenuGestion()"
+          onclick="openLastClosedMenu()"
         />
       </div>
     </div>
