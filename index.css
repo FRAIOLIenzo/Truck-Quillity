@@ -12,6 +12,7 @@ body {
     overflow-y: hidden;
 }
 
+/* NavBar */
 .navbar {
     width: 100%;
     height: 70px;
@@ -80,26 +81,30 @@ body {
     border-radius: 50px;
 }
 
+/* Map */
 .map {
     width: 100%;
     height: calc(100vh - 65px);
 }
 
+
+/* Menu Gestion */
 .menuGestion {
     position: absolute;
     top: 80px;
-    left: 10px;
+    left: 50px;
     width: 400px;
     height: calc(100vh - 85px);
     background-color: #FEFAF6;
     border-radius: 20px;
+    display: none;
 }
 
 .menuGestionHeader {
     height: 40px;
     margin: 0px 10px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     border-bottom: 2px solid #102C57;
 }
 
@@ -111,12 +116,35 @@ body {
 }
 
 .menuGestionHeaderIcon {
-    height: 100%;
     margin-left: auto;
     width: 30px;
     height: 30px;
 }
 
 .menuGestionHeaderIcon:hover {
+    cursor: pointer;
+}
+
+/* Menu Close */
+.menuClose{
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    background-color: #FEFAF6;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.menuCloseIcon {
+    width: 30px;
+    height: 30px;
+}
+
+.menuCloseIcon:hover {
     cursor: pointer;
 }

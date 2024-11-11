@@ -13,7 +13,7 @@
       </div>
       <div class="menuContainer">
         <ul class="menu">
-          <div class="menuElementContainer" id="1">
+          <div class="menuElementContainer" id="1" onclick="openMenuGestion()">
             <li class="menuElement"><a>Gestion</a></li>
           </div>
           <div class="menuElementContainer" id="2">
@@ -38,7 +38,7 @@
           frameborder="0"
         ></iframe>
       </div>
-      <div class="menuGestion">
+      <div class="menuGestion" id="menuGestion">
         <div class="menuGestionHeader">
           <div class="menuGestionHeaderText">
             <span>Gestion</span>
@@ -48,8 +48,17 @@
             src="pictures/menu-open.svg"
             alt="menuOpen"
             class="menuGestionHeaderIcon"
+            onclick="closeMenuGestion()"
           />
         </div>
+      </div>
+      <div class="menuClose" id="menuClose">
+        <img
+        src="pictures/menu-close.svg"
+        alt="menuOpen"
+        class="menuCloseIcon"
+        onclick="openMenuGestion()"
+      />
       </div>
     </div>
     <script src="script.js"></script>
