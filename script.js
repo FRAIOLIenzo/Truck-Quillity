@@ -209,6 +209,7 @@ function validerPopupAjouterVille() {
 inputField.addEventListener("keydown", handleKeyDown);
 
 function lancerItineraire() {
+  document.getElementById("loaderContainer").style.display = 'flex';
   fetch("http://127.0.0.1:5000/api/test", {
     method: "POST",
     headers: {
@@ -224,14 +225,16 @@ function lancerItineraire() {
         console.log(data.message);
         console.log(data.distance_multi_start);
         console.log(data.path_multi_start);
-        
+        document.getElementById("loaderContainer").style.display = 'none';
       } else {
         console.error("Erreur lors de l'envoi des données");
+        document.getElementById("loaderContainer").style.display = 'none';
       }
     })
 
     .catch((error) => {
       console.error("Erreur de réseau:", error);
+      document.getElementById("loaderContainer").style.display = 'none';
     });
   console.log(cityListJson);
 }
