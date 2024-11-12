@@ -16,47 +16,53 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const geoNamesUsername = "enzouz";
-
-  async function getCitySuggestions(query) {
-    const response = await fetch(
-      `http://api.geonames.org/searchJSON?name_startsWith=${query}&maxRows=5&cities=cities1000&username=${geoNamesUsername}`
-    );
-    console.log(response);
-    if (response.ok) {
-      const data = await response.json();
-      return data.geonames.map((city) => city.name);
+  inputField.addEventListener("input", () => {
+    const query = inputField.value.trim();
+    const suggestionContainer = document.querySelector(".popupAjouterVilleFormSuggestion");
+    if (query.length >= 3) {
+      fetch(`https://api-adresse.data.gouv.fr/search/?q=${query}&type=municipality&autocomplete=1`)
+        .then(response => response.json())
+        .then(data => {
+          suggestionContainer.innerHTML = "";
+          if (data.features.length === 0) {
+            suggestionContainer.style.display = "none";
+          } else {
+            suggestionContainer.style.display = "block";
+            data.features.forEach((feature, index) => {
+              const suggestionItem = document.createElement("div");
+              suggestionItem.classList.add("suggestion-item");
+              suggestionItem.textContent = feature.properties.label;
+              suggestionItem.addEventListener("click", () => {
+                inputField.value = feature.properties.label;
+                suggestionContainer.innerHTML = "";
+                suggestionContainer.style.display = "none";
+              });
+              suggestionContainer.appendChild(suggestionItem);
+              if (index === 0) {
+                suggestionItem.classList.add("first-suggestion");
+              }
+            });
+          }
+        })
+        .catch(error => console.error("Erreur de réseau:", error));
     } else {
-      console.error("Erreur lors de la récupération des données GeoNames");
-      return [];
+      suggestionContainer.innerHTML = "";
+      suggestionContainer.style.display = "none";
     }
-  }
+  });
 
-  function displaySuggestions(suggestions) {
-    suggestionList.innerHTML = "";
-    suggestions.forEach((city) => {
-      const listItem = document.createElement("div");
-      listItem.classList.add("suggestion-item");
-      listItem.textContent = city;
-
-      listItem.addEventListener("click", () => {
-        inputField.value = city;
-        suggestionList.innerHTML = "";
-      });
-
-      suggestionList.appendChild(listItem);
-    });
-  }
-
-  // inputField.addEventListener("input", async function () {
-  //   const query = inputField.value.trim();
-  //   if (query.length > 3) {
-  //     const suggestions = await getCitySuggestions(query);
-  //     displaySuggestions(suggestions);
-  //   } else {
-  //     suggestionList.innerHTML = "";
-  //   }
-  // });
+  inputField.addEventListener("keydown", (event) => {
+    if (event.key === "Tab") {
+      event.preventDefault();
+      const firstSuggestion = document.querySelector(".first-suggestion");
+      if (firstSuggestion) {
+        inputField.value = firstSuggestion.textContent;
+        const suggestionContainer = document.querySelector(".popupAjouterVilleFormSuggestion");
+        suggestionContainer.innerHTML = "";
+        suggestionContainer.style.display = "none";
+      }
+    }
+  });
 });
 
 const menuGestion = document.getElementById("menuGestion");

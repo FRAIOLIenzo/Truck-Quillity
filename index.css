@@ -295,6 +295,16 @@ body {
   padding: 0px 10px;
 }
 
+.popupAjouterVilleFormSuggestion {
+    width: auto;
+    height: auto;
+    background-color: #fefaf6;
+    border: 1px solid #102c57;
+    border-radius: 12px;
+    padding: 0px 10px;
+    display: none;
+}
+
 .popupAjouterVilleFormList {
   margin-top: 10px;
   width: 100%;
