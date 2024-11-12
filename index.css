@@ -126,15 +126,28 @@ body {
 
 .menuGestionHeaderIcon,
 .menuStatistiquesHeaderIcon,
-.menuAlgorithmesHeaderIcon,
-.popupAjouterVilleHeaderIcon {
+.menuAlgorithmesHeaderIcon {
   margin-left: auto;
   width: 30px;
   height: 30px;
   user-select: none;
 }
 
-.popupAjouterVilleHeaderIcon:hover {
+.popupAjouterVilleHeaderIcon {
+    width: 30px;
+    height: 30px;
+    user-select: none;
+    margin-left: 10px;
+}
+
+.popupAjouterVilleHeaderIconRandom {
+    margin-left: auto;
+    width: 30px;
+    height: 30px;
+    user-select: none;
+}
+
+.popupAjouterVilleHeaderIcon:hover, .popupAjouterVilleHeaderIconRandom:hover {
   cursor: pointer;
   background-color: #2639556e;
   border-radius: 20px;
