@@ -59,11 +59,7 @@
             onclick="closeMenu()"
           />
         </div>
-        <div
-          class="menuGestionAjouter"
-          id="menuGestionAjouter"
-          
-        >
+        <div class="menuGestionAjouter" id="menuGestionAjouter">
           <span class="menuGestionAjouterText">Ajouter des villes</span>
           <img
             src="pictures/delete.svg"
@@ -88,6 +84,14 @@
             class="menuGestionAjouterListeVilleText"
             id="menuGestionAjouterListeVilleText"
           ></p>
+        </div>
+        <div class="menuGestionBoutonContainer">
+          <button
+            class="menuGestionBoutonLancer"
+            onclick="lancerItineraire()"
+          >
+            Lancer l'itinéraire
+          </button>
         </div>
       </div>
 
@@ -146,7 +150,7 @@
             type="text"
             id="popupAjouterVilleFormInput"
             class="popupAjouterVilleFormInput"
-            placeholder="Veuillez écrire le noms de villes /!\ La ville de départ doit être la première /!\" 
+            placeholder="Veuillez écrire le noms de villes /!\ La ville de départ doit être la première /!\"
           />
           <div
             id="popupAjouterVilleFormList"

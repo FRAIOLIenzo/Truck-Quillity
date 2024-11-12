@@ -306,7 +306,7 @@ body {
   font-weight: bold;
 }
 
-.popupAjouterVilleBoutonContainer {
+.popupAjouterVilleBoutonContainer, .menuGestionBoutonContainer {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -316,7 +316,7 @@ body {
   justify-content: flex-end;
 }
 
-.popupAjouterVilleBoutonAjouter {
+.popupAjouterVilleBoutonAjouter, .menuGestionBoutonLancer {
   background-color: #102c57;
   border: none;
   color: #fefaf6;
@@ -325,6 +325,10 @@ body {
   border-radius: 16px;
   height: 40px;
   width: 120px;
+}
+
+.menuGestionBoutonLancer {
+    width: 200px;
 }
 
 .popupAjouterVilleBoutonAnnuler {
@@ -340,11 +344,13 @@ body {
 }
 
 .popupAjouterVilleBoutonAjouter:hover,
-.popupAjouterVilleBoutonAnnuler:hover {
+.popupAjouterVilleBoutonAnnuler:hover, 
+.menuGestionBoutonLancer:hover {
   cursor: pointer;
 }
 
-.popupAjouterVilleBoutonAjouter:hover {
+.popupAjouterVilleBoutonAjouter:hover,
+.menuGestionBoutonLancer:hover {
   background-color: #263955;
 }
 

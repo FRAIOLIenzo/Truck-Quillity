@@ -155,6 +155,7 @@ function closePopupAjouterVille() {
 function deleteListeVille() {
   cityList.length = 0;
   document.getElementById("popupAjouterVilleFormList").innerHTML = "";
+  cityListJson = ""
   document.getElementById("menuGestionAjouterListeVilleText").textContent = "";
   resetMap();
   document
@@ -173,13 +174,41 @@ function deleteListeVille() {
     .classList.remove("active");
 }
 
+let cityListJson = "";
+
 function validerPopupAjouterVille() {
-  console.log("Villes ajoutées:", cityList);
   document.getElementById("popupAjouterVille").style.display = "none";
   document.getElementById("overlay").style.display = "none";
-  const cityListJson = JSON.stringify(
+  cityListJson = JSON.stringify(
     cityList.map((city) => ({ city_name: city }))
   );
+  if (cityList.length > 0) {
+    document
+      .getElementById("menuGestionAjouter").classList.add("active");
+    document
+      .getElementById("menuGestionAjouterListeVille")
+      .classList.add("active");
+    document
+      .getElementById("menuGestionAjouterListeVilleText")
+      .classList.add("active");
+    document
+      .getElementById("menuGestionAjouterIconDelete")
+      .classList.add("active");
+    document
+      .getElementById("menuGestionAjouterIconPlus")
+      .classList.add("active");
+    const cityListText = cityList
+      .map((city) => city + ",\u00A0")
+      .join("");
+    document.getElementById(
+      "menuGestionAjouterListeVilleText"
+    ).textContent = cityListText;
+  }
+}
+
+inputField.addEventListener("keydown", handleKeyDown);
+
+function lancerItineraire() {
   fetch("http://127.0.0.1:5000/api/test", {
     method: "POST",
     headers: {
@@ -195,28 +224,7 @@ function validerPopupAjouterVille() {
         console.log(data.message);
         console.log(data.distance_multi_start);
         console.log(data.path_multi_start);
-        if (cityList.length > 0) {
-          document
-            .getElementById("menuGestionAjouter").classList.add("active");
-          document
-            .getElementById("menuGestionAjouterListeVille")
-            .classList.add("active");
-          document
-            .getElementById("menuGestionAjouterListeVilleText")
-            .classList.add("active");
-          document
-            .getElementById("menuGestionAjouterIconDelete")
-            .classList.add("active");
-          document
-            .getElementById("menuGestionAjouterIconPlus")
-            .classList.add("active");
-          const cityListText = cityList
-            .map((city) => city + ",\u00A0")
-            .join("");
-          document.getElementById(
-            "menuGestionAjouterListeVilleText"
-          ).textContent = cityListText;
-        }
+        
       } else {
         console.error("Erreur lors de l'envoi des données");
       }
@@ -227,8 +235,6 @@ function validerPopupAjouterVille() {
     });
   console.log(cityListJson);
 }
-
-inputField.addEventListener("keydown", handleKeyDown);
 
 function resetMap() {
   const resetJson = JSON.stringify({ city_name: "reset" });
