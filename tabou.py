@@ -23,12 +23,6 @@ from flask_cors import CORS
 import json
 
 
-        
-
-#---------------------------------------------------------------Main----------------------------------------------------------------
-
-
-
 #---------------------------------------------------------------Fonctions----------------------------------------------------------------
 def generate_coordinates(nb_villes, x_max=100, y_max=100, min_distance=5):
     random.seed(9)
@@ -209,14 +203,6 @@ def get_location():
 
         solution_initiale = path
 
-        # Tabou
-        # taille_tabou = 50
-        # iter_max = 50   
-        # tabou, _, _ = recherche_tabou(solution_initiale, taille_tabou, iter_max, distance_matrix)
-        # tabou_distance = calculate_path_distance(tabou, distance_matrix)
-        # path = tabou
-        # distance = tabou_distance
-
         # Multi start
         nb_test = 100
         sol_max, val_max, nb_test, _, _ = multi_start(nb_villes, solution_initiale, distance_matrix, nb_test)
@@ -252,31 +238,5 @@ def get_reset():
     else:
         return jsonify({'error': 'Location not found'}), 404
     
-
-# print("Main")
-# nb_villes = 100
-
-# # distance_matrix = distances_to_matrix(distances, nb_villes)
-
-# # random.seed(9)
-# # path = generate_path(nb_villes, Paris) # ville de départ = 0
-# # random.seed()
-# # start = time.process_time()
-
-# Initialisation des paramètres
-# # taille_tabou = 50
-# # iter_max = 50 
-# # solution_initiale = path
-# # tabou, courants, meilleurs_courants = recherche_tabou(solution_initiale, taille_tabou, iter_max, distance_matrix)
-# # tabou_distance = calculate_path_distance(tabou, distance_matrix)
-# # stop = time.process_time()
-# # print("calculé en ", stop-start, 's')
-# # print("Distance : ", tabou_distance)
-
-
-# Run multi start
-# # nb_test = 100
-# # sol_max, val_max, nb_test, solutions, best_solutions = multi_start(nb_villes, solution_initiale, distance_matrix, nb_test)
-
 if __name__ == '__main__':
     app.run(debug=True)

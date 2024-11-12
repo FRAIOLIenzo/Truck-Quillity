@@ -59,16 +59,35 @@
             onclick="closeMenu()"
           />
         </div>
-        <div class="menuGestionAjouter" id="menuGestionAjouter" onclick="openPopupAjouterVille()">
+        <div
+          class="menuGestionAjouter"
+          id="menuGestionAjouter"
+          
+        >
           <span class="menuGestionAjouterText">Ajouter des villes</span>
+          <img
+            src="pictures/delete.svg"
+            alt="plus"
+            class="menuGestionAjouterIconDelete"
+            id="menuGestionAjouterIconDelete"
+            onclick="deleteListeVille()"
+          />
           <img
             src="pictures/plus.svg"
             alt="plus"
-            class="menuGestionAjouterIcon"
+            class="menuGestionAjouterIconPlus"
+            id="menuGestionAjouterIconPlus"
+            onclick="openPopupAjouterVille()"
           />
         </div>
-        <div class="menuGestionAjouterListeVille" id="menuGestionAjouterListeVille">
-          <p class="menuGestionAjouterListeVilleText" id="menuGestionAjouterListeVilleText"></p>
+        <div
+          class="menuGestionAjouterListeVille"
+          id="menuGestionAjouterListeVille"
+        >
+          <p
+            class="menuGestionAjouterListeVilleText"
+            id="menuGestionAjouterListeVilleText"
+          ></p>
         </div>
       </div>
 
@@ -127,7 +146,7 @@
             type="text"
             id="popupAjouterVilleFormInput"
             class="popupAjouterVilleFormInput"
-            placeholder="Veuillez écrire le noms de villes"
+            placeholder="Veuillez écrire le noms de villes /!\ La ville de départ doit être la première /!\" 
           />
           <div
             id="popupAjouterVilleFormList"
@@ -135,8 +154,18 @@
           ></div>
         </div>
         <div class="popupAjouterVilleBoutonContainer">
-            <button class="popupAjouterVilleBoutonAnnuler" onclick="closePopupAjouterVille()">Annuler</button>
-            <button class="popupAjouterVilleBoutonAjouter" onclick="validerPopupAjouterVille()">Ajouter</button>
+          <button
+            class="popupAjouterVilleBoutonAnnuler"
+            onclick="closePopupAjouterVille()"
+          >
+            Annuler
+          </button>
+          <button
+            class="popupAjouterVilleBoutonAjouter"
+            onclick="validerPopupAjouterVille()"
+          >
+            Ajouter
+          </button>
         </div>
       </div>
     </div>
