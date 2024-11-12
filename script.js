@@ -183,9 +183,14 @@ function validerPopupAjouterVille() {
     },
     body: cityListJson,
   })
-    .then((response) => {
-      if (response.ok) {
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.message) {
         document.querySelector(".map iframe").src = "map.html";
+        console.log(data);
+        console.log(data.message);
+        console.log(data.distance_multi_start);
+        console.log(data.path_multi_start);
         if (cityList.length > 0) {
           document.getElementById("menuGestionAjouter").classList.add("active");
           document
@@ -205,6 +210,7 @@ function validerPopupAjouterVille() {
         console.error("Erreur lors de l'envoi des données");
       }
     })
+
     .catch((error) => {
       console.error("Erreur de réseau:", error);
     });
