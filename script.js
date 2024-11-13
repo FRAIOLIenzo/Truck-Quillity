@@ -209,7 +209,10 @@ function validerPopupAjouterVille() {
     document
       .getElementById("menuGestionAjouterIconPlus")
       .classList.add("active");
-    const cityListText = cityList.map((city) => city + ",\u00A0").join("");
+    let cityListText = cityList.slice(0, 10).map((city) => city + ",\u00A0").join("");
+    if (cityList.length > 10) {
+      cityListText += "...";
+    }
     document.getElementById("menuGestionAjouterListeVilleText").textContent =
       cityListText;
   }
