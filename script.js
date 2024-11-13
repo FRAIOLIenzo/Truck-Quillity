@@ -250,7 +250,7 @@ inputField.addEventListener("keydown", handleKeyDown);
 
 function lancerItineraire() {
   document.getElementById("loaderContainer").style.display = 'flex';
-  fetch("http://127.0.0.1:5000/api/test", {
+  fetch("http://127.0.0.1:5000/api/fourmie", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -261,10 +261,6 @@ function lancerItineraire() {
     .then((data) => {
       if (data.message) {
         document.querySelector(".map iframe").src = "map.html";
-        console.log(data);
-        console.log(data.message);
-        console.log(data.distance_multi_start);
-        console.log(data.path_multi_start);
         document.getElementById("loaderContainer").style.display = 'none';
       } else {
         console.error("Erreur lors de l'envoi des données");
