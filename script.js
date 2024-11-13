@@ -65,29 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-function popupAjouterRandomVille() {
-  fetch('cities.csv')
-    .then(response => response.text())
-    .then(data => {
-      const cities = data.split('\n').map(line => line.split(',')[1]); // Assuming city_code is the first column
-      const uniqueCities = cities.filter(city => !cityList.includes(city));
-      const randomCities = [];
-      while (randomCities.length < 10 && uniqueCities.length > 0) {
-        const randomIndex = Math.floor(Math.random() * uniqueCities.length);
-        const randomCity = uniqueCities.splice(randomIndex, 1)[0];
-        randomCities.push(randomCity);
-      }
-      randomCities.forEach(city => {
-        const paragraph = document.createElement("p");
-        paragraph.textContent = city + ",\u00A0";
-        document.getElementById("popupAjouterVilleFormList").appendChild(paragraph);
-        cityList.push(city);
-      });
-      console.log(cityList.join(", "));
-    })
-    .catch(error => console.error("Erreur de réseau:", error));
-}
-
 const menuGestion = document.getElementById("menuGestion");
 const menuClose = document.getElementById("menuClose");
 const menuStatistiques = document.getElementById("menuStatistiques");
@@ -162,6 +139,8 @@ function handleKeyDown(event) {
     const city = inputField.value.trim();
     const paragraph = document.createElement("p");
     paragraph.textContent = city + ",\u00A0";
+    paragraph.style.marginTop = "5px";
+    paragraph.style.marginBottom = "5px";
     document.getElementById("popupAjouterVilleFormList").appendChild(paragraph);
     cityList.push(city);
     inputField.value = "";
@@ -233,6 +212,38 @@ function validerPopupAjouterVille() {
       "menuGestionAjouterListeVilleText"
     ).textContent = cityListText;
   }
+}
+
+
+function popupAjouterRandomVille() {
+  fetch("http://127.0.0.1:5000/api/random_cities", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        console.log(data);
+        data.forEach((city) => {
+          const paragraph = document.createElement("p");
+          paragraph.style.marginTop = "5px";
+          paragraph.style.marginBottom = "5px";
+          paragraph.textContent = city.Cityname + ",\u00A0";
+          document.getElementById("popupAjouterVilleFormList").appendChild(paragraph);
+          cityList.push(city.Cityname);
+        });
+        console.log(cityList.join(", "));
+      } else {
+        console.error("Erreur lors de l'envoi des données");
+      }
+    })
+
+    .catch((error) => {
+      console.error("Erreur de réseau:", error);
+    });
 }
 
 inputField.addEventListener("keydown", handleKeyDown);

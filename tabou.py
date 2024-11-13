@@ -21,6 +21,7 @@ from flask import Flask, request, jsonify
 from geopy.geocoders import Nominatim
 from flask_cors import CORS
 import json
+import csv
 
 
 #---------------------------------------------------------------Fonctions----------------------------------------------------------------
@@ -170,6 +171,15 @@ def load_coordinates_from_json_string(json_string):
     coordinates = {idx: (city['Latitude'], city['Longitude']) for idx, city in enumerate(data)}
     return coordinates
 
+def load_random_cities_from_csv(file_path, num_cities):
+    cities = []
+    with open(file_path, newline='', encoding='utf-8') as csvfile:
+        reader = csv.reader(csvfile)
+        for row in reader:
+            cities.append(row[0]) 
+    return random.sample(cities, num_cities)
+
+
 app = Flask(__name__)
 CORS(app)  # This will enable CORS for all routes
 
@@ -238,5 +248,25 @@ def get_reset():
     else:
         return jsonify({'error': 'Location not found'}), 404
     
+@app.route('/api/random_cities', methods=['GET'])
+def get_random_cities():
+    num_cities = int(request.args.get('num_cities', 10))  
+    file_path = 'cities.csv' 
+    random_cities = load_random_cities_from_csv(file_path, num_cities)
+    geolocator = Nominatim(user_agent="city_locator")
+    cities_info = []
+    for city_name in random_cities:
+        location = geolocator.geocode(city_name)
+        if location:
+            cities_info.append(
+                {    
+                    'Cityname': city_name,
+                }
+            )
+    return jsonify(cities_info)
+    
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
