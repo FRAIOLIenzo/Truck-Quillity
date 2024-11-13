@@ -18,11 +18,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   inputField.addEventListener("input", () => {
     const query = inputField.value.trim();
-    const suggestionContainer = document.querySelector(".popupAjouterVilleFormSuggestion");
+    const suggestionContainer = document.querySelector(
+      ".popupAjouterVilleFormSuggestion"
+    );
     if (query.length >= 3) {
-      fetch(`https://api-adresse.data.gouv.fr/search/?q=${query}&type=municipality&autocomplete=1`)
-        .then(response => response.json())
-        .then(data => {
+      fetch(
+        `https://api-adresse.data.gouv.fr/search/?q=${query}&type=municipality&autocomplete=1`
+      )
+        .then((response) => response.json())
+        .then((data) => {
           suggestionContainer.innerHTML = "";
           if (data.features.length === 0) {
             suggestionContainer.style.display = "none";
@@ -44,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
           }
         })
-        .catch(error => console.error("Erreur de réseau:", error));
+        .catch((error) => console.error("Erreur de réseau:", error));
     } else {
       suggestionContainer.innerHTML = "";
       suggestionContainer.style.display = "none";
@@ -57,7 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const firstSuggestion = document.querySelector(".first-suggestion");
       if (firstSuggestion) {
         inputField.value = firstSuggestion.textContent;
-        const suggestionContainer = document.querySelector(".popupAjouterVilleFormSuggestion");
+        const suggestionContainer = document.querySelector(
+          ".popupAjouterVilleFormSuggestion"
+        );
         suggestionContainer.innerHTML = "";
         suggestionContainer.style.display = "none";
       }
@@ -144,7 +150,6 @@ function handleKeyDown(event) {
     document.getElementById("popupAjouterVilleFormList").appendChild(paragraph);
     cityList.push(city);
     inputField.value = "";
-    console.log(cityList.join(", "));
   }
 }
 
@@ -163,11 +168,10 @@ function closePopupAjouterVille() {
 function deleteListeVille() {
   cityList.length = 0;
   document.getElementById("popupAjouterVilleFormList").innerHTML = "";
-  cityListJson = ""
+  cityListJson = "";
   document.getElementById("menuGestionAjouterListeVilleText").textContent = "";
   resetMap();
-  document
-    .getElementById("menuGestionAjouter").classList.remove("active");
+  document.getElementById("menuGestionAjouter").classList.remove("active");
   document
     .getElementById("menuGestionAjouterListeVille")
     .classList.remove("active");
@@ -180,6 +184,9 @@ function deleteListeVille() {
   document
     .getElementById("menuGestionAjouterIconPlus")
     .classList.remove("active");
+  document.getElementById("menuGestionTemps").style.display = "none";
+  document.getElementById("menuGestionDistance").style.display = "none";
+  document.getElementById("menuGestionNbCamion").style.display = "none";
 }
 
 let cityListJson = "";
@@ -187,12 +194,9 @@ let cityListJson = "";
 function validerPopupAjouterVille() {
   document.getElementById("popupAjouterVille").style.display = "none";
   document.getElementById("overlay").style.display = "none";
-  cityListJson = JSON.stringify(
-    cityList.map((city) => ({ city_name: city }))
-  );
+  cityListJson = JSON.stringify(cityList.map((city) => ({ city_name: city })));
   if (cityList.length > 0) {
-    document
-      .getElementById("menuGestionAjouter").classList.add("active");
+    document.getElementById("menuGestionAjouter").classList.add("active");
     document
       .getElementById("menuGestionAjouterListeVille")
       .classList.add("active");
@@ -205,15 +209,11 @@ function validerPopupAjouterVille() {
     document
       .getElementById("menuGestionAjouterIconPlus")
       .classList.add("active");
-    const cityListText = cityList
-      .map((city) => city + ",\u00A0")
-      .join("");
-    document.getElementById(
-      "menuGestionAjouterListeVilleText"
-    ).textContent = cityListText;
+    const cityListText = cityList.map((city) => city + ",\u00A0").join("");
+    document.getElementById("menuGestionAjouterListeVilleText").textContent =
+      cityListText;
   }
 }
-
 
 function popupAjouterRandomVille() {
   fetch("http://127.0.0.1:5000/api/random_cities", {
@@ -221,7 +221,6 @@ function popupAjouterRandomVille() {
     headers: {
       "Content-Type": "application/json",
     },
-
   })
     .then((response) => response.json())
     .then((data) => {
@@ -232,7 +231,9 @@ function popupAjouterRandomVille() {
           paragraph.style.marginTop = "5px";
           paragraph.style.marginBottom = "5px";
           paragraph.textContent = city.Cityname + ",\u00A0";
-          document.getElementById("popupAjouterVilleFormList").appendChild(paragraph);
+          document
+            .getElementById("popupAjouterVilleFormList")
+            .appendChild(paragraph);
           cityList.push(city.Cityname);
         });
         console.log(cityList.join(", "));
@@ -249,7 +250,7 @@ function popupAjouterRandomVille() {
 inputField.addEventListener("keydown", handleKeyDown);
 
 function lancerItineraire() {
-  document.getElementById("loaderContainer").style.display = 'flex';
+  document.getElementById("loaderContainer").style.display = "flex";
   fetch("http://127.0.0.1:5000/api/fourmie", {
     method: "POST",
     headers: {
@@ -261,16 +262,25 @@ function lancerItineraire() {
     .then((data) => {
       if (data.message) {
         document.querySelector(".map iframe").src = "map.html";
-        document.getElementById("loaderContainer").style.display = 'none';
+        document.getElementById("loaderContainer").style.display = "none";
+        document.getElementById("menuGestionTempsValue").textContent =
+          data.temps_execution.toFixed(2) + "s";
+        document.getElementById("menuGestionDistanceValue").textContent =
+          data.distance.toFixed(2) + "km";
+        document.getElementById("menuGestionNbCamionValue").textContent =
+          data.nb_camions;
+        document.getElementById("menuGestionTemps").style.display = "flex";
+        document.getElementById("menuGestionDistance").style.display = "flex";
+        document.getElementById("menuGestionNbCamion").style.display = "flex";
       } else {
         console.error("Erreur lors de l'envoi des données");
-        document.getElementById("loaderContainer").style.display = 'none';
+        document.getElementById("loaderContainer").style.display = "none";
       }
     })
 
     .catch((error) => {
       console.error("Erreur de réseau:", error);
-      document.getElementById("loaderContainer").style.display = 'none';
+      document.getElementById("loaderContainer").style.display = "none";
     });
 }
 

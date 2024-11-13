@@ -159,7 +159,7 @@ body {
   cursor: pointer;
 }
 
-.menuGestionAjouter {
+.menuGestionAjouter, .menuGestionDistance, .menuGestionNbCamion, .menuGestionTemps {
   margin: 20px 10px;
   display: flex;
   align-items: center;
@@ -169,6 +169,10 @@ body {
   font-weight: bold;
   border-radius: 16px;
   height: 40px;
+}
+
+.menuGestionDistance, .menuGestionNbCamion, .menuGestionTemps {
+  display: none;
 }
 
 .menuGestionAjouter.active {
@@ -207,8 +211,14 @@ body {
     background-color: #102c57;
 }
 
-.menuGestionAjouterText {
+.menuGestionAjouterText, .menuGestionDistanceText, .menuGestionNbCamionText, .menuGestionTempsText {
   margin-left: 10px;
+  user-select: none;
+}
+
+.menuGestionTempsValue, .menuGestionDistanceValue, .menuGestionNbCamionValue {
+  margin-left: auto;
+  margin-right: 15px;
   user-select: none;
 }
 

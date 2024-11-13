@@ -61,6 +61,7 @@ def fourmie_route():
         'solution': solution,
         'capacite': capacite,
         'distance': distance,
+        'nb_camions': len(solution),
         'temps_execution': tf - t0
     })
 
