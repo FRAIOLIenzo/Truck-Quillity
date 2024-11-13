@@ -1,15 +1,11 @@
 import random
-import math
-from collections import deque
-from tqdm import tqdm
-from itertools import combinations
-from geopy.distance import geodesic
-import folium
+import csv
 from flask import Flask, request, jsonify
 from geopy.geocoders import Nominatim
 from flask_cors import CORS
-import json
-import csv
+import time as tp
+import numpy as np
+import folium
 from fourmis import *
 #---------------------------------------------------------------Fonctions----------------------------------------------------------------
 def load_random_cities_from_csv(file_path, num_cities):
