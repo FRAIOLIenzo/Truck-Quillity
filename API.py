@@ -28,7 +28,7 @@ CORS(app)
 
 @app.route('/api/fourmie', methods=['POST'])
 def fourmie_route():
-    
+    data = request.json
     # Declare global variables at the module level
     nb_fourmis = 100
     max_iteration = 100
@@ -40,7 +40,7 @@ def fourmie_route():
     t0 = tp.time()
     random.seed(48)
 
-    city_names = ['Lyon', 'Marseille', 'Lille', 'Bordeaux']
+    city_names = data
     villes = get_city_coordinates(city_names)
     distances = generate_distance_matrix(villes)
     nom_ville = [city[0] for city in villes]

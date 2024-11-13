@@ -255,7 +255,7 @@ function lancerItineraire() {
     headers: {
       "Content-Type": "application/json",
     },
-    body: cityListJson,
+    body: JSON.stringify(cityList),
   })
     .then((response) => response.json())
     .then((data) => {
@@ -272,7 +272,6 @@ function lancerItineraire() {
       console.error("Erreur de réseau:", error);
       document.getElementById("loaderContainer").style.display = 'none';
     });
-  console.log(cityListJson);
 }
 
 function resetMap() {
