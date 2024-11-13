@@ -17,6 +17,7 @@ import random
 import requests
 import numpy as np
 from math import radians, sin, cos, sqrt, atan2
+import json
 
 geolocator = Nominatim(user_agent="vrp_geo_locator")
 def calculate_distance(lat1, lon1, lat2, lon2):
@@ -232,5 +233,8 @@ def afficher_carte(solution, nom_ville, distances):
 
     # Sauvegarder la carte
     m.save("map.html")
+
+
+
 
 
