@@ -10,7 +10,7 @@ from geopy.geocoders import Nominatim
 from flask_cors import CORS
 import json
 import csv
-from fourmie import *
+from fourmis import *
 #---------------------------------------------------------------Fonctions----------------------------------------------------------------
 def load_random_cities_from_csv(file_path, num_cities):
     cities = []
@@ -26,7 +26,7 @@ CORS(app)
 
 
 
-@app.route('/api/fourmie', methods=['POST'])
+@app.route('/api/fourmis', methods=['POST'])
 def fourmie_route():
     data = request.json
     # Declare global variables at the module level

@@ -216,6 +216,8 @@ function validerPopupAjouterVille() {
 }
 
 function popupAjouterRandomVille() {
+  document.getElementById("loaderContainerPopup").style.display = "block";
+  document.getElementById("popupAjouterVilleFormList").style.display = "none";
   fetch("http://127.0.0.1:5000/api/random_cities", {
     method: "GET",
     headers: {
@@ -240,6 +242,8 @@ function popupAjouterRandomVille() {
       } else {
         console.error("Erreur lors de l'envoi des données");
       }
+      document.getElementById("loaderContainerPopup").style.display = "none";
+      document.getElementById("popupAjouterVilleFormList").style.display = "flex";
     })
 
     .catch((error) => {
@@ -251,7 +255,7 @@ inputField.addEventListener("keydown", handleKeyDown);
 
 function lancerItineraire() {
   document.getElementById("loaderContainer").style.display = "flex";
-  fetch("http://127.0.0.1:5000/api/fourmie", {
+  fetch("http://127.0.0.1:5000/api/fourmis", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -415,13 +415,22 @@ body {
     justify-content: center;
 }
 
-.loader {
-    border: 8px solid #f3f3f3; /* Light grey */
-    border-top: 8px solid #3498db; /* Blue */
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 2s linear infinite;
+.loaderContainerPopup {
+  width: 100%;
+  display: none;
+}
+
+.loader, .loaderPopup {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+.loaderPopup {
+  margin-left: 320px;
 }
 
 @keyframes spin {
