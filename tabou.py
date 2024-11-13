@@ -25,26 +25,6 @@ import csv
 
 
 #---------------------------------------------------------------Fonctions----------------------------------------------------------------
-def generate_coordinates(nb_villes, x_max=100, y_max=100, min_distance=5):
-    random.seed(9)
-    coordinates = {}
-    while len(coordinates) < nb_villes:
-        x = random.randint(1, x_max)
-        y = random.randint(1, y_max)
-        if all(math.sqrt((x - cx) ** 2 + (y - cy) ** 2) >= min_distance for cx, cy in coordinates.values()):
-            coordinates[len(coordinates)] = (x, y)
-    random.seed()
-    return coordinates
-
-def calculate_distances(coordinates):
-    distances = {}
-    for i, (x1, y1) in coordinates.items():
-        for j, (x2, y2) in coordinates.items():
-            if i != j:
-                distance = round(math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2))
-                distances[(i, j)] = distance
-    return distances
-
 def calculate_real_distances(coordinates):
     distances = {}
     for i, (x1, y1) in coordinates.items():
@@ -201,12 +181,11 @@ def get_location():
                         'Longitude': location.longitude
                     }
                 )
-        test = json.dumps(cities_info)
-        coordinates = load_coordinates_from_json_string(test)
+        cities = json.dumps(cities_info)
+        coordinates = load_coordinates_from_json_string(cities)
         nb_villes = len(coordinates)
         distances = calculate_real_distances(coordinates)
         distance_matrix = distances_to_matrix(distances, nb_villes)
-
         random.seed(9)
         path = generate_path(nb_villes, 0)
         random.seed()
