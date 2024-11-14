@@ -362,7 +362,8 @@ inputField.addEventListener("keydown", handleKeyDown);
 
 function lancerItineraire() {
   document.getElementById("loaderContainer").style.display = "flex";
-  fetch("http://127.0.0.1:5000/api/fourmis", {
+  const selectedAlgo = document.getElementById("menuGestionChoixAlgo").value.toLowerCase();
+  fetch(`http://127.0.0.1:5000/api/${selectedAlgo}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

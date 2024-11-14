@@ -535,3 +535,44 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.menuGestionChoixAlgoContainer {
+  margin: 20px 10px;
+  display: flex;
+  align-items: center;
+  background-color: #102c57;
+  color: #fefaf6;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 16px;
+  height: 40px;
+}
+
+.menuGestionChoixAlgoText {
+  margin-left: 10px;
+  user-select: none;
+}
+
+.menuGestionChoixAlgo {
+  display: flex;
+  align-items: center;
+  background-color: #102c57;
+  color: #fefaf6;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 16px;
+  border: none;
+  outline: none;
+  margin-left: auto;
+  margin-right: 10px;
+  appearance: none;
+  height: 40px;
+  width: 100px;
+  background-image: url("pictures/arrow-down.svg"); /* Remplacez par le chemin de votre image de flèche */
+  background-repeat: no-repeat;
+  background-position: right 0px center; /* Positionne la flèche à droite */
+}
+
+.menuGestionChoixAlgo:hover {
+  cursor: pointer;
+}
