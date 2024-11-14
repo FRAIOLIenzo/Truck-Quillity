@@ -192,7 +192,7 @@ body {
   border-bottom: 2px solid #fefaf6;
 }
 
-.menuStatistiquesAfficherPulp {
+.menuStatistiquesAfficherPulp.active {
   margin: 20px 10px 0px 10px;
   display: flex;
   align-items: center;
@@ -225,7 +225,7 @@ body {
   font-weight: bold;
   border-radius: 0px 0px 16px 16px;
   height: 290px;
-  display: block;
+  display: none;
 }
 .menuStatistiquesAfficherPulpTableau {
   width: 100%;

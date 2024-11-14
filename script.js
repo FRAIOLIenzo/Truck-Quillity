@@ -229,6 +229,8 @@ function lireDonneesResultJson() {
     .then((data) => {
       if (data) {
         console.log(data);
+        document.getElementById("menuStatistiquesAfficherPulpTableauContainer").style.display = "block";
+        document.getElementById("menuStatistiquesAfficherPulp").classList.add("active");
         const tableBody = document.getElementById("menuStatistiquesAfficherPulpTableauBody");
         tableBody.innerHTML = ""; // Clear existing rows
 
