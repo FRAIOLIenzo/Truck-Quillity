@@ -86,6 +86,25 @@
                 ]
             ]
         },
+        "Genetique": {
+            "NombreCamion": 1,
+            "Distance": 964.5479548437495,
+            "Temps": 0.53360915184021,
+            "ListeTrajet": [
+                "Paris",
+                "villers-buzon",
+                "villers-sous-chalamont",
+                "les-villedieu",
+                "ville-du-pont",
+                "villars-les-blamont",
+                "voujeaucourt",
+                "villers-la-combe",
+                "villers-grelot",
+                "bouconville-vauclair",
+                "bouresches",
+                "Paris"
+            ]
+        },
         "Fourmi": {
             "NombreCamion": 2,
             "Distance": 892.9148642282089,
@@ -110,6 +129,7 @@
                 ]
             }
         },
+        
         "Tabu": {
             "NombreCamion": 2,
             "Distance": 920.2772153246478,
@@ -220,6 +240,25 @@
                     "charmes",
                     "brissy-hamegicourt"
                 ]
+            ]
+        },
+        "Genetique": {
+            "NombreCamion": 1,
+            "Distance": 372.27970827336344,
+            "Temps": 0.32604551315307617,
+            "ListeTrajet": [
+                "Paris",
+                "camelin",
+                "caillouel-crepigny",
+                "charmes",
+                "brissy-hamegicourt",
+                "chaourse",
+                "brunehamel",
+                "chambry",
+                "cerny-en-laonnois",
+                "bucy-le-long",
+                "brumetz",
+                "Paris"
             ]
         },
         "Fourmi": {
@@ -348,6 +387,25 @@
                     "montigny-l-allier",
                     "chaudun"
                 ]
+            ]
+        },
+        "Genetique": {
+            "NombreCamion": 1,
+            "Distance": 306.3443410318185,
+            "Temps": 0.2909970283508301,
+            "ListeTrajet": [
+                "Paris",
+                "montigny-lengrain",
+                "chauny",
+                "clastres",
+                "monthenault",
+                "montchalons",
+                "chivy-les-etouvelles",
+                "ciry-salsogne",
+                "chaudun",
+                "chezy-en-orxois",
+                "montigny-l-allier",
+                "Paris"
             ]
         },
         "Fourmi": {
@@ -484,6 +542,25 @@
                     "osly-courtil",
                     "mont-notre-dame"
                 ]
+            ]
+        },
+        "Genetique": {
+            "NombreCamion": 1,
+            "Distance": 431.5500872393458,
+            "Temps": 0.42351388931274414,
+            "ListeTrajet": [
+                "Paris",
+                "osly-courtil",
+                "ognes",
+                "le-nouvion-en-thierache",
+                "mont-st-jean",
+                "neufchatel-sur-aisne",
+                "orainville",
+                "pancy-courtecon",
+                "mont-notre-dame",
+                "muret-et-crouttes",
+                "nesles-la-montagne",
+                "Paris"
             ]
         },
         "Fourmi": {
@@ -646,6 +723,25 @@
                 ]
             }
         },
+        "Genetique": {
+            "NombreCamion": 1,
+            "Distance": 423.2960968311014,
+            "Temps": 0.725440502166748,
+            "ListeTrajet": [
+                "Paris",
+                "villers-st-christophe",
+                "parpeville",
+                "papleux",
+                "wimy",
+                "pargny-les-bois",
+                "parfondru",
+                "parcy-et-tigny",
+                "villeneuve-sur-fere",
+                "pargny-la-dhuys",
+                "viffort",
+                "Paris"
+            ]
+        },
         "Tabu": {
             "NombreCamion": 2,
             "Distance": 1463.6270029781192,
@@ -782,6 +878,25 @@
                 ]
             }
         },
+        "Genetique": {
+            "NombreCamion": 1,
+            "Distance": 1338.736074391365,
+            "Temps": 0.5810756683349609,
+            "ListeTrajet": [
+                "Paris",
+                "bourguignon-sous-coucy",
+                "brancourt-en-laonnois",
+                "brie",
+                "castres",
+                "bosmont-sur-serre",
+                "bruyeres-et-montberault",
+                "brenelle",
+                "braye-en-laonnois",
+                "bouffignereux",
+                "st-firmin-en-valgodemard",
+                "Paris"
+            ]
+        },
         "Tabu": {
             "NombreCamion": 2,
             "Distance": 1809.4920123019351,
@@ -892,6 +1007,25 @@
                     "les-assions",
                     "chaillevois"
                 ]
+            ]
+        },
+        "Genetique": {
+            "NombreCamion": 1,
+            "Distance": 1296.9316655250414,
+            "Temps": 0.6405737400054932,
+            "ListeTrajet": [
+                "Paris",
+                "chery-les-pouilly",
+                "chatillon-les-sons",
+                "chatillon-sur-oise",
+                "chaillevois",
+                "chassemy",
+                "chery-chartreuve",
+                "chateau-thierry",
+                "annonay",
+                "albon-d-ardeche",
+                "les-assions",
+                "Paris"
             ]
         },
         "Fourmi": {
@@ -1020,6 +1154,25 @@
                     "gravieres",
                     "beauvene"
                 ]
+            ]
+        },
+        "Genetique": {
+            "NombreCamion": 1,
+            "Distance": 1347.7138413479986,
+            "Temps": 0.49460554122924805,
+            "ListeTrajet": [
+                "Paris",
+                "malarce-sur-la-thines",
+                "gravieres",
+                "bessas",
+                "laurac-en-vivarais",
+                "marcols-les-eaux",
+                "freyssenet",
+                "beauvene",
+                "boulieu-les-annonay",
+                "cilly",
+                "chigny",
+                "Paris"
             ]
         },
         "Fourmi": {
@@ -1170,6 +1323,25 @@
                 ]
             }
         },
+        "Genetique": {
+            "NombreCamion": 1,
+            "Distance": 1075.0341974217813,
+            "Temps": 0.38662123680114746,
+            "ListeTrajet": [
+                "Paris",
+                "belsentes",
+                "st-genest-lachamp",
+                "prunet",
+                "rocher",
+                "montreal",
+                "st-alban-auriolles",
+                "st-etienne-de-serre",
+                "st-maurice-en-chalencon",
+                "st-peray",
+                "st-romain-de-lerps",
+                "Paris"
+            ]
+        },
         "Tabu": {
             "NombreCamion": 1,
             "Distance": 2719.504237771009,
@@ -1297,6 +1469,25 @@
                     "sampzon"
                 ]
             }
+        },
+        "Genetique": {
+            "NombreCamion": 1,
+            "Distance": 1380.61247889466,
+            "Temps": 0.3569941520690918,
+            "ListeTrajet": [
+                "Paris",
+                "les-vans",
+                "sanilhac",
+                "vallon-pont-d-arc",
+                "sampzon",
+                "soyons",
+                "montigny-les-conde",
+                "montloue",
+                "montigny-sous-marle",
+                "montbrehain",
+                "montescourt-lizerolles",
+                "Paris"
+            ]
         },
         "Tabu": {
             "NombreCamion": 1,
