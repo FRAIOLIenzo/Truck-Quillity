@@ -7,6 +7,7 @@ import time as tp
 import numpy as np
 import folium
 from fourmis import *
+from tabou import *
 import json
 #---------------------------------------------------------------Fonctions----------------------------------------------------------------
 def load_random_cities_from_csv(file_path, num_cities):
@@ -58,6 +59,7 @@ CORS(app)
 @app.route('/api/fourmis', methods=['POST'])
 def fourmie_route():
     data = request.json
+    t0 = tp.time()
     # Declare global variables at the module level
     nb_fourmis = 100
     max_iteration = 100
@@ -66,7 +68,7 @@ def fourmie_route():
     capacite_max = 20
     cache_probabilites = {}
 
-    t0 = tp.time()
+
     random.seed(48)
 
     city_names = data
@@ -93,6 +95,45 @@ def fourmie_route():
         'nb_camions': len(solution),
         'temps_execution': tf - t0
     })
+
+@app.route('/api/tabou', methods=['POST'])
+def tabou_route():
+    start = tp.process_time()
+    data = request.json
+    random.seed(42)
+    city_names = data
+    villes = get_city_coordinates(city_names)
+    distances = generate_distance_matrix(villes)
+    distance_matrix = distances
+    nom_ville = [city[0] for city in villes]
+    ville_d = {nom_ville[0]: 0} 
+    ville_d.update({valeur: random.randint(1, 10) for valeur in nom_ville[1:]})
+
+
+
+    # Initialisation des paramètres
+    nb_villes = len(nom_ville)
+    capacite_max = 20
+    path = generate_path(nb_villes, capacite_max, ville_d, nom_ville)
+    solution_initiale = path
+
+
+    # Run multi start
+    nb_test = 100
+    sol_max, val_max, nb_test, solutions, best_solutions, poids = multi_start(nb_villes, solution_initiale, distance_matrix, nb_test, nom_ville, ville_d, capacite_max)
+    stop = tp.process_time()
+
+    create_map_with_routes(sol_max)
+
+    return jsonify({
+        'message': 'Solution trouvée',
+        'solution': sol_max,
+        'capacite': poids,
+        'distance': val_max,
+        'nb_camions': len(sol_max),
+        'temps_execution': stop - start
+    })
+
 
 @app.route('/api/reset', methods=['POST'])
 def get_reset():
