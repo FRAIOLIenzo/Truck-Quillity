@@ -222,7 +222,7 @@ function validerPopupAjouterVille() {
 }
 
 function lireDonneesResultJson(type) {
-  fetch("http://127.0.0.1:5000/api/test", {
+  fetch("http://127.0.0.1:5000/api/stat", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -417,4 +417,32 @@ function resetMap() {
     .catch((error) => {
       console.error("Erreur de réseau:", error);
     });
+}
+
+function afficherInfo() {
+  document.getElementById("popupAfficherVille").style.display = "block";
+  document.getElementById("overlay").style.display = "block";
+  fetch("http://127.0.0.1:5000/api/statville", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const popupAfficherVilleList = document.getElementById("popupAfficherVilleList");
+      popupAfficherVilleList.innerHTML = ""; // Clear existing content
+
+      Object.keys(data).forEach((key) => {
+        const paragraph = document.createElement("p");
+        paragraph.textContent = `${key}: ${data[key].join(", ")}`;
+        popupAfficherVilleList.appendChild(paragraph);
+      });
+      console.log(data);
+    })
+}
+
+function closePopupAfficherCity() {
+  document.getElementById("popupAfficherVille").style.display = "none";
+  document.getElementById("overlay").style.display = "none";
 }

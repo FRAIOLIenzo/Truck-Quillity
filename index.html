@@ -131,6 +131,12 @@
             <span>Statistics</span>
           </div>
           <img
+          src="pictures/info.svg"
+          alt="info"
+          class="menuStatistiquesHeaderIconInfo"
+          onclick="afficherInfo()"
+        />
+          <img
             src="pictures/menu-open.svg"
             alt="menuOpen"
             class="menuStatistiquesHeaderIcon"
@@ -312,7 +318,7 @@
             type="text"
             id="popupAjouterVilleFormInput"
             class="popupAjouterVilleFormInput"
-            placeholder="Veuillez écrire le noms de villes /!\ La ville de départ doit être la première /!\"
+            placeholder="Please write the city names /!\ The departure city must be the first /!\"
             autocomplete="off"
           />
           <div class="popupAjouterVilleFormSuggestion"></div>
@@ -340,6 +346,23 @@
           <div class="loaderPopup"></div>
         </div>
       </div>
+
+      <div class="popupAjouterVille" id="popupAfficherVille">
+        <div class="popupAjouterVilleHeader">
+          <span class="popupAjouterVilleHeaderText">Cities</span>
+          <img
+            src="pictures/close.svg"
+            alt="close"
+            class="popupAfficherVilleHeaderIcon"
+            onclick="closePopupAfficherCity()"
+          />
+        </div>
+
+          <div class="popupAfficherVilleList" id="popupAfficherVilleList">
+            <p class="popupAfficherVilleFormListText"></p>
+          </div>
+
+
     </div>
 
     <script src="script.js"></script>

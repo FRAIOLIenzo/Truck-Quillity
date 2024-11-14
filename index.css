@@ -129,7 +129,7 @@ body {
 }
 
 .menuGestionHeaderIcon,
-.menuStatistiquesHeaderIcon,
+.menuStatistiquesHeaderIconInfo,
 .menuAlgorithmesHeaderIcon {
   margin-left: auto;
   width: 30px;
@@ -137,13 +137,23 @@ body {
   user-select: none;
 }
 
-.popupAjouterVilleHeaderIcon {
+.menuStatistiquesHeaderIcon {
+  width: 30px;
+  height: 30px;
+  user-select: none;
+  margin-left: 20px;
+}
+.popupAjouterVilleHeaderIcon,
+.popupAfficherVilleHeaderIcon {
   width: 30px;
   height: 30px;
   user-select: none;
   margin-left: 10px;
 }
 
+.popupAfficherVilleHeaderIcon {
+  margin-left: auto;
+}
 .popupAjouterVilleHeaderIconRandom {
   margin-left: auto;
   width: 30px;
@@ -152,6 +162,7 @@ body {
 }
 
 .popupAjouterVilleHeaderIcon:hover,
+.popupAfficherVilleHeaderIcon:hover,
 .popupAjouterVilleHeaderIconRandom:hover {
   cursor: pointer;
   background-color: #2639556e;
@@ -160,6 +171,7 @@ body {
 
 .menuGestionHeaderIcon:hover,
 .menuStatistiquesHeaderIcon:hover,
+.menuStatistiquesHeaderIconInfo:hover,
 .menuAlgorithmesHeaderIcon:hover {
   cursor: pointer;
 }
@@ -419,7 +431,8 @@ body {
   display: none;
 }
 
-.popupAjouterVilleFormList {
+.popupAjouterVilleFormList,
+.popupAfficherVilleList {
   margin-top: 10px;
   width: 100%;
   max-height: 200px;
@@ -428,6 +441,12 @@ body {
   overflow-y: auto;
   color: #102c57;
   font-weight: bold;
+}
+
+.popupAfficherVilleList {
+  margin: 10px 10px;
+  width: 680px;
+  max-height: 300px;
 }
 
 .popupAjouterVilleBoutonContainer,

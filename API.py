@@ -217,11 +217,17 @@ def get_random_cities():
             )
     return jsonify(cities_info)
 
-@app.route('/api/test', methods=['GET'])
+@app.route('/api/stat', methods=['GET'])
 def result_json():
     file_path = 'result.json'
-    villes_names = load_all_data_from_json(file_path)
-    return jsonify(villes_names)
+    data_json = load_all_data_from_json(file_path)
+    return jsonify(data_json)
+
+@app.route('/api/statville', methods=['GET'])
+def result_villes_json():
+    file_path = 'result.json'
+    villes_name = load_villes_names_from_json(file_path)
+    return jsonify(villes_name)
 
 if __name__ == '__main__':
     app.run(debug=True)
