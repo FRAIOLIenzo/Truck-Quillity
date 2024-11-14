@@ -221,87 +221,40 @@ def create_map_with_routes(sol_max):
     # Sauvegarder la carte
     m.save("map.html")
 
+def plot_real_routes_tabu(sol_max, coords):
+    # Créer une nouvelle carte
+    m_real = folium.Map(location=[46.603354, 1.888334], zoom_start=6)
+
+    # Tracer les vraies routes entre les villes
+    for (camion, itineraire), color in zip(sol_max.items(), [f"#{random.randint(0, 0xFFFFFF):06x}" for _ in sol_max]):
+        route_coords = []
+        for i in range(len(itineraire) - 1):
+            ville1 = itineraire[i]
+            ville2 = itineraire[i + 1]
+            origin = coords[ville1]
+            destination = coords[ville2]
+            route = get_route(origin, destination, "5b3ce3597851110001cf6248cf662aab956e43739386391547c544bc")
+            route_coords.extend(route)
+        folium.PolyLine(route_coords, color=color, weight=5, opacity=0.7).add_to(m_real)
+
+        # Ajouter des marqueurs pour chaque ville
+        for lat, lon, ville in zip([coords[city][0] for city in itineraire], [coords[city][1] for city in itineraire], itineraire):
+            folium.Marker([lat, lon], popup=f"{ville} - {camion}", tooltip=ville).add_to(m_real)
+
+    # Enregistrer la carte avec les vraies routes
+    m_real.save("carte_vrp_real_tabu.html")
+
+def get_route(origin, destination, api_key):
+    # Utiliser un service d'itinéraire pour obtenir les coordonnées de la route
+    url = f"https://api.openrouteservice.org/v2/directions/driving-car?start={origin[1]},{origin[0]}&end={destination[1]},{destination[0]}"
+    headers = {"Authorization": api_key}
+    response = requests.get(url, headers=headers)
+    route_data = response.json()
+
+    route_coords = []
+    for coordinate in route_data["features"][0]["geometry"]["coordinates"]:
+        route_coords.append((coordinate[1], coordinate[0]))
+
+    return route_coords
 
 
-
-# def create_map():
-#     # Centre de la carte autour de la France
-#     m = folium.Map(location=[46.603354, 1.888334], zoom_start=6)
-
-#     # Couleurs aléatoires pour chaque itinéraire
-#     colors = [f"#{random.randint(0, 0xFFFFFF):06x}" for _ in sol_max]
-
-#     # Ajouter chaque itinéraire à la carte
-#     for (camion, itineraire), color in zip(sol_max.items(), colors):
-#         # Extraire les coordonnées
-#         latitudes = [coords[ville][0] for ville in itineraire]
-#         longitudes = [coords[ville][1] for ville in itineraire]
-#         locations = list(zip(latitudes, longitudes))
-
-#         # Ajouter le chemin avec une couleur spécifique
-#         folium.PolyLine(locations, color=color, weight=5, opacity=0.7).add_to(m)
-
-#         # Ajouter des marqueurs pour chaque ville
-#         for lat, lon, ville in zip(latitudes, longitudes, itineraire):
-#             folium.Marker([lat, lon], popup=f"{ville} - {camion}", tooltip=ville).add_to(m)
-#             folium.Marker([lat, lon], icon=folium.DivIcon(
-#                 html=f'<div style="background-color: white; color: black; font-weight: bold; padding: 5px; border-radius: 50%;">🔍</div>',
-#                 class_name="custom-icon"
-#             )).add_to(m)
-
-#     # Ajouter un bouton pour passer en mode "vrai route"
-#     folium.Html(
-#         """
-#         <button id="real-route-btn" style="position: absolute; top: 10px; right: 10px; z-index: 999;">
-#             Voir les vraies routes
-#         </button>
-#         <script>
-#             document.getElementById('real-route-btn').addEventListener('click', function() {
-#                 window.location.href = 'carte_vrp_real.html';
-#             });
-#         </script>
-#         """,
-#         script=True
-#     ).add_to(m)
-
-#     return m
-
-# def plot_real_routes(m):
-#     # Créer une nouvelle carte
-#     m_real = folium.Map(location=[46.603354, 1.888334], zoom_start=6)
-
-#     # Tracer les vraies routes entre les villes
-#     for (camion, itineraire), color in zip(sol_max.items(), [f"#{random.randint(0, 0xFFFFFF):06x}" for _ in sol_max]):
-#         route_coords = []
-#         for i in range(len(itineraire) - 1):
-#             ville1 = itineraire[i]
-#             ville2 = itineraire[i + 1]
-#             origin = coords[ville1]
-#             destination = coords[ville2]
-#             route = get_route(origin, destination, "5b3ce3597851110001cf6248cf662aab956e43739386391547c544bc")
-#             route_coords.extend(route)
-#         folium.PolyLine(route_coords, color=color, weight=5, opacity=0.7).add_to(m_real)
-
-#         # Ajouter des marqueurs pour chaque ville
-#         for lat, lon, ville in zip([coords[city][0] for city in itineraire], [coords[city][1] for city in itineraire], itineraire):
-#             folium.Marker([lat, lon], popup=f"{ville} - {camion}", tooltip=ville).add_to(m_real)
-
-#     # Enregistrer la carte avec les vraies routes
-#     m_real.save("carte_vrp_real.html")
-
-# def get_route(origin, destination, api_key):
-#     # Utiliser un service d'itinéraire pour obtenir les coordonnées de la route
-#     url = f"https://api.openrouteservice.org/v2/directions/driving-car?start={origin[1]},{origin[0]}&end={destination[1]},{destination[0]}"
-#     headers = {"Authorization": api_key}
-#     response = requests.get(url, headers=headers)
-#     route_data = response.json()
-
-#     route_coords = []
-#     for coordinate in route_data["features"][0]["geometry"]["coordinates"]:
-#         route_coords.append((coordinate[1], coordinate[0]))
-
-#     return route_coords
-
-# Créer la carte avec le bouton "Voir les vraies routes"
-# m = create_map()
-# plot_real_routes(m)

@@ -92,6 +92,8 @@ def fourmie_route():
     solution, capacite, distance = resoudre(v_phero, meilleur_distance, meilleur_solution, meilleur_capacite, max_iteration, nb_fourmis,nom_ville, distances, capacite_max, ville_d, v_phero, visibilités, i_phero, i_visi, cache_probabilites,t_evaporation, depot_phero)
     tf = tp.time()
     afficher_carte(solution, nom_ville, distances)
+    coords = {ville: (lat, lon) for ville, lat, lon in villes}
+    plot_real_routes(solution, coords)
     return jsonify({
         'message': 'Solution trouvée',
         'solution': solution,
@@ -130,7 +132,7 @@ def tabou_route():
     stop = tp.process_time()
 
     create_map_with_routes(sol_max)
-
+    plot_real_routes_tabu(sol_max, {ville: (lat, lon) for ville, lat, lon in villes})
     return jsonify({
         'message': 'Solution trouvée',
         'solution': sol_max,

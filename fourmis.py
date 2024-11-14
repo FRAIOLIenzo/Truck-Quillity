@@ -234,6 +234,84 @@ def afficher_carte(solution, nom_ville, distances):
     # Sauvegarder la carte
     m.save("map.html")
 
+def get_route(origin, destination, api_key):
+    """
+    Récupère l'itinéraire entre deux points en utilisant OpenRouteService API
+    """
+    try:
+        # Construction de l'URL avec les coordonnées
+        url = f"https://api.openrouteservice.org/v2/directions/driving-car"
+        headers = {
+            "Authorization": api_key,
+            "Content-Type": "application/json"
+        }
+        params = {
+            "start": f"{origin[1]},{origin[0]}",
+            "end": f"{destination[1]},{destination[0]}"
+        }
+        
+        response = requests.get(url, headers=headers, params=params)
+        
+        # Vérifier si la requête a réussi
+        if response.status_code != 200:
+            print(f"Erreur API ({response.status_code}): {response.text}")
+            # Retourner une ligne droite entre les points en cas d'erreur
+            return [origin, destination]
+            
+        route_data = response.json()
+        
+        # Vérifier la structure de la réponse
+        if "features" not in route_data or not route_data["features"]:
+            print("Format de réponse invalide:", route_data)
+            return [origin, destination]
+            
+        # Extraire les coordonnées
+        coordinates = route_data["features"][0]["geometry"]["coordinates"]
+        route_coords = [(coord[1], coord[0]) for coord in coordinates]
+        
+        return route_coords
+        
+    except Exception as e:
+        print(f"Erreur lors de la récupération de l'itinéraire: {str(e)}")
+        # En cas d'erreur, retourner une ligne droite entre les points
+        return [origin, destination]
+
+
+def plot_real_routes(solution, coords):
+    # Créer une nouvelle carte
+    m_real = folium.Map(location=[46.603354, 1.888334], zoom_start=6)
+
+    # Tracer les vraies routes entre les villes
+    for (camion, itineraire), color in zip(solution.items(), [f"#{random.randint(0, 0xFFFFFF):06x}" for _ in solution]):
+        route_coords = []
+        for i in range(len(itineraire) - 1):
+            ville1 = itineraire[i]
+            ville2 = itineraire[i + 1]
+            origin = coords[ville1]
+            destination = coords[ville2]
+            try:
+                # Ajouter une pause entre les requêtes pour respecter les limites de l'API
+                tp.sleep(2)
+                route = get_route(origin, destination, "5b3ce3597851110001cf6248cf662aab956e43739386391547c544bc")
+                route_coords.extend(route)
+            except Exception as e:
+                print(f"Erreur pour la route {ville1} -> {ville2}: {str(e)}")
+                # En cas d'erreur, tracer une ligne droite
+                if origin and destination:
+                    route_coords.extend([origin, destination])
+
+        # Tracer l'itinéraire
+        if route_coords:
+            folium.PolyLine(route_coords, color=color, weight=5, opacity=0.7).add_to(m_real)
+
+        # Ajouter des marqueurs pour chaque ville
+        for ville in itineraire:
+            if coords[ville]:
+                lat, lon = coords[ville]
+                folium.Marker([lat, lon], popup=f"{ville} - {camion}", tooltip=ville).add_to(m_real)
+
+    # Enregistrer la carte avec les vraies routes
+    m_real.save("carte_vrp_real.html")
 
 
 
