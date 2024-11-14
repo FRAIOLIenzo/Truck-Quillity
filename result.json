@@ -65,7 +65,7 @@
         "Pulp": {
             "NombreCamion": 2,
             "Distance": 890.0059374051925,
-            "Temps": 1.0300464630126953,
+            "Temps": 1.0025510787963867,
             "ListeTrajet": [
                 [
                     0,
@@ -85,6 +85,30 @@
                     0
                 ]
             ]
+        },
+        "Fourmi": {
+            "NombreCamion": 2,
+            "Distance": 892.9148642282089,
+            "Temps": 2.6676888465881348,
+            "ListeTrajet": {
+                "Camion n1": [
+                    "ville-du-pont",
+                    "villers-sous-chalamont",
+                    "villers-buzon",
+                    "bouresches",
+                    "bouconville-vauclair",
+                    "villers-grelot",
+                    "voujeaucourt",
+                    "villars-les-blamont",
+                    "villers-la-combe",
+                    "ville-du-pont"
+                ],
+                "Camion n2": [
+                    "ville-du-pont",
+                    "les-villedieu",
+                    "ville-du-pont"
+                ]
+            }
         }
     },
     "Jeu_1": {
@@ -153,7 +177,7 @@
         "Pulp": {
             "NombreCamion": 2,
             "Distance": 430.5509381567815,
-            "Temps": 1.1798131465911865,
+            "Temps": 0.23887944221496582,
             "ListeTrajet": [
                 [
                     0,
@@ -173,6 +197,26 @@
                     0
                 ]
             ]
+        },
+        "Fourmi": {
+            "NombreCamion": 1,
+            "Distance": 260.13632046208124,
+            "Temps": 2.6043636798858643,
+            "ListeTrajet": {
+                "Camion n1": [
+                    "brissy-hamegicourt",
+                    "charmes",
+                    "caillouel-crepigny",
+                    "camelin",
+                    "brumetz",
+                    "bucy-le-long",
+                    "cerny-en-laonnois",
+                    "chambry",
+                    "brunehamel",
+                    "chaourse",
+                    "brissy-hamegicourt"
+                ]
+            }
         }
     },
     "Jeu_2": {
@@ -241,7 +285,7 @@
         "Pulp": {
             "NombreCamion": 2,
             "Distance": 741.0753995826187,
-            "Temps": 1.4973907470703125,
+            "Temps": 0.312591552734375,
             "ListeTrajet": [
                 [
                     0,
@@ -261,6 +305,30 @@
                     0
                 ]
             ]
+        },
+        "Fourmi": {
+            "NombreCamion": 2,
+            "Distance": 209.4447001801776,
+            "Temps": 2.8396923542022705,
+            "ListeTrajet": {
+                "Camion n1": [
+                    "chaudun",
+                    "ciry-salsogne",
+                    "monthenault",
+                    "montchalons",
+                    "chivy-les-etouvelles",
+                    "clastres",
+                    "chauny",
+                    "montigny-l-allier",
+                    "chezy-en-orxois",
+                    "chaudun"
+                ],
+                "Camion n2": [
+                    "chaudun",
+                    "montigny-lengrain",
+                    "chaudun"
+                ]
+            }
         }
     },
     "Jeu_3": {
@@ -329,7 +397,7 @@
         "Pulp": {
             "NombreCamion": 2,
             "Distance": 1074.0053818788813,
-            "Temps": 1.9084315299987793,
+            "Temps": 0.4690897464752197,
             "ListeTrajet": [
                 [
                     0,
@@ -349,6 +417,30 @@
                     0
                 ]
             ]
+        },
+        "Fourmi": {
+            "NombreCamion": 2,
+            "Distance": 378.4367378034643,
+            "Temps": 2.6206350326538086,
+            "ListeTrajet": {
+                "Camion n1": [
+                    "mont-notre-dame",
+                    "muret-et-crouttes",
+                    "nesles-la-montagne",
+                    "pancy-courtecon",
+                    "ognes",
+                    "le-nouvion-en-thierache",
+                    "mont-st-jean",
+                    "orainville",
+                    "neufchatel-sur-aisne",
+                    "mont-notre-dame"
+                ],
+                "Camion n2": [
+                    "mont-notre-dame",
+                    "osly-courtil",
+                    "mont-notre-dame"
+                ]
+            }
         }
     },
     "Jeu_4": {
@@ -417,7 +509,7 @@
         "Pulp": {
             "NombreCamion": 2,
             "Distance": 1427.5086631021807,
-            "Temps": 2.111476421356201,
+            "Temps": 0.1961829662322998,
             "ListeTrajet": [
                 [
                     0,
@@ -437,6 +529,30 @@
                     0
                 ]
             ]
+        },
+        "Fourmi": {
+            "NombreCamion": 2,
+            "Distance": 373.82451984907374,
+            "Temps": 2.8710758686065674,
+            "ListeTrajet": {
+                "Camion n1": [
+                    "papleux",
+                    "wimy",
+                    "parfondru",
+                    "pargny-la-dhuys",
+                    "viffort",
+                    "villeneuve-sur-fere",
+                    "parcy-et-tigny",
+                    "villers-st-christophe",
+                    "parpeville",
+                    "papleux"
+                ],
+                "Camion n2": [
+                    "papleux",
+                    "pargny-les-bois",
+                    "papleux"
+                ]
+            }
         }
     },
     "Jeu_5": {
@@ -505,7 +621,7 @@
         "Pulp": {
             "NombreCamion": 2,
             "Distance": 1759.484390762534,
-            "Temps": 2.472564458847046,
+            "Temps": 0.35987424850463867,
             "ListeTrajet": [
                 [
                     0,
@@ -525,6 +641,30 @@
                     0
                 ]
             ]
+        },
+        "Fourmi": {
+            "NombreCamion": 2,
+            "Distance": 2348.137068379429,
+            "Temps": 2.6642696857452393,
+            "ListeTrajet": {
+                "Camion n1": [
+                    "st-firmin-en-valgodemard",
+                    "bosmont-sur-serre",
+                    "castres",
+                    "bourguignon-sous-coucy",
+                    "brancourt-en-laonnois",
+                    "brie",
+                    "bruyeres-et-montberault",
+                    "bouffignereux",
+                    "st-firmin-en-valgodemard"
+                ],
+                "Camion n2": [
+                    "st-firmin-en-valgodemard",
+                    "braye-en-laonnois",
+                    "brenelle",
+                    "st-firmin-en-valgodemard"
+                ]
+            }
         }
     },
     "Jeu_6": {
@@ -593,7 +733,7 @@
         "Pulp": {
             "NombreCamion": 2,
             "Distance": 2073.675139939787,
-            "Temps": 2.78072452545166,
+            "Temps": 0.3776893615722656,
             "ListeTrajet": [
                 [
                     0,
@@ -613,6 +753,26 @@
                     0
                 ]
             ]
+        },
+        "Fourmi": {
+            "NombreCamion": 1,
+            "Distance": 1236.134964661098,
+            "Temps": 2.7354419231414795,
+            "ListeTrajet": {
+                "Camion n1": [
+                    "chaillevois",
+                    "chery-les-pouilly",
+                    "chatillon-les-sons",
+                    "chatillon-sur-oise",
+                    "chassemy",
+                    "chateau-thierry",
+                    "annonay",
+                    "albon-d-ardeche",
+                    "les-assions",
+                    "chery-chartreuve",
+                    "chaillevois"
+                ]
+            }
         }
     },
     "Jeu_7": {
@@ -681,7 +841,7 @@
         "Pulp": {
             "NombreCamion": 2,
             "Distance": 2423.36030283074,
-            "Temps": 3.4846811294555664,
+            "Temps": 0.7143604755401611,
             "ListeTrajet": [
                 [
                     0,
@@ -701,6 +861,26 @@
                     0
                 ]
             ]
+        },
+        "Fourmi": {
+            "NombreCamion": 1,
+            "Distance": 1279.2324388938034,
+            "Temps": 2.647265911102295,
+            "ListeTrajet": {
+                "Camion n1": [
+                    "beauvene",
+                    "marcols-les-eaux",
+                    "freyssenet",
+                    "laurac-en-vivarais",
+                    "bessas",
+                    "gravieres",
+                    "malarce-sur-la-thines",
+                    "cilly",
+                    "chigny",
+                    "boulieu-les-annonay",
+                    "beauvene"
+                ]
+            }
         }
     },
     "Jeu_8": {
@@ -769,7 +949,7 @@
         "Pulp": {
             "NombreCamion": 2,
             "Distance": 3059.656974917173,
-            "Temps": 3.6292309761047363,
+            "Temps": 0.19408893585205078,
             "ListeTrajet": [
                 [
                     0,
@@ -789,6 +969,26 @@
                     0
                 ]
             ]
+        },
+        "Fourmi": {
+            "NombreCamion": 1,
+            "Distance": 170.55218513612806,
+            "Temps": 2.892589807510376,
+            "ListeTrajet": {
+                "Camion n1": [
+                    "montreal",
+                    "st-alban-auriolles",
+                    "rocher",
+                    "prunet",
+                    "st-genest-lachamp",
+                    "st-maurice-en-chalencon",
+                    "st-peray",
+                    "st-romain-de-lerps",
+                    "belsentes",
+                    "st-etienne-de-serre",
+                    "montreal"
+                ]
+            }
         }
     },
     "Jeu_9": {
@@ -857,7 +1057,7 @@
         "Pulp": {
             "NombreCamion": 2,
             "Distance": 3059.656974917173,
-            "Temps": 3.7923038005828857,
+            "Temps": 0.24187660217285156,
             "ListeTrajet": [
                 [
                     0,
@@ -877,6 +1077,26 @@
                     0
                 ]
             ]
+        },
+        "Fourmi": {
+            "NombreCamion": 1,
+            "Distance": 1454.189873866203,
+            "Temps": 2.883108139038086,
+            "ListeTrajet": {
+                "Camion n1": [
+                    "sampzon",
+                    "soyons",
+                    "sanilhac",
+                    "les-vans",
+                    "vallon-pont-d-arc",
+                    "montigny-les-conde",
+                    "montloue",
+                    "montigny-sous-marle",
+                    "montbrehain",
+                    "montescourt-lizerolles",
+                    "sampzon"
+                ]
+            }
         }
     }
 }

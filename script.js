@@ -245,7 +245,7 @@ function lireDonneesResultJson(type) {
             tableBody = document.getElementById("menuStatistiquesAfficherPulpTableauBody");
             activeClass = "menuStatistiquesAfficherPulp";
             break;
-          case "Fourmis":
+          case "Fourmi":
             container = document.getElementById("menuStatistiquesAfficherFourmisTableauContainer");
             tableBody = document.getElementById("menuStatistiquesAfficherFourmisTableauBody");
             activeClass = "menuStatistiquesAfficherFourmis";
@@ -268,7 +268,6 @@ function lireDonneesResultJson(type) {
         container.style.display = "block";
         document.getElementById(activeClass).classList.add("active");
         tableBody.innerHTML = ""; // Clear existing rows
-
         Object.keys(data).forEach((key) => {
           const row = document.createElement("tr");
 
@@ -277,15 +276,15 @@ function lireDonneesResultJson(type) {
           row.appendChild(cellJeu);
 
           const cellDistance = document.createElement("td");
-          cellDistance.textContent = data[key].Distance.toFixed(2) + " km";
+          cellDistance.textContent = data[key][type].Distance.toFixed(2) + " km";
           row.appendChild(cellDistance);
 
           const cellNombreCamion = document.createElement("td");
-          cellNombreCamion.textContent = data[key].NombreCamion;
+          cellNombreCamion.textContent = data[key][type].NombreCamion;
           row.appendChild(cellNombreCamion);
 
           const cellTemps = document.createElement("td");
-          cellTemps.textContent = data[key].Temps.toFixed(2) + " s";
+          cellTemps.textContent = data[key][type].Temps.toFixed(2) + " s";
           row.appendChild(cellTemps);
 
           tableBody.appendChild(row);

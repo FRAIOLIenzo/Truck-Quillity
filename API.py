@@ -25,17 +25,24 @@ def load_villes_names_from_json(file_path):
             villes_names[key] = [ville[0] for ville in value['villes']]
     return villes_names
 
-def load_pulp_data_from_json(file_path):
+def load_all_data_from_json(file_path):
     with open(file_path, 'r', encoding='utf-8') as json_file:
         data = json.load(json_file)
-        pulp_data = {}
+        all_data = {}
         for key, value in data.items():
-            pulp_data[key] = {
-                'Distance': value['Pulp']['Distance'],
-                'NombreCamion': value['Pulp']['NombreCamion'],
-                'Temps': value['Pulp']['Temps']
+            all_data[key] = {
+                'Pulp': {
+                    'Distance': value['Pulp']['Distance'],
+                    'NombreCamion': value['Pulp']['NombreCamion'],
+                    'Temps': value['Pulp']['Temps']
+                },
+                'Fourmi': {
+                    'Distance': value['Fourmi']['Distance'],
+                    'NombreCamion': value['Fourmi']['NombreCamion'],
+                    'Temps': value['Fourmi']['Temps']
+                }
             }
-    return pulp_data
+    return all_data
 
 
 app = Flask(__name__)
@@ -114,7 +121,7 @@ def get_random_cities():
 @app.route('/api/test', methods=['GET'])
 def result_json():
     file_path = 'result.json'
-    villes_names = load_pulp_data_from_json(file_path)
+    villes_names = load_all_data_from_json(file_path)
     return jsonify(villes_names)
 
 if __name__ == '__main__':
