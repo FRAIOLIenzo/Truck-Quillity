@@ -277,7 +277,7 @@ def get_route(origin, destination, api_key):
         return [origin, destination]
 
 
-def plot_real_routes(solution, coords):
+def plot_real_routes_fourmis(solution, coords):
     # Créer une nouvelle carte
     m_real = folium.Map(location=[46.603354, 1.888334], zoom_start=6)
 
@@ -309,9 +309,9 @@ def plot_real_routes(solution, coords):
             if coords[ville]:
                 lat, lon = coords[ville]
                 folium.Marker([lat, lon], popup=f"{ville} - {camion}", tooltip=ville).add_to(m_real)
-
+        
     # Enregistrer la carte avec les vraies routes
-    m_real.save("carte_vrp_real.html")
+    m_real.save("map_test.html")
 
 
 

@@ -242,7 +242,7 @@ def plot_real_routes_tabu(sol_max, coords):
             folium.Marker([lat, lon], popup=f"{ville} - {camion}", tooltip=ville).add_to(m_real)
 
     # Enregistrer la carte avec les vraies routes
-    m_real.save("carte_vrp_real_tabu.html")
+    m_real.save("map_tabu.html")
 
 def get_route(origin, destination, api_key):
     # Utiliser un service d'itinéraire pour obtenir les coordonnées de la route

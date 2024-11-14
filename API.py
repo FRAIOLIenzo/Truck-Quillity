@@ -66,6 +66,7 @@ CORS(app)
 def fourmie_route():
     data = request.json
     t0 = tp.time()
+    
     # Declare global variables at the module level
     nb_fourmis = 180
     max_iteration = 900
@@ -85,15 +86,15 @@ def fourmie_route():
 
     n = len(nom_ville)
     v_phero = np.ones((n, n), dtype=float) - np.eye(n)  
-    visibilités = 1 / (distances + np.eye(n))  
+    visibilites = 1 / (distances + np.eye(n))  
 
     # Initialisation des solutions
     meilleur_solution, meilleur_distance, meilleur_capacite = None, float('inf'), None
-    solution, capacite, distance = resoudre(v_phero, meilleur_distance, meilleur_solution, meilleur_capacite, max_iteration, nb_fourmis,nom_ville, distances, capacite_max, ville_d, v_phero, visibilités, i_phero, i_visi, cache_probabilites,t_evaporation, depot_phero)
+    solution, capacite, distance = resoudre(v_phero, meilleur_distance, meilleur_solution, meilleur_capacite, max_iteration, nb_fourmis, nom_ville, distances, capacite_max, ville_d, v_phero, visibilites, i_phero, i_visi, cache_probabilites, t_evaporation, depot_phero)
+    
     tf = tp.time()
     afficher_carte(solution, nom_ville, distances)
-    coords = {ville: (lat, lon) for ville, lat, lon in villes}
-    plot_real_routes(solution, coords)
+    plot_real_routes_fourmis(solution, {ville: (lat, lon) for ville, lat, lon in villes})
     return jsonify({
         'message': 'Solution trouvée',
         'solution': solution,
@@ -103,6 +104,10 @@ def fourmie_route():
         'temps_execution': tf - t0,
         'test': ville_d
     })
+
+
+
+
 
 @app.route('/api/tabou', methods=['POST'])
 def tabou_route():

@@ -57,18 +57,19 @@ document.addEventListener("DOMContentLoaded", () => {
   inputField.addEventListener("paste", (event) => {
     event.preventDefault();
     const pasteData = event.clipboardData.getData("text");
-    const cities = pasteData.split(",").map(city => city.trim());
-    cities.forEach(city => {
+    const cities = pasteData.split(",").map((city) => city.trim());
+    cities.forEach((city) => {
       const paragraph = document.createElement("p");
       paragraph.textContent = city + ",\u00A0";
       paragraph.style.marginTop = "5px";
       paragraph.style.marginBottom = "5px";
-      document.getElementById("popupAjouterVilleFormList").appendChild(paragraph);
+      document
+        .getElementById("popupAjouterVilleFormList")
+        .appendChild(paragraph);
       cityList.push(city);
     });
     inputField.value = "";
   });
-
 
   inputField.addEventListener("keydown", (event) => {
     if (event.key === "Tab") {
@@ -256,7 +257,9 @@ function lireDonneesResultJson(type) {
           ".menuStatistiquesAfficherPulpTableauContainer, .menuStatistiquesAfficherFourmisTableauContainer, .menuStatistiquesAfficherTabouTableauContainer, .menuStatistiquesAfficherGenetiqueTableauContainer"
         );
         containers.forEach((cont) => (cont.style.display = "none"));
-        const activeElements = document.querySelectorAll(".menuStatistiquesAfficherPulp.active, .menuStatistiquesAfficherFourmis.active, .menuStatistiquesAfficherTabou.active, .menuStatistiquesAfficherGenetique.active");
+        const activeElements = document.querySelectorAll(
+          ".menuStatistiquesAfficherPulp.active, .menuStatistiquesAfficherFourmis.active, .menuStatistiquesAfficherTabou.active, .menuStatistiquesAfficherGenetique.active"
+        );
         activeElements.forEach((el) => el.classList.remove("active"));
 
         switch (type) {
@@ -376,41 +379,63 @@ function popupAjouterRandomVille() {
 inputField.addEventListener("keydown", handleKeyDown);
 
 function lancerItineraire() {
-  document.getElementById("loaderContainer").style.display = "flex";
-  const selectedAlgo = document.getElementById("menuGestionChoixAlgo").value.toLowerCase();
-  console.log("city", cityList);
-  fetch(`http://127.0.0.1:5000/api/${selectedAlgo}`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(cityList),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.message) {
-        console.log("data", data);
-        document.querySelector(".map iframe").src = "map.html";
-        document.getElementById("loaderContainer").style.display = "none";
-        document.getElementById("menuGestionTempsValue").textContent =
-          data.temps_execution.toFixed(2) + "s";
-        document.getElementById("menuGestionDistanceValue").textContent =
-          data.distance.toFixed(2) + "km";
-        document.getElementById("menuGestionNbCamionValue").textContent =
-          data.nb_camions;
-        document.getElementById("menuGestionTemps").style.display = "flex";
-        document.getElementById("menuGestionDistance").style.display = "flex";
-        document.getElementById("menuGestionNbCamion").style.display = "flex";
-      } else {
-        console.error("Erreur lors de l'envoi des données");
-        document.getElementById("loaderContainer").style.display = "none";
-      }
-    })
+  const selectedAlgo = document
+    .getElementById("menuGestionChoixAlgo")
+    .value.toLowerCase();
+    console.log("selectedAlgo", selectedAlgo);
+    console.log(document.querySelector(".menuGestionBoutonLancer").textContent)
+  if (
+    document.querySelector(".menuGestionBoutonLancer").textContent !==
+      "Refine routes" 
+  ) {
+    console.log("cityudufushvsbhbfjbjsf");
+    document.getElementById("loaderContainer").style.display = "flex";
 
-    .catch((error) => {
-      console.error("Erreur de réseau:", error);
-      document.getElementById("loaderContainer").style.display = "none";
-    });
+    console.log("city", cityList);
+    fetch(`http://127.0.0.1:5000/api/${selectedAlgo}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(cityList),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.message) {
+          console.log("data", data);
+          document.querySelector(".map iframe").src = "map.html";
+          document.getElementById("loaderContainer").style.display = "none";
+          document.getElementById("menuGestionTempsValue").textContent =
+            data.temps_execution.toFixed(2) + "s";
+          document.getElementById("menuGestionDistanceValue").textContent =
+            data.distance.toFixed(2) + "km";
+          document.getElementById("menuGestionNbCamionValue").textContent =
+            data.nb_camions;
+          document.getElementById("menuGestionTemps").style.display = "flex";
+          document.getElementById("menuGestionDistance").style.display = "flex";
+          document.getElementById("menuGestionNbCamion").style.display = "flex";
+          if (selectedAlgo === "fourmis") {
+            document.querySelector(".menuGestionBoutonLancer").textContent =
+            "Refine routes";
+          }
+        } else {
+          console.error("Erreur lors de l'envoi des données");
+          document.getElementById("loaderContainer").style.display = "none";
+        }
+      })
+
+      .catch((error) => {
+        console.error("Erreur de réseau:", error);
+        document.getElementById("loaderContainer").style.display = "none";
+      });
+  } else {
+    console.log("oui oui oui");
+    document.getElementById("loaderContainer").style.display = "flex";
+    document.querySelector(".map iframe").src = "map_test.html";
+    document.getElementById("loaderContainer").style.display = "none";
+    document.querySelector(".menuGestionBoutonLancer").textContent =
+    "Start route";
+  }
 }
 
 function resetMap() {
@@ -445,7 +470,9 @@ function afficherInfo() {
   })
     .then((response) => response.json())
     .then((data) => {
-      const popupAfficherVilleList = document.getElementById("popupAfficherVilleList");
+      const popupAfficherVilleList = document.getElementById(
+        "popupAfficherVilleList"
+      );
       popupAfficherVilleList.innerHTML = ""; // Clear existing content
 
       Object.keys(data).forEach((key) => {
@@ -454,7 +481,7 @@ function afficherInfo() {
         popupAfficherVilleList.appendChild(paragraph);
       });
       console.log(data);
-    })
+    });
 }
 
 function closePopupAfficherCity() {
