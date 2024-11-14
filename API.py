@@ -40,6 +40,11 @@ def load_all_data_from_json(file_path):
                     'Distance': value['Fourmi']['Distance'],
                     'NombreCamion': value['Fourmi']['NombreCamion'],
                     'Temps': value['Fourmi']['Temps']
+                },
+                'Tabu': {
+                    'Distance': value['Tabu']['Distance'],
+                    'NombreCamion': value['Tabu']['NombreCamion'],
+                    'Temps': value['Tabu']['Temps']
                 }
             }
     return all_data

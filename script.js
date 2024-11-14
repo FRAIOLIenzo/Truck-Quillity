@@ -250,7 +250,7 @@ function lireDonneesResultJson(type) {
             tableBody = document.getElementById("menuStatistiquesAfficherFourmisTableauBody");
             activeClass = "menuStatistiquesAfficherFourmis";
             break;
-          case "Tabou":
+          case "Tabu":
             container = document.getElementById("menuStatistiquesAfficherTabouTableauContainer");
             tableBody = document.getElementById("menuStatistiquesAfficherTabouTableauBody");
             activeClass = "menuStatistiquesAfficherTabou";
