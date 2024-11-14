@@ -6,6 +6,18 @@
 
 Truck-Quility is a web application designed to help logistics and transportation companies solve the Vehicle Routing Problem (VRP). The app optimizes the routing of delivery trucks based on constraints, such as distance and vehicle capacities, helping businesses reduce costs and improve efficiency.
 
+---
+
+## Contributors
+
+This project is a school project from 4 [CESI](https://www.cesi.fr/) students :
+- BERGBAUER ARTHUR
+- CHAOUCHE YLIES
+- ENZO FRAIOLI
+- THÉOPHILE NOËL
+
+---
+
 ## Features
 
 - **Route Optimization**: Calculates the most efficient routes for multiple vehicles to deliver goods to a set of locations.
@@ -13,6 +25,8 @@ Truck-Quility is a web application designed to help logistics and transportation
 - **Interactive Map**: Visualize optimized routes and delivery points on an interactive map.
 - **Customizable Constraints**: Users can enter custom constraints, such as vehicle capacity, and algorithm parameters.
 - **User-friendly Interface**: Simple and intuitive design for easy configuration and viewing of optimized routes.
+
+---
 
 ## Problem Addressed
 
@@ -24,6 +38,8 @@ Truck-Quility provides an easy-to-use solution for companies to tackle the compl
   - Ant Colony Optimization
   - Tabu research
   - Genetics
+
+---
 
 ## Installation
 
