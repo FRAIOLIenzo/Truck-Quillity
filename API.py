@@ -61,13 +61,12 @@ def fourmie_route():
     data = request.json
     t0 = tp.time()
     # Declare global variables at the module level
-    nb_fourmis = 100
-    max_iteration = 100
+    nb_fourmis = 180
+    max_iteration = 900
     t_evaporation = 0.1  
     i_phero, i_visi, depot_phero = 1, 2, 100  
     capacite_max = 20
     cache_probabilites = {}
-
 
     random.seed(48)
 
@@ -93,14 +92,17 @@ def fourmie_route():
         'capacite': capacite,
         'distance': distance,
         'nb_camions': len(solution),
-        'temps_execution': tf - t0
+        'temps_execution': tf - t0,
+        'test': ville_d
     })
 
 @app.route('/api/tabou', methods=['POST'])
 def tabou_route():
     start = tp.process_time()
     data = request.json
-    random.seed(42)
+
+    random.seed(48)
+
     city_names = data
     villes = get_city_coordinates(city_names)
     distances = generate_distance_matrix(villes)
@@ -108,8 +110,6 @@ def tabou_route():
     nom_ville = [city[0] for city in villes]
     ville_d = {nom_ville[0]: 0} 
     ville_d.update({valeur: random.randint(1, 10) for valeur in nom_ville[1:]})
-
-
 
     # Initialisation des paramètres
     nb_villes = len(nom_ville)
@@ -131,7 +131,8 @@ def tabou_route():
         'capacite': poids,
         'distance': val_max,
         'nb_camions': len(sol_max),
-        'temps_execution': stop - start
+        'temps_execution': stop - start,
+        'test': ville_d
     })
 
 

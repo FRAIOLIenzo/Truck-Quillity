@@ -373,6 +373,7 @@ function lancerItineraire() {
     .then((response) => response.json())
     .then((data) => {
       if (data.message) {
+        console.log("data", data);
         document.querySelector(".map iframe").src = "map.html";
         document.getElementById("loaderContainer").style.display = "none";
         document.getElementById("menuGestionTempsValue").textContent =
