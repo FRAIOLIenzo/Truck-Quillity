@@ -14,21 +14,21 @@
       <div class="menuContainer">
         <ul class="menu">
           <div class="menuElementContainer" id="1" onclick="openMenuGestion()">
-            <li class="menuElement"><a>Gestion</a></li>
+            <li class="menuElement"><a>Management</a></li>
           </div>
           <div
             class="menuElementContainer"
             id="2"
             onclick="openMenuStatistiques()"
           >
-            <li class="menuElement"><a>Statistiques</a></li>
+            <li class="menuElement"><a>Statistics</a></li>
           </div>
           <div
             class="menuElementContainer"
             id="3"
             onclick="openMenuAlgorithmes()"
           >
-            <li class="menuElement"><a>Algorithmes</a></li>
+            <li class="menuElement"><a>Algorithms</a></li>
           </div>
         </ul>
       </div>
@@ -52,7 +52,7 @@
       <div class="menuGestion" id="menuGestion">
         <div class="menuGestionHeader">
           <div class="menuGestionHeaderText">
-            <span>Gestion</span>
+            <span>Management</span>
           </div>
 
           <img
@@ -63,19 +63,19 @@
           />
         </div>
         <div class="menuGestionChoixAlgoContainer">
-          <span class="menuGestionChoixAlgoText">Choix de l'algorithme</span>
+          <span class="menuGestionChoixAlgoText">Choice of algorithm</span>
           <select
             name="menuGestionChoixAlgo"
             id="menuGestionChoixAlgo"
             class="menuGestionChoixAlgo"
           >
-            <option value="Fourmis">Fourmis</option>
-            <option value="Tabou">Tabou</option>
-            <option value="Genetique">Génétique</option>
+            <option value="Fourmis">Ant</option>
+            <option value="Tabou">Tabu</option>
+            <option value="Genetique">Genetic</option>
           </select>
         </div>
         <div class="menuGestionAjouter" id="menuGestionAjouter">
-          <span class="menuGestionAjouterText">Ajouter des villes</span>
+          <span class="menuGestionAjouterText">Add cities</span>
           <img
             src="pictures/delete.svg"
             alt="plus"
@@ -101,18 +101,18 @@
           ></p>
         </div>
         <div class="menuGestionTemps" id="menuGestionTemps">
-          <span class="menuGestionTempsText">Temps d'éxécution: </span>
+          <span class="menuGestionTempsText">Execution time:</span>
           <span class="menuGestionTempsValue" id="menuGestionTempsValue"></span>
         </div>
         <div class="menuGestionDistance" id="menuGestionDistance">
-          <span class="menuGestionDistanceText">Distance total: </span>
+          <span class="menuGestionDistanceText">Total distance:</span>
           <span
             class="menuGestionDistanceValue"
             id="menuGestionDistanceValue"
           ></span>
         </div>
         <div class="menuGestionNbCamion" id="menuGestionNbCamion">
-          <span class="menuGestionNbCamionText">Nombre de camions: </span>
+          <span class="menuGestionNbCamionText">Number of trucks:</span>
           <span
             class="menuGestionNbCamionValue"
             id="menuGestionNbCamionValue"
@@ -120,7 +120,7 @@
         </div>
         <div class="menuGestionBoutonContainer">
           <button class="menuGestionBoutonLancer" onclick="lancerItineraire()">
-            Lancer l'itinéraire
+            Start route
           </button>
         </div>
       </div>
@@ -128,7 +128,7 @@
       <div class="menuStatistiques" id="menuStatistiques">
         <div class="menuStatistiquesHeader">
           <div class="menuStatistiquesHeaderText">
-            <span>Statistiques</span>
+            <span>Statistics</span>
           </div>
           <img
             src="pictures/menu-open.svg"
@@ -143,7 +143,7 @@
           class="menuStatistiquesAfficherPulp"
           id="menuStatistiquesAfficherPulp"
         >
-          <span class="menuStatistiquesAfficherPulpText">Valeurs Pulp</span>
+          <span class="menuStatistiquesAfficherPulpText">Pulp Values</span>
           <img
             src="pictures/plus.svg"
             alt="plus"
@@ -159,10 +159,10 @@
           <table class="menuStatistiquesAfficherPulpTableau">
             <thead>
               <tr>
-                <th>Nb. Tests</th>
+                <th>No. Testing</th>
                 <th>Distance</th>
-                <th>Nb. Camions</th>
-                <th>Temps</th>
+                <th>No. Trucks</th>
+                <th>Time</th>
               </tr>
             </thead>
             <tbody id="menuStatistiquesAfficherPulpTableauBody"></tbody>
@@ -175,7 +175,7 @@
           id="menuStatistiquesAfficherFourmis"
         >
           <span class="menuStatistiquesAfficherFourmisText"
-            >Valeurs Fourmis</span
+            >Ant Values</span
           >
           <img
             src="pictures/plus.svg"
@@ -192,10 +192,10 @@
           <table class="menuStatistiquesAfficherFourmisTableau">
             <thead>
               <tr>
-                <th>Nb. Tests</th>
+                <th>No. Testing</th>
                 <th>Distance</th>
-                <th>Nb. Camions</th>
-                <th>Temps</th>
+                <th>No. Trucks</th>
+                <th>Time</th>
               </tr>
             </thead>
             <tbody id="menuStatistiquesAfficherFourmisTableauBody"></tbody>
@@ -206,7 +206,7 @@
           class="menuStatistiquesAfficherTabou"
           id="menuStatistiquesAfficherTabou"
         >
-          <span class="menuStatistiquesAfficherTabouText">Valeurs Tabou</span>
+          <span class="menuStatistiquesAfficherTabouText">Tabu Values</span>
           <img
             src="pictures/plus.svg"
             alt="plus"
@@ -222,10 +222,10 @@
           <table class="menuStatistiquesAfficherTabouTableau">
             <thead>
               <tr>
-                <th>Nb. Tests</th>
+                <th>No. Testing</th>
                 <th>Distance</th>
-                <th>Nb. Camions</th>
-                <th>Temps</th>
+                <th>No. Trucks</th>
+                <th>Time</th>
               </tr>
             </thead>
             <tbody id="menuStatistiquesAfficherTabouTableauBody"></tbody>
@@ -237,7 +237,7 @@
           id="menuStatistiquesAfficherGenetique"
         >
           <span class="menuStatistiquesAfficherGenetiqueText"
-            >Valeurs Génétique
+            >Genetic Values
           </span>
           <img
             src="pictures/plus.svg"
@@ -254,10 +254,10 @@
         <table class="menuStatistiquesAfficherGenetiqueTableau">
           <thead>
             <tr>
-              <th>Nb. Tests</th>
+              <th>No. Testing</th>
               <th>Distance</th>
-              <th>Nb. Camions</th>
-              <th>Temps</th>
+              <th>No. Trucks</th>
+              <th>Time</th>
             </tr>
           </thead>
           <tbody id="menuStatistiquesAfficherGenetiqueTableauBody"></tbody>
@@ -269,7 +269,7 @@
       <div class="menuAlgorithmes" id="menuAlgorithmes">
         <div class="menuAlgorithmesHeader">
           <div class="menuAlgorithmesHeaderText">
-            <span>Algorithmes</span>
+            <span>Algorithms</span>
           </div>
 
           <img
@@ -293,7 +293,7 @@
       <div class="overlay" id="overlay"></div>
       <div class="popupAjouterVille" id="popupAjouterVille">
         <div class="popupAjouterVilleHeader">
-          <span class="popupAjouterVilleHeaderText">Ajouter des villes</span>
+          <span class="popupAjouterVilleHeaderText">Add cities</span>
           <img
             src="pictures/random.svg"
             alt="close"
@@ -327,13 +327,13 @@
             class="popupAjouterVilleBoutonAnnuler"
             onclick="closePopupAjouterVille()"
           >
-            Annuler
+          Cancel
           </button>
           <button
             class="popupAjouterVilleBoutonAjouter"
             onclick="validerPopupAjouterVille()"
           >
-            Ajouter
+          Add
           </button>
         </div>
         <div class="loaderContainerPopup" id="loaderContainerPopup">
