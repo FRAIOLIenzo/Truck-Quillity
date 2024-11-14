@@ -68,20 +68,40 @@
         },
         "ANT": {
             "NombreCamion": 1,
-            "Distance": 2160.376717597559,
-            "Temps": 7.7004616260528564,
+            "Distance": 1855.3293941668444,
+            "Temps": 51.787394762039185,
             "ListeTrajet": [
                 [
                     "Maleville",
-                    "Mirepeisset",
                     "Laroquebrou",
-                    "Routot",
+                    "Saint-Martin-des-Champs",
                     "Chambray",
+                    "Routot",
+                    "Tremblois-l\u00e8s-Rocroi",
+                    "Pr\u00e9manon",
+                    "Berrias-et-Casteljau",
+                    "Peyrolles",
+                    "Mirepeisset",
+                    "Maleville"
+                ]
+            ]
+        },
+        "Tabu": {
+            "NombreCamion": 1,
+            "Distance": 1996.2734252291582,
+            "Temps": 1.2952611446380615,
+            "ListeTrajet": [
+                [
+                    "Maleville",
+                    "Laroquebrou",
+                    "Chambray",
+                    "Routot",
                     "Tremblois-l\u00e8s-Rocroi",
                     "Saint-Martin-des-Champs",
                     "Pr\u00e9manon",
                     "Berrias-et-Casteljau",
                     "Peyrolles",
+                    "Mirepeisset",
                     "Maleville"
                 ]
             ]
@@ -155,25 +175,41 @@
             ]
         },
         "ANT": {
-            "NombreCamion": 2,
-            "Distance": 2317.043953532731,
-            "Temps": 8.778977632522583,
+            "NombreCamion": 1,
+            "Distance": 1738.4884143766756,
+            "Temps": 52.05863666534424,
             "ListeTrajet": [
                 [
                     "Niaux",
                     "Lunac",
+                    "Noailles",
+                    "Raymond",
+                    "Rians",
+                    "\u00c9cordal",
+                    "Longw\u00e9",
+                    "Monnet-la-Ville",
+                    "Seyssinet-Pariset",
                     "Rochecolombe",
+                    "Niaux"
+                ]
+            ]
+        },
+        "Tabu": {
+            "NombreCamion": 1,
+            "Distance": 2052.2646295061204,
+            "Temps": 2.287400007247925,
+            "ListeTrajet": [
+                [
+                    "Niaux",
+                    "Lunac",
                     "Seyssinet-Pariset",
                     "Monnet-la-Ville",
                     "Longw\u00e9",
                     "\u00c9cordal",
-                    "Raymond",
                     "Rians",
-                    "Niaux"
-                ],
-                [
-                    "Niaux",
+                    "Raymond",
                     "Noailles",
+                    "Rochecolombe",
                     "Niaux"
                 ]
             ]
@@ -248,20 +284,40 @@
         },
         "ANT": {
             "NombreCamion": 1,
-            "Distance": 2056.950745845629,
-            "Temps": 7.929325342178345,
+            "Distance": 1731.5027861815638,
+            "Temps": 88.56587529182434,
             "ListeTrajet": [
                 [
                     "Saint-Marcel",
                     "La Vieille-Lyre",
                     "Juignettes",
-                    "Tavant",
                     "Avenay",
+                    "Tavant",
                     "Saint-Mathieu-de-Tr\u00e9viers",
                     "Fontan\u00e8s",
                     "L'Abergement-de-Varey",
                     "Fournets-Luisans",
                     "Essises",
+                    "Saint-Marcel"
+                ]
+            ]
+        },
+        "Tabu": {
+            "NombreCamion": 1,
+            "Distance": 2131.3869414687388,
+            "Temps": 3.2315075397491455,
+            "ListeTrajet": [
+                [
+                    "Saint-Marcel",
+                    "Essises",
+                    "La Vieille-Lyre",
+                    "Juignettes",
+                    "Avenay",
+                    "Fournets-Luisans",
+                    "L'Abergement-de-Varey",
+                    "Fontan\u00e8s",
+                    "Saint-Mathieu-de-Tr\u00e9viers",
+                    "Tavant",
                     "Saint-Marcel"
                 ]
             ]
@@ -335,25 +391,41 @@
             ]
         },
         "ANT": {
-            "NombreCamion": 2,
-            "Distance": 2088.792471332677,
-            "Temps": 8.222407579421997,
+            "NombreCamion": 1,
+            "Distance": 1632.2078673150963,
+            "Temps": 57.14142560958862,
+            "ListeTrajet": [
+                [
+                    "Beccas",
+                    "Courant",
+                    "Montmarault",
+                    "Belley",
+                    "Puy-Saint-Andr\u00e9",
+                    "Trescl\u00e9oux",
+                    "Cabri\u00e8s",
+                    "Esplas-de-S\u00e9rou",
+                    "Lissac",
+                    "Pech-Luna",
+                    "Beccas"
+                ]
+            ]
+        },
+        "Tabu": {
+            "NombreCamion": 1,
+            "Distance": 1846.257489298674,
+            "Temps": 4.161494493484497,
             "ListeTrajet": [
                 [
                     "Beccas",
                     "Esplas-de-S\u00e9rou",
-                    "Pech-Luna",
-                    "Trescl\u00e9oux",
-                    "Cabri\u00e8s",
-                    "Belley",
-                    "Puy-Saint-Andr\u00e9",
-                    "Montmarault",
-                    "Courant",
-                    "Beccas"
-                ],
-                [
-                    "Beccas",
                     "Lissac",
+                    "Courant",
+                    "Montmarault",
+                    "Belley",
+                    "Trescl\u00e9oux",
+                    "Puy-Saint-Andr\u00e9",
+                    "Cabri\u00e8s",
+                    "Pech-Luna",
                     "Beccas"
                 ]
             ]
@@ -427,9 +499,9 @@
             ]
         },
         "ANT": {
-            "NombreCamion": 2,
-            "Distance": 2635.909173371529,
-            "Temps": 8.33995008468628,
+            "NombreCamion": 1,
+            "Distance": 2282.4333043499632,
+            "Temps": 54.23041558265686,
             "ListeTrajet": [
                 [
                     "Ladev\u00e8ze-Rivi\u00e8re",
@@ -441,11 +513,27 @@
                     "Pleyben",
                     "V\u00e9n\u00e9rand",
                     "Expiremont",
+                    "Busserolles",
                     "Ladev\u00e8ze-Rivi\u00e8re"
-                ],
+                ]
+            ]
+        },
+        "Tabu": {
+            "NombreCamion": 1,
+            "Distance": 2570.5436716644804,
+            "Temps": 5.101576566696167,
+            "ListeTrajet": [
                 [
                     "Ladev\u00e8ze-Rivi\u00e8re",
+                    "Expiremont",
                     "Busserolles",
+                    "Grandlup-et-Fay",
+                    "Saint-Louet-sur-Seulles",
+                    "Bavent",
+                    "Pleyben",
+                    "V\u00e9n\u00e9rand",
+                    "Creissan",
+                    "Saint-Andr\u00e9-de-V\u00e9zines",
                     "Ladev\u00e8ze-Rivi\u00e8re"
                 ]
             ]
@@ -519,19 +607,43 @@
             ]
         },
         "ANT": {
-            "NombreCamion": 1,
-            "Distance": 2269.9600518519082,
-            "Temps": 8.32560420036316,
+            "NombreCamion": 2,
+            "Distance": 2764.1295052466885,
+            "Temps": 52.544044733047485,
             "ListeTrajet": [
                 [
                     "Balaguier-sur-Rance",
-                    "Montagnac-d'Auberoche",
-                    "Le Temple",
-                    "Fatouville-Grestain",
-                    "Le Ch\u00e2telet",
-                    "Braize",
-                    "Loray",
+                    "La Palud-sur-Verdon",
+                    "Saint-Jean-de-Moirans",
                     "Oytier-Saint-Oblas",
+                    "Loray",
+                    "Fatouville-Grestain",
+                    "Le Temple",
+                    "Montagnac-d'Auberoche",
+                    "Balaguier-sur-Rance"
+                ],
+                [
+                    "Balaguier-sur-Rance",
+                    "Braize",
+                    "Le Ch\u00e2telet",
+                    "Balaguier-sur-Rance"
+                ]
+            ]
+        },
+        "Tabu": {
+            "NombreCamion": 1,
+            "Distance": 2455.0798410826055,
+            "Temps": 6.058572053909302,
+            "ListeTrajet": [
+                [
+                    "Balaguier-sur-Rance",
+                    "Le Temple",
+                    "Montagnac-d'Auberoche",
+                    "Fatouville-Grestain",
+                    "Braize",
+                    "Le Ch\u00e2telet",
+                    "Oytier-Saint-Oblas",
+                    "Loray",
                     "Saint-Jean-de-Moirans",
                     "La Palud-sur-Verdon",
                     "Balaguier-sur-Rance"
@@ -608,19 +720,43 @@
         },
         "ANT": {
             "NombreCamion": 1,
-            "Distance": 2346.0711822500343,
-            "Temps": 8.583193063735962,
+            "Distance": 2261.0877823070846,
+            "Temps": 57.09493017196655,
             "ListeTrajet": [
                 [
                     "Sauve",
-                    "Les H\u00f4pitaux-Neufs",
+                    "Manses",
+                    "Beaumont-sur-L\u00e8ze",
+                    "Bourgnac",
+                    "Marcheprime",
+                    "Saint-Carn\u00e9",
+                    "Pure",
                     "Trouhans",
                     "Liesle",
+                    "Les H\u00f4pitaux-Neufs",
+                    "Sauve"
+                ]
+            ]
+        },
+        "Tabu": {
+            "NombreCamion": 2,
+            "Distance": 3043.8467755361917,
+            "Temps": 6.901973247528076,
+            "ListeTrajet": [
+                [
+                    "Sauve",
+                    "Beaumont-sur-L\u00e8ze",
+                    "Liesle",
+                    "Les H\u00f4pitaux-Neufs",
+                    "Trouhans",
                     "Pure",
                     "Saint-Carn\u00e9",
                     "Bourgnac",
                     "Marcheprime",
-                    "Beaumont-sur-L\u00e8ze",
+                    "Sauve"
+                ],
+                [
+                    "Sauve",
                     "Manses",
                     "Sauve"
                 ]
@@ -696,24 +832,48 @@
         },
         "ANT": {
             "NombreCamion": 2,
-            "Distance": 2549.8624511689,
-            "Temps": 8.70742130279541,
+            "Distance": 2549.8624511689004,
+            "Temps": 86.0627989768982,
             "ListeTrajet": [
                 [
                     "Le Fousseret",
-                    "Saint-Germain-des-Pr\u00e9s",
-                    "Saint-Gildas",
-                    "Merey",
-                    "Mesli\u00e8res",
-                    "Cernon",
-                    "Peyriat",
-                    "Chevagnes",
                     "V\u00e9drines-Saint-Loup",
+                    "Chevagnes",
+                    "Peyriat",
+                    "Cernon",
+                    "Mesli\u00e8res",
+                    "Merey",
+                    "Saint-Gildas",
+                    "Saint-Germain-des-Pr\u00e9s",
                     "Le Fousseret"
                 ],
                 [
                     "Le Fousseret",
                     "Belcastel",
+                    "Le Fousseret"
+                ]
+            ]
+        },
+        "Tabu": {
+            "NombreCamion": 2,
+            "Distance": 2924.1382105268103,
+            "Temps": 7.716578006744385,
+            "ListeTrajet": [
+                [
+                    "Le Fousseret",
+                    "Belcastel",
+                    "Peyriat",
+                    "Chevagnes",
+                    "Cernon",
+                    "Mesli\u00e8res",
+                    "Merey",
+                    "Saint-Gildas",
+                    "Saint-Germain-des-Pr\u00e9s",
+                    "Le Fousseret"
+                ],
+                [
+                    "Le Fousseret",
+                    "V\u00e9drines-Saint-Loup",
                     "Le Fousseret"
                 ]
             ]
@@ -787,9 +947,9 @@
             ]
         },
         "ANT": {
-            "NombreCamion": 2,
-            "Distance": 2345.6438245141308,
-            "Temps": 8.269904851913452,
+            "NombreCamion": 1,
+            "Distance": 1915.6973734371275,
+            "Temps": 56.814600229263306,
             "ListeTrajet": [
                 [
                     "Santosse",
@@ -801,11 +961,31 @@
                     "Le Taillan-M\u00e9doc",
                     "Beaumont-en-V\u00e9ron",
                     "V\u00e9retz",
+                    "Houville-la-Branche",
+                    "Santosse"
+                ]
+            ]
+        },
+        "Tabu": {
+            "NombreCamion": 2,
+            "Distance": 2792.299817305009,
+            "Temps": 8.482481002807617,
+            "ListeTrajet": [
+                [
+                    "Santosse",
+                    "Beaumont-en-V\u00e9ron",
+                    "Bieujac",
+                    "Le Taillan-M\u00e9doc",
+                    "Auriac",
+                    "Mons",
+                    "Saint-Pierre-de-M\u00e9sage",
+                    "La Brigue",
                     "Santosse"
                 ],
                 [
                     "Santosse",
                     "Houville-la-Branche",
+                    "V\u00e9retz",
                     "Santosse"
                 ]
             ]
@@ -879,21 +1059,45 @@
             ]
         },
         "ANT": {
-            "NombreCamion": 1,
-            "Distance": 2256.0355407718357,
-            "Temps": 8.725620746612549,
+            "NombreCamion": 2,
+            "Distance": 3263.7986493032968,
+            "Temps": 53.700849771499634,
             "ListeTrajet": [
                 [
                     "Ma\u00ebl-Pestivien",
                     "Guengat",
-                    "Saint-Martin-du-Bois",
-                    "Saint-Rustice",
+                    "Vernais",
+                    "Plateau d'Hauteville",
+                    "Saint-Paul-et-Valmalle",
                     "Montgaillard",
                     "Lap\u00e8ge",
-                    "Saint-Paul-et-Valmalle",
-                    "Plateau d'Hauteville",
+                    "Saint-Rustice",
+                    "Saint-Martin-du-Bois",
+                    "Ma\u00ebl-Pestivien"
+                ],
+                [
+                    "Ma\u00ebl-Pestivien",
                     "Marcigny-sous-Thil",
+                    "Ma\u00ebl-Pestivien"
+                ]
+            ]
+        },
+        "Tabu": {
+            "NombreCamion": 1,
+            "Distance": 2466.5584079329437,
+            "Temps": 9.385387420654297,
+            "ListeTrajet": [
+                [
+                    "Ma\u00ebl-Pestivien",
+                    "Guengat",
                     "Vernais",
+                    "Marcigny-sous-Thil",
+                    "Plateau d'Hauteville",
+                    "Saint-Rustice",
+                    "Lap\u00e8ge",
+                    "Montgaillard",
+                    "Saint-Paul-et-Valmalle",
+                    "Saint-Martin-du-Bois",
                     "Ma\u00ebl-Pestivien"
                 ]
             ]

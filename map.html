@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_cc15385290744c77f4b43ab2af49cec8 {
+                #map_3add38198d962ee03146aa34227fcda9 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -39,16 +39,16 @@
 <body>
     
     
-            <div class="folium-map" id="map_cc15385290744c77f4b43ab2af49cec8" ></div>
+            <div class="folium-map" id="map_3add38198d962ee03146aa34227fcda9" ></div>
         
 </body>
 <script>
     
     
-            var map_cc15385290744c77f4b43ab2af49cec8 = L.map(
-                "map_cc15385290744c77f4b43ab2af49cec8",
+            var map_3add38198d962ee03146aa34227fcda9 = L.map(
+                "map_3add38198d962ee03146aa34227fcda9",
                 {
-                    center: [48.8566, 2.3522],
+                    center: [46.603354, 1.888334],
                     crs: L.CRS.EPSG3857,
                     zoom: 6,
                     zoomControl: true,
@@ -60,13 +60,135 @@
 
         
     
-            var tile_layer_84596a5cf1a4b2ec727301badddfaff2 = L.tileLayer(
+            var tile_layer_17740f842f2bafdc6f9d677da1a05692 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
             );
         
     
-            tile_layer_84596a5cf1a4b2ec727301badddfaff2.addTo(map_cc15385290744c77f4b43ab2af49cec8);
+            tile_layer_17740f842f2bafdc6f9d677da1a05692.addTo(map_3add38198d962ee03146aa34227fcda9);
+        
+    
+            var poly_line_249ea6eda9f0dc8a1d3717b6ea4b79d0 = L.polyline(
+                [[48.8534951, 2.3483915], [47.2186371, -1.5541362], [50.6365654, 3.0635282], [48.8534951, 2.3483915]],
+                {"bubblingMouseEvents": true, "color": "#99a5e5", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#99a5e5", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_3add38198d962ee03146aa34227fcda9);
+        
+    
+            var marker_a2fdaaf37aebb50bd0dc6658790e7384 = L.marker(
+                [48.8534951, 2.3483915],
+                {}
+            ).addTo(map_3add38198d962ee03146aa34227fcda9);
+        
+    
+        var popup_44e67d8e8539fd0f3beea6fc393316ab = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6fd5d930c84e7ed2469718a20b373938 = $(`<div id="html_6fd5d930c84e7ed2469718a20b373938" style="width: 100.0%; height: 100.0%;">paris - Camion n°1</div>`)[0];
+                popup_44e67d8e8539fd0f3beea6fc393316ab.setContent(html_6fd5d930c84e7ed2469718a20b373938);
+            
+        
+
+        marker_a2fdaaf37aebb50bd0dc6658790e7384.bindPopup(popup_44e67d8e8539fd0f3beea6fc393316ab)
+        ;
+
+        
+    
+    
+            marker_a2fdaaf37aebb50bd0dc6658790e7384.bindTooltip(
+                `<div>
+                     paris
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_de56c586ada37aea2c21a76dd4af7979 = L.marker(
+                [47.2186371, -1.5541362],
+                {}
+            ).addTo(map_3add38198d962ee03146aa34227fcda9);
+        
+    
+        var popup_8cebdd8a6f61ff997ba8aa8f7a21edba = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_69942487b3b696d228944f5c111da95b = $(`<div id="html_69942487b3b696d228944f5c111da95b" style="width: 100.0%; height: 100.0%;">Nantes - Camion n°1</div>`)[0];
+                popup_8cebdd8a6f61ff997ba8aa8f7a21edba.setContent(html_69942487b3b696d228944f5c111da95b);
+            
+        
+
+        marker_de56c586ada37aea2c21a76dd4af7979.bindPopup(popup_8cebdd8a6f61ff997ba8aa8f7a21edba)
+        ;
+
+        
+    
+    
+            marker_de56c586ada37aea2c21a76dd4af7979.bindTooltip(
+                `<div>
+                     Nantes
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2efeb441228e6ffad91f064cf4ba4074 = L.marker(
+                [50.6365654, 3.0635282],
+                {}
+            ).addTo(map_3add38198d962ee03146aa34227fcda9);
+        
+    
+        var popup_4770e27be31b17795f077f88dc722741 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4bfdb06990d291f592e8814bc0208278 = $(`<div id="html_4bfdb06990d291f592e8814bc0208278" style="width: 100.0%; height: 100.0%;">Lille - Camion n°1</div>`)[0];
+                popup_4770e27be31b17795f077f88dc722741.setContent(html_4bfdb06990d291f592e8814bc0208278);
+            
+        
+
+        marker_2efeb441228e6ffad91f064cf4ba4074.bindPopup(popup_4770e27be31b17795f077f88dc722741)
+        ;
+
+        
+    
+    
+            marker_2efeb441228e6ffad91f064cf4ba4074.bindTooltip(
+                `<div>
+                     Lille
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e42d33abe07590059f3f000c4666fd61 = L.marker(
+                [48.8534951, 2.3483915],
+                {}
+            ).addTo(map_3add38198d962ee03146aa34227fcda9);
+        
+    
+        var popup_5af509f74c600dd2cb674c98a6904821 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_aa89be10684530e2f264b3a771058ea6 = $(`<div id="html_aa89be10684530e2f264b3a771058ea6" style="width: 100.0%; height: 100.0%;">paris - Camion n°1</div>`)[0];
+                popup_5af509f74c600dd2cb674c98a6904821.setContent(html_aa89be10684530e2f264b3a771058ea6);
+            
+        
+
+        marker_e42d33abe07590059f3f000c4666fd61.bindPopup(popup_5af509f74c600dd2cb674c98a6904821)
+        ;
+
+        
+    
+    
+            marker_e42d33abe07590059f3f000c4666fd61.bindTooltip(
+                `<div>
+                     paris
+                 </div>`,
+                {"sticky": true}
+            );
         
 </script>
 </html>

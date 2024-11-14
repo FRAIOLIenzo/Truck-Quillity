@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
       element.classList.add("active");
     });
   });
-
   inputField.addEventListener("input", () => {
     const query = inputField.value.trim();
     const suggestionContainer = document.querySelector(
@@ -54,6 +53,22 @@ document.addEventListener("DOMContentLoaded", () => {
       suggestionContainer.style.display = "none";
     }
   });
+
+  inputField.addEventListener("paste", (event) => {
+    event.preventDefault();
+    const pasteData = event.clipboardData.getData("text");
+    const cities = pasteData.split(",").map(city => city.trim());
+    cities.forEach(city => {
+      const paragraph = document.createElement("p");
+      paragraph.textContent = city + ",\u00A0";
+      paragraph.style.marginTop = "5px";
+      paragraph.style.marginBottom = "5px";
+      document.getElementById("popupAjouterVilleFormList").appendChild(paragraph);
+      cityList.push(city);
+    });
+    inputField.value = "";
+  });
+
 
   inputField.addEventListener("keydown", (event) => {
     if (event.key === "Tab") {

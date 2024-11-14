@@ -43,11 +43,11 @@ def load_all_data_from_json(file_path):
                     'NombreCamion': value['ANT']['NombreCamion'],
                     'Temps': value['ANT']['Temps']
                 },
-                # 'Tabu': {
-                #     'Distance': value['Tabu']['Distance'],
-                #     'NombreCamion': value['Tabu']['NombreCamion'],
-                #     'Temps': value['Tabu']['Temps']
-                # },
+                'Tabu': {
+                    'Distance': value['Tabu']['Distance'],
+                    'NombreCamion': value['Tabu']['NombreCamion'],
+                    'Temps': value['Tabu']['Temps']
+                },
                 # 'Genetique': {
                 #     'Distance': value['Genetique']['Distance'],
                 #     'NombreCamion': value['Genetique']['NombreCamion'],
@@ -71,7 +71,7 @@ def fourmie_route():
     max_iteration = 900
     t_evaporation = 0.1  
     i_phero, i_visi, depot_phero = 1, 2, 100  
-    capacite_max = 20
+    capacite_max = 50
     cache_probabilites = {}
 
     random.seed(48)
@@ -119,7 +119,7 @@ def tabou_route():
 
     # Initialisation des paramètres
     nb_villes = len(nom_ville)
-    capacite_max = 20
+    capacite_max = 50
     path = generate_path(nb_villes, capacite_max, ville_d, nom_ville)
     solution_initiale = path
 
@@ -156,7 +156,7 @@ def genetique_route():
     # Générer des demandes aléatoires
     random.seed(48)
     generate_random_demands(selected_cities, min_demand=1, max_demand=10)
-    vehicle_capacity = 30
+    vehicle_capacity = 50
 
 
     # Calcul du nombre minimal de camions nécessaires
