@@ -209,7 +209,10 @@ function validerPopupAjouterVille() {
     document
       .getElementById("menuGestionAjouterIconPlus")
       .classList.add("active");
-    let cityListText = cityList.slice(0, 10).map((city) => city + ",\u00A0").join("");
+    let cityListText = cityList
+      .slice(0, 10)
+      .map((city) => city + ",\u00A0")
+      .join("");
     if (cityList.length > 14) {
       cityListText += "...";
     }
@@ -234,30 +237,48 @@ function lireDonneesResultJson(type) {
         let activeClass;
 
         // Close any open tables
-        const containers = document.querySelectorAll(".menuStatistiquesAfficherPulpTableauContainer, .menuStatistiquesAfficherFourmisTableauContainer, .menuStatistiquesAfficherTabouTableauContainer, .menuStatistiquesAfficherGenetiqueTableauContainer");
+        const containers = document.querySelectorAll(
+          ".menuStatistiquesAfficherPulpTableauContainer, .menuStatistiquesAfficherFourmisTableauContainer, .menuStatistiquesAfficherTabouTableauContainer, .menuStatistiquesAfficherGenetiqueTableauContainer"
+        );
         containers.forEach((cont) => (cont.style.display = "none"));
-        const activeElements = document.querySelectorAll(".active");
+        const activeElements = document.querySelectorAll(".menuStatistiquesAfficherPulp.active, .menuStatistiquesAfficherFourmis.active, .menuStatistiquesAfficherTabou.active, .menuStatistiquesAfficherGenetique.active");
         activeElements.forEach((el) => el.classList.remove("active"));
 
         switch (type) {
           case "Pulp":
-            container = document.getElementById("menuStatistiquesAfficherPulpTableauContainer");
-            tableBody = document.getElementById("menuStatistiquesAfficherPulpTableauBody");
+            container = document.getElementById(
+              "menuStatistiquesAfficherPulpTableauContainer"
+            );
+            tableBody = document.getElementById(
+              "menuStatistiquesAfficherPulpTableauBody"
+            );
             activeClass = "menuStatistiquesAfficherPulp";
             break;
           case "Fourmi":
-            container = document.getElementById("menuStatistiquesAfficherFourmisTableauContainer");
-            tableBody = document.getElementById("menuStatistiquesAfficherFourmisTableauBody");
+            container = document.getElementById(
+              "menuStatistiquesAfficherFourmisTableauContainer"
+            );
+            tableBody = document.getElementById(
+              "menuStatistiquesAfficherFourmisTableauBody"
+            );
             activeClass = "menuStatistiquesAfficherFourmis";
             break;
           case "Tabu":
-            container = document.getElementById("menuStatistiquesAfficherTabouTableauContainer");
-            tableBody = document.getElementById("menuStatistiquesAfficherTabouTableauBody");
+            container = document.getElementById(
+              "menuStatistiquesAfficherTabouTableauContainer"
+            );
+            tableBody = document.getElementById(
+              "menuStatistiquesAfficherTabouTableauBody"
+            );
             activeClass = "menuStatistiquesAfficherTabou";
             break;
           case "Genetique":
-            container = document.getElementById("menuStatistiquesAfficherGenetiqueTableauContainer");
-            tableBody = document.getElementById("menuStatistiquesAfficherGenetiqueTableauBody");
+            container = document.getElementById(
+              "menuStatistiquesAfficherGenetiqueTableauContainer"
+            );
+            tableBody = document.getElementById(
+              "menuStatistiquesAfficherGenetiqueTableauBody"
+            );
             activeClass = "menuStatistiquesAfficherGenetique";
             break;
           default:
@@ -276,7 +297,8 @@ function lireDonneesResultJson(type) {
           row.appendChild(cellJeu);
 
           const cellDistance = document.createElement("td");
-          cellDistance.textContent = data[key][type].Distance.toFixed(2) + " km";
+          cellDistance.textContent =
+            data[key][type].Distance.toFixed(2) + " km";
           row.appendChild(cellDistance);
 
           const cellNombreCamion = document.createElement("td");
@@ -297,7 +319,6 @@ function lireDonneesResultJson(type) {
       console.error("Erreur de réseau:", error);
     });
 }
-
 
 function popupAjouterRandomVille() {
   document.getElementById("loaderContainerPopup").style.display = "block";
@@ -327,7 +348,8 @@ function popupAjouterRandomVille() {
         console.error("Erreur lors de l'envoi des données");
       }
       document.getElementById("loaderContainerPopup").style.display = "none";
-      document.getElementById("popupAjouterVilleFormList").style.display = "flex";
+      document.getElementById("popupAjouterVilleFormList").style.display =
+        "flex";
     })
 
     .catch((error) => {
