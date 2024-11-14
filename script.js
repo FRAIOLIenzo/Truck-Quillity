@@ -363,6 +363,7 @@ inputField.addEventListener("keydown", handleKeyDown);
 function lancerItineraire() {
   document.getElementById("loaderContainer").style.display = "flex";
   const selectedAlgo = document.getElementById("menuGestionChoixAlgo").value.toLowerCase();
+  console.log("city", cityList);
   fetch(`http://127.0.0.1:5000/api/${selectedAlgo}`, {
     method: "POST",
     headers: {

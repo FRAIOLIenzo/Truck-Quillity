@@ -8,6 +8,7 @@ import numpy as np
 import folium
 from fourmis import *
 from tabou import *
+from genetique import *
 import json
 #---------------------------------------------------------------Fonctions----------------------------------------------------------------
 def load_random_cities_from_csv(file_path, num_cities):
@@ -133,6 +134,52 @@ def tabou_route():
         'nb_camions': len(sol_max),
         'temps_execution': stop - start,
         'test': ville_d
+    })
+
+@app.route('/api/genetique', methods=['POST'])
+def genetique_route():
+    data = request.json
+    t0 = tp.time()
+    # Exemple d'utilisation
+    city_names = data
+    selected_cities = get_cities_from_names(city_names)
+
+    # Définir le dépôt
+    depot = selected_cities.pop(0)
+
+
+    # Générer des demandes aléatoires
+    random.seed(48)
+    generate_random_demands(selected_cities, min_demand=1, max_demand=10)
+    vehicle_capacity = 30
+
+
+    # Calcul du nombre minimal de camions nécessaires
+    total_demand = sum(city.demand for city in selected_cities)
+    num_trucks = math.ceil(total_demand / vehicle_capacity)
+
+    # Clustering K-Means capacitaire
+    clusters = kmeans_capacitated_clustering(selected_cities, vehicle_capacity)
+
+
+    # Vérifier que chaque cluster respecte la capacité
+    for idx, cluster in enumerate(clusters):
+        total_cluster_demand = sum(city.demand for city in cluster)
+
+    # Exécuter l'algorithme génétique pour chaque cluster
+    results = []
+    for i, cluster in enumerate(clusters):
+        result = genetic_algorithm_tsp(cluster, depot, generations=500, population_size=100, mutation_rate=0.4)
+        results.append(result)
+    tf = tp.time()
+    create_map(depot, results)
+
+    return jsonify({
+        'message': 'Solution GENETIQUE',
+        'capacite': {f'Camion {i+1}': sum(city.demand for city in cluster) for i, cluster in enumerate(clusters)},
+        'distance': sum([route['distance'] for route in results]),
+        'nb_camions': num_trucks,
+        'temps_execution': tf - t0,
     })
 
 
