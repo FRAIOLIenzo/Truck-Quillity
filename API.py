@@ -70,44 +70,6 @@ def fourmie_route():
         'temps_execution': tf - t0
     })
 
-@app.route('/api/stat', methods=['POST'])
-def stat_route():
-    # Declare global variables at the module level
-    nb_fourmis = 100
-    max_iteration = 100
-    t_evaporation = 0.1  
-    i_phero, i_visi, depot_phero = 1, 2, 100  
-    capacite_max = 20
-    cache_probabilites = {}
-
-    t0 = tp.time()
-    random.seed(48)
-    result = load_villes_names_from_json('result.json')
-    city_names = result['Jeu_0']
-
-    villes = get_city_coordinates(city_names)
-    distances = generate_distance_matrix(villes)
-    nom_ville = [city[0] for city in villes]
-    ville_d = {nom_ville[0]: 0} 
-    ville_d.update({valeur: random.randint(1, 10) for valeur in nom_ville[1:]})
-
-    n = len(nom_ville)
-    v_phero = np.ones((n, n), dtype=float) - np.eye(n)  
-    visibilités = 1 / (distances + np.eye(n))  
-
-    # Initialisation des solutions
-    meilleur_solution, meilleur_distance, meilleur_capacite = None, float('inf'), None
-    solution, capacite, distance = resoudre(v_phero, meilleur_distance, meilleur_solution, meilleur_capacite, max_iteration, nb_fourmis,nom_ville, distances, capacite_max, ville_d, v_phero, visibilités, i_phero, i_visi, cache_probabilites,t_evaporation, depot_phero)
-    tf = tp.time()
-    return jsonify({
-        'message': 'Solution trouvée',
-        'city_names': city_names,
-        'ville_d': ville_d
-    })
-
-
-
-
 @app.route('/api/reset', methods=['POST'])
 def get_reset():
     data = request.json

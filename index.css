@@ -103,6 +103,10 @@ body {
   display: none;
 }
 
+.menuStatistiques {
+  width: 1000px;
+}
+
 .menuGestionHeader,
 .menuStatistiquesHeader,
 .menuAlgorithmesHeader,
