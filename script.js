@@ -250,6 +250,7 @@ function popupAjouterRandomVille() {
     })
 
     .catch((error) => {
+      document.getElementById("loaderContainerPopup").style.display = "none";
       console.error("Erreur de réseau:", error);
     });
 }

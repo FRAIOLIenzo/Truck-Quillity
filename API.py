@@ -72,7 +72,6 @@ def fourmie_route():
 
 @app.route('/api/stat', methods=['POST'])
 def stat_route():
-    
     # Declare global variables at the module level
     nb_fourmis = 100
     max_iteration = 100
@@ -104,7 +103,6 @@ def stat_route():
         'message': 'Solution trouvée',
         'city_names': city_names,
         'ville_d': ville_d
-
     })
 
 
