@@ -254,7 +254,7 @@ function lireDonneesResultJson(type) {
             );
             activeClass = "menuStatistiquesAfficherPulp";
             break;
-          case "Fourmi":
+          case "ANT":
             container = document.getElementById(
               "menuStatistiquesAfficherFourmisTableauContainer"
             );

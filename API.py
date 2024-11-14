@@ -38,21 +38,21 @@ def load_all_data_from_json(file_path):
                     'NombreCamion': value['Pulp']['NombreCamion'],
                     'Temps': value['Pulp']['Temps']
                 },
-                'Fourmi': {
-                    'Distance': value['Fourmi']['Distance'],
-                    'NombreCamion': value['Fourmi']['NombreCamion'],
-                    'Temps': value['Fourmi']['Temps']
+                'ANT': {
+                    'Distance': value['ANT']['Distance'],
+                    'NombreCamion': value['ANT']['NombreCamion'],
+                    'Temps': value['ANT']['Temps']
                 },
-                'Tabu': {
-                    'Distance': value['Tabu']['Distance'],
-                    'NombreCamion': value['Tabu']['NombreCamion'],
-                    'Temps': value['Tabu']['Temps']
-                },
-                'Genetique': {
-                    'Distance': value['Genetique']['Distance'],
-                    'NombreCamion': value['Genetique']['NombreCamion'],
-                    'Temps': value['Genetique']['Temps']
-                }
+                # 'Tabu': {
+                #     'Distance': value['Tabu']['Distance'],
+                #     'NombreCamion': value['Tabu']['NombreCamion'],
+                #     'Temps': value['Tabu']['Temps']
+                # },
+                # 'Genetique': {
+                #     'Distance': value['Genetique']['Distance'],
+                #     'NombreCamion': value['Genetique']['NombreCamion'],
+                #     'Temps': value['Genetique']['Temps']
+                # }
             }
     return all_data
 
