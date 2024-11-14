@@ -163,7 +163,7 @@ body {
   cursor: pointer;
 }
 
-.menuGestionAjouter, .menuGestionDistance, .menuGestionNbCamion, .menuGestionTemps {
+.menuGestionAjouter, .menuGestionDistance, .menuGestionNbCamion, .menuGestionTemps, .menuStatistiquesAfficherPulp {
   margin: 20px 10px;
   display: flex;
   align-items: center;
@@ -192,6 +192,19 @@ body {
   border-bottom: 2px solid #fefaf6;
 }
 
+.menuStatistiquesAfficherPulp {
+  margin: 20px 10px 0px 10px;
+  display: flex;
+  align-items: center;
+  background-color: #102c57;
+  color: #fefaf6;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 16px 16px 0px 0px;
+  height: 40px;
+  border-bottom: 2px solid #fefaf6;
+}
+
 .menuGestionAjouterListeVille.active {
   margin: 0px 10px;
   display: flex;
@@ -201,6 +214,43 @@ body {
   font-weight: bold;
   border-radius: 0px 0px 16px 16px;
   height: 95px;
+}
+
+.menuStatistiquesAfficherPulpTableauContainer {
+  margin: 0px 10px;
+  display: flex;
+  background-color: #102c57;
+  color: #fefaf6;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 0px 0px 16px 16px;
+  height: 290px;
+  display: block;
+}
+.menuStatistiquesAfficherPulpTableau {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.menuStatistiquesAfficherPulpTableau th,
+.menuStatistiquesAfficherPulpTableau td {
+  border: 1px solid #fefaf6;
+  padding: 4px;
+  text-align: center;
+  color: #fefaf6;
+}
+
+.menuStatistiquesAfficherPulpTableau th {
+  background-color: #102c57;
+  font-weight: bold;
+}
+
+.menuStatistiquesAfficherPulpTableau tr:nth-child(even) {
+  background-color: #263955;
+}
+
+.menuStatistiquesAfficherPulpTableau tr:hover {
+  background-color: #102c57;
 }
 
 .menuGestionAjouterListeVilleText.active {
@@ -215,7 +265,7 @@ body {
     background-color: #102c57;
 }
 
-.menuGestionAjouterText, .menuGestionDistanceText, .menuGestionNbCamionText, .menuGestionTempsText {
+.menuGestionAjouterText, .menuGestionDistanceText, .menuGestionNbCamionText, .menuGestionTempsText, .menuStatistiquesAfficherPulpText {
   margin-left: 10px;
   user-select: none;
 }

@@ -218,6 +218,52 @@ function validerPopupAjouterVille() {
   }
 }
 
+function lireDonneesResultJson() {
+  fetch("http://127.0.0.1:5000/api/test", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        console.log(data);
+        const tableBody = document.getElementById("menuStatistiquesAfficherPulpTableauBody");
+        tableBody.innerHTML = ""; // Clear existing rows
+
+        Object.keys(data).forEach((key) => {
+          const row = document.createElement("tr");
+
+          const cellJeu = document.createElement("td");
+          cellJeu.textContent = key;
+          row.appendChild(cellJeu);
+
+          const cellDistance = document.createElement("td");
+          cellDistance.textContent = data[key].Distance.toFixed(2) + " km";
+          row.appendChild(cellDistance);
+
+          const cellNombreCamion = document.createElement("td");
+          cellNombreCamion.textContent = data[key].NombreCamion;
+          row.appendChild(cellNombreCamion);
+
+          const cellTemps = document.createElement("td");
+          cellTemps.textContent = data[key].Temps.toFixed(2) + " s";
+          row.appendChild(cellTemps);
+
+          tableBody.appendChild(row);
+        });
+      } else {
+        console.error("Erreur lors de l'envoi des données");
+      }
+    })
+
+    .catch((error) => {;
+      console.error("Erreur de réseau:", error);
+    });
+}
+
+
 function popupAjouterRandomVille() {
   document.getElementById("loaderContainerPopup").style.display = "block";
   document.getElementById("popupAjouterVilleFormList").style.display = "none";
