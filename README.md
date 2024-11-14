@@ -53,5 +53,5 @@ Truck-Quility provides an easy-to-use solution for companies to tackle the compl
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/Truck-Quility.git (BON LIEN)
+   https://github.com/FRAIOLIenzo/Truck-Quillite.git
 
