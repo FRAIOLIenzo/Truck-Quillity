@@ -125,6 +125,8 @@
             onclick="closeMenu()"
           />
         </div>
+
+        <!-- ------------------------------------------------------------------------------------- -->
         <div
           class="menuStatistiquesAfficherPulp"
           id="menuStatistiquesAfficherPulp"
@@ -135,7 +137,7 @@
             alt="plus"
             class="menuGestionAjouterIconPlus"
             id="menuGestionAjouterIconPlus"
-            onclick="lireDonneesResultJson()"
+            onclick="lireDonneesResultJson('Pulp')"
           />
         </div>
         <div
@@ -154,39 +156,75 @@
             <tbody id="menuStatistiquesAfficherPulpTableauBody"></tbody>
           </table>
         </div>
+        <!-- ------------------------------------------------------------------------------------- -->
+
         <div
-          class="menuStatistiquesAfficherPulp"
-          id="menuStatistiquesAfficherPulp"
+          class="menuStatistiquesAfficherFourmis"
+          id="menuStatistiquesAfficherFourmis"
         >
-          <span class="menuStatistiquesAfficherPulpText">Valeurs Fourmis</span>
+          <span class="menuStatistiquesAfficherFourmisText"
+            >Valeurs Fourmis</span
+          >
           <img
             src="pictures/plus.svg"
             alt="plus"
             class="menuGestionAjouterIconPlus"
             id="menuGestionAjouterIconPlus"
-            onclick="lireDonneesResultJson()"
+            onclick="lireDonneesResultJson('Fourmis')"
           />
+        </div>
+        <div
+          class="menuStatistiquesAfficherFourmisTableauContainer"
+          id="menuStatistiquesAfficherFourmisTableauContainer"
+        >
+          <table class="menuStatistiquesAfficherFourmisTableau">
+            <thead>
+              <tr>
+                <th>Nb. Tests</th>
+                <th>Distance</th>
+                <th>Nb. Camions</th>
+                <th>Temps</th>
+              </tr>
+            </thead>
+            <tbody id="menuStatistiquesAfficherFourmisTableauBody"></tbody>
+          </table>
         </div>
 
         <div
-          class="menuStatistiquesAfficherPulp"
-          id="menuStatistiquesAfficherPulp"
+          class="menuStatistiquesAfficherTabou"
+          id="menuStatistiquesAfficherTabou"
         >
-          <span class="menuStatistiquesAfficherPulpText">Valeurs Tabou</span>
+          <span class="menuStatistiquesAfficherTabouText">Valeurs Tabou</span>
           <img
             src="pictures/plus.svg"
             alt="plus"
             class="menuGestionAjouterIconPlus"
             id="menuGestionAjouterIconPlus"
-            onclick="lireDonneesResultJson()"
+            onclick="lireDonneesResultJson('Tabou')"
           />
+        </div>
+        <div
+          class="menuStatistiquesAfficherTabouTableauContainer"
+          id="menuStatistiquesAfficherTabouTableauContainer"
+        >
+          <table class="menuStatistiquesAfficherTabouTableau">
+            <thead>
+              <tr>
+                <th>Nb. Tests</th>
+                <th>Distance</th>
+                <th>Nb. Camions</th>
+                <th>Temps</th>
+              </tr>
+            </thead>
+            <tbody id="menuStatistiquesAfficherTabouTableauBody"></tbody>
+          </table>
         </div>
 
         <div
-          class="menuStatistiquesAfficherPulp"
-          id="menuStatistiquesAfficherPulp"
+          class="menuStatistiquesAfficherGenetique"
+          id="menuStatistiquesAfficherGenetique"
         >
-          <span class="menuStatistiquesAfficherPulpText"
+          <span class="menuStatistiquesAfficherGenetiqueText"
             >Valeurs Génétique
           </span>
           <img
@@ -194,10 +232,27 @@
             alt="plus"
             class="menuGestionAjouterIconPlus"
             id="menuGestionAjouterIconPlus"
-            onclick="lireDonneesResultJson()"
+            onclick="lireDonneesResultJson('Genetique')"
           />
         </div>
+        <div
+        class="menuStatistiquesAfficherGenetiqueTableauContainer"
+        id="menuStatistiquesAfficherGenetiqueTableauContainer"
+      >
+        <table class="menuStatistiquesAfficherGenetiqueTableau">
+          <thead>
+            <tr>
+              <th>Nb. Tests</th>
+              <th>Distance</th>
+              <th>Nb. Camions</th>
+              <th>Temps</th>
+            </tr>
+          </thead>
+          <tbody id="menuStatistiquesAfficherGenetiqueTableauBody"></tbody>
+        </table>
       </div>
+      </div>
+
 
       <div class="menuAlgorithmes" id="menuAlgorithmes">
         <div class="menuAlgorithmesHeader">

@@ -218,7 +218,7 @@ function validerPopupAjouterVille() {
   }
 }
 
-function lireDonneesResultJson() {
+function lireDonneesResultJson(type) {
   fetch("http://127.0.0.1:5000/api/test", {
     method: "GET",
     headers: {
@@ -229,9 +229,44 @@ function lireDonneesResultJson() {
     .then((data) => {
       if (data) {
         console.log(data);
-        document.getElementById("menuStatistiquesAfficherPulpTableauContainer").style.display = "block";
-        document.getElementById("menuStatistiquesAfficherPulp").classList.add("active");
-        const tableBody = document.getElementById("menuStatistiquesAfficherPulpTableauBody");
+        let tableBody;
+        let container;
+        let activeClass;
+
+        // Close any open tables
+        const containers = document.querySelectorAll(".menuStatistiquesAfficherPulpTableauContainer, .menuStatistiquesAfficherFourmisTableauContainer, .menuStatistiquesAfficherTabouTableauContainer, .menuStatistiquesAfficherGenetiqueTableauContainer");
+        containers.forEach((cont) => (cont.style.display = "none"));
+        const activeElements = document.querySelectorAll(".active");
+        activeElements.forEach((el) => el.classList.remove("active"));
+
+        switch (type) {
+          case "Pulp":
+            container = document.getElementById("menuStatistiquesAfficherPulpTableauContainer");
+            tableBody = document.getElementById("menuStatistiquesAfficherPulpTableauBody");
+            activeClass = "menuStatistiquesAfficherPulp";
+            break;
+          case "Fourmis":
+            container = document.getElementById("menuStatistiquesAfficherFourmisTableauContainer");
+            tableBody = document.getElementById("menuStatistiquesAfficherFourmisTableauBody");
+            activeClass = "menuStatistiquesAfficherFourmis";
+            break;
+          case "Tabou":
+            container = document.getElementById("menuStatistiquesAfficherTabouTableauContainer");
+            tableBody = document.getElementById("menuStatistiquesAfficherTabouTableauBody");
+            activeClass = "menuStatistiquesAfficherTabou";
+            break;
+          case "Genetique":
+            container = document.getElementById("menuStatistiquesAfficherGenetiqueTableauContainer");
+            tableBody = document.getElementById("menuStatistiquesAfficherGenetiqueTableauBody");
+            activeClass = "menuStatistiquesAfficherGenetique";
+            break;
+          default:
+            console.error("Type non reconnu");
+            return;
+        }
+
+        container.style.display = "block";
+        document.getElementById(activeClass).classList.add("active");
         tableBody.innerHTML = ""; // Clear existing rows
 
         Object.keys(data).forEach((key) => {
@@ -259,8 +294,7 @@ function lireDonneesResultJson() {
         console.error("Erreur lors de l'envoi des données");
       }
     })
-
-    .catch((error) => {;
+    .catch((error) => {
       console.error("Erreur de réseau:", error);
     });
 }
