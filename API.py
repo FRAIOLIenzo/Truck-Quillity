@@ -137,7 +137,7 @@ def tabou_route():
     stop = tp.process_time()
 
     create_map_with_routes(sol_max)
-    plot_real_routes_tabu(sol_max, {ville: (lat, lon) for ville, lat, lon in villes})
+    # plot_real_routes_tabu(sol_max, {ville: (lat, lon) for ville, lat, lon in villes})
     return jsonify({
         'message': 'Solution trouvée',
         'solution': sol_max,
@@ -181,7 +181,7 @@ def genetique_route():
     # Exécuter l'algorithme génétique pour chaque cluster
     results = []
     for i, cluster in enumerate(clusters):
-        result = genetic_algorithm_tsp(cluster, depot, generations=500, population_size=100, mutation_rate=0.4)
+        result = genetic_algorithm_tsp(cluster, depot, data['algoSettings']['nbGenerations'], data['algoSettings']['populationSize'], mutation_rate=0.4)
         results.append(result)
     tf = tp.time()
     create_map(depot, results)

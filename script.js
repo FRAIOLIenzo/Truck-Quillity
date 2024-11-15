@@ -500,13 +500,17 @@ function sauvegarderAlgo() {
   const nbStarts = document.getElementById("menuAlgoNbStarts").value;
   const capacityTabou = document.getElementById("menuAlgoCapacityTabou").value;
   const capacityGenetic = document.getElementById("menuAlgoCapacityGenetic").value;
+  const nbGenerations = document.getElementById("menuAlgoGenerationGenetic").value;
+  const populationSize = document.getElementById("menuAlgoPopulationGenetic").value;
   const algoSettings = {
     nbFourmis: parseInt(nbFourmis, 10),
     nbIterations: parseInt(nbIterations, 10),
     capacity: parseInt(capacity, 10),
     nbStarts: parseInt(nbStarts, 10),
     capacityTabou: parseInt(capacityTabou, 10),
-    capacityGenetic: parseInt(capacityGenetic, 10)
+    capacityGenetic: parseInt(capacityGenetic, 10),
+    nbGenerations: parseInt(nbGenerations, 10),
+    populationSize: parseInt(populationSize, 10),
   };
   console.log("Algorithm settings saved:", algoSettings);
   return algoSettings;
