@@ -105,7 +105,9 @@
           <span class="menuGestionTempsValue" id="menuGestionTempsValue"></span>
         </div>
         <div class="menuGestionDistance" id="menuGestionDistance">
-          <span class="menuGestionDistanceText">Total bird flight distance</span>
+          <span class="menuGestionDistanceText"
+            >Total bird flight distance</span
+          >
           <span
             class="menuGestionDistanceValue"
             id="menuGestionDistanceValue"
@@ -131,11 +133,11 @@
             <span>Statistics</span>
           </div>
           <img
-          src="pictures/info.svg"
-          alt="info"
-          class="menuStatistiquesHeaderIconInfo"
-          onclick="afficherInfo()"
-        />
+            src="pictures/info.svg"
+            alt="info"
+            class="menuStatistiquesHeaderIconInfo"
+            onclick="afficherInfo()"
+          />
           <img
             src="pictures/menu-open.svg"
             alt="menuOpen"
@@ -180,9 +182,7 @@
           class="menuStatistiquesAfficherFourmis"
           id="menuStatistiquesAfficherFourmis"
         >
-          <span class="menuStatistiquesAfficherFourmisText"
-            >Ant Values</span
-          >
+          <span class="menuStatistiquesAfficherFourmisText">Ant Values</span>
           <img
             src="pictures/plus.svg"
             alt="plus"
@@ -237,41 +237,24 @@
             <tbody id="menuStatistiquesAfficherTabouTableauBody"></tbody>
           </table>
         </div>
-
-        <div
-          class="menuStatistiquesAfficherGenetique"
-          id="menuStatistiquesAfficherGenetique"
-        >
-          <span class="menuStatistiquesAfficherGenetiqueText"
-            >Genetic Values
-          </span>
-          <img
-            src="pictures/plus.svg"
-            alt="plus"
-            class="menuGestionAjouterIconPlus"
-            id="menuGestionAjouterIconPlus"
-            onclick="lireDonneesResultJson('Genetique')"
-          />
-        </div>
-        <div
-        class="menuStatistiquesAfficherGenetiqueTableauContainer"
-        id="menuStatistiquesAfficherGenetiqueTableauContainer"
-      >
-        <table class="menuStatistiquesAfficherGenetiqueTableau">
-          <thead>
-            <tr>
-              <th>No. Testing</th>
-              <th>Distance</th>
-              <th>No. Trucks</th>
-              <th>Time</th>
-            </tr>
-          </thead>
-          <tbody id="menuStatistiquesAfficherGenetiqueTableauBody"></tbody>
-        </table>
-      </div>
       </div>
 
       <div class="overlay" id="overlay"></div>
+      <div class="popupAjouterVille" id="popupAfficherVille">
+        <div class="popupAjouterVilleHeader">
+          <span class="popupAjouterVilleHeaderText">Cities</span>
+          <img
+            src="pictures/close.svg"
+            alt="close"
+            class="popupAfficherVilleHeaderIcon"
+            onclick="closePopupAfficherCity()"
+          />
+        </div>
+
+        <div class="popupAfficherVilleList" id="popupAfficherVilleList">
+          <p class="popupAfficherVilleFormListText"></p>
+        </div>
+      </div>
       <div class="popupAjouterVille" id="popupAjouterVille">
         <div class="popupAjouterVilleHeader">
           <span class="popupAjouterVilleHeaderText">Add cities</span>
@@ -308,20 +291,20 @@
             class="popupAjouterVilleBoutonAnnuler"
             onclick="closePopupAjouterVille()"
           >
-          Cancel
+            Cancel
           </button>
           <button
             class="popupAjouterVilleBoutonAjouter"
             onclick="validerPopupAjouterVille()"
           >
-          Add
+            Add
           </button>
         </div>
         <div class="loaderContainerPopup" id="loaderContainerPopup">
           <div class="loaderPopup"></div>
         </div>
       </div>
-      
+
       <div class="menuAlgorithmes" id="menuAlgorithmes">
         <div class="menuAlgorithmesHeader">
           <div class="menuAlgorithmesHeaderText">
@@ -338,7 +321,7 @@
           <span class="TitleAnt">Ant Constraints</span>
           <div class="menuAlgoContainer">
             <div class="menuAlgoContainerText">
-              <span>Number of ants</span>
+              <span>Number of ants:</span>
               <input
                 type="number"
                 id="menuAlgoNbFourmis"
@@ -347,7 +330,7 @@
               />
             </div>
             <div class="menuAlgoContainerText">
-              <span>Number of iterations</span>
+              <span>Number of iterations:</span>
               <input
                 type="number"
                 id="menuAlgoNbIterations"
@@ -356,7 +339,7 @@
               />
             </div>
             <div class="menuAlgoContainerText">
-              <span>Truck Capacity</span>
+              <span>Truck Capacity:</span>
               <input
                 type="number"
                 id="menuAlgoCapacity"
@@ -364,41 +347,68 @@
                 value="50"
               />
             </div>
+          </div>
+          <div class="menuAlgoBoutonContainer">
+            <button class="menuAlgoBoutonSave" onclick="sauvegarderAlgo()">
+              Save
+            </button>
+          </div>
         </div>
-        <div class="menuAlgoBoutonContainer">
-          <button class="menuAlgoBoutonSave" onclick="sauvegarderAlgo()">
-            Save
-          </button>
+
+
+        <div class="containerSave">
+          <span class="TitleAnt">Tabu Constraints</span>
+          <div class="menuAlgoContainer">
+            <div class="menuAlgoContainerText">
+              <span>Number of multi starts:</span>
+              <input
+                type="number"
+                id="menuAlgoNbStarts"
+                class="menuAlgoNbFourmis"
+                value="100"
+              />
+            </div>
+            <div class="menuAlgoContainerText">
+              <span>Truck Capacity:</span>
+              <input
+                type="number"
+                id="menuAlgoCapacityTabou"
+                class="menuAlgoCapacity"
+                value="50"
+              />
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="menuClose" id="menuClose">
-        <img
-          src="pictures/menu-close.svg"
-          alt="menuOpen"
-          class="menuCloseIcon"
-          onclick="openLastClosedMenu()"
-        />
-      </div>
 
 
+        <div class="containerSave">
+          <span class="TitleAnt">Genetic Constraints</span>
+          <div class="menuAlgoContainer">
+            <div class="menuAlgoContainerText">
+              <span>Truck Capacity:</span>
+              <input
+                type="number"
+                id="menuAlgoCapacityGenetic"
+                class="menuAlgoCapacity"
+                value="50"
+              />
+            </div>
+          </div>
+        </div>
 
-      <div class="popupAjouterVille" id="popupAfficherVille">
-        <div class="popupAjouterVilleHeader">
-          <span class="popupAjouterVilleHeaderText">Cities</span>
+
+
+        <div class="menuClose" id="menuClose">
           <img
-            src="pictures/close.svg"
-            alt="close"
-            class="popupAfficherVilleHeaderIcon"
-            onclick="closePopupAfficherCity()"
+            src="pictures/menu-close.svg"
+            alt="menuOpen"
+            class="menuCloseIcon"
+            onclick="openLastClosedMenu()"
           />
         </div>
 
-          <div class="popupAfficherVilleList" id="popupAfficherVilleList">
-            <p class="popupAfficherVilleFormListText"></p>
-          </div>
 
-
+      </div>
     </div>
 
     <script src="script.js"></script>

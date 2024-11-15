@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_fe499f390cc7c4363e9bfdfac65ac497 {
+                #map_e71adb9f87718c7fb854d0db62324009 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -39,16 +39,16 @@
 <body>
     
     
-            <div class="folium-map" id="map_fe499f390cc7c4363e9bfdfac65ac497" ></div>
+            <div class="folium-map" id="map_e71adb9f87718c7fb854d0db62324009" ></div>
         
 </body>
 <script>
     
     
-            var map_fe499f390cc7c4363e9bfdfac65ac497 = L.map(
-                "map_fe499f390cc7c4363e9bfdfac65ac497",
+            var map_e71adb9f87718c7fb854d0db62324009 = L.map(
+                "map_e71adb9f87718c7fb854d0db62324009",
                 {
-                    center: [46.603354, 1.888334],
+                    center: [45.9152, 4.82419],
                     crs: L.CRS.EPSG3857,
                     zoom: 6,
                     zoomControl: true,
@@ -60,530 +60,154 @@
 
         
     
-            var tile_layer_6ed195869848aa294ca07a12a5996217 = L.tileLayer(
+            var tile_layer_c7b721f146d2baed83c11eb4ceaa9b87 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
             );
         
     
-            tile_layer_6ed195869848aa294ca07a12a5996217.addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
+            tile_layer_c7b721f146d2baed83c11eb4ceaa9b87.addTo(map_e71adb9f87718c7fb854d0db62324009);
         
     
-            var poly_line_aec522a069eba3fe41f11fdad608a779 = L.polyline(
-                [[45.4401467, 4.3873058], [44.9332277, 4.8920811], [44.805615, -0.6308396], [45.8354243, 1.2644847], [45.4401467, 4.3873058]],
-                {"bubblingMouseEvents": true, "color": "#0f9669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#0f9669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 5}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
+            var marker_aa73cc036f4a65a2cf4496369540b76f = L.marker(
+                [45.9152, 4.82419],
+                {}
+            ).addTo(map_e71adb9f87718c7fb854d0db62324009);
         
     
-            var marker_ca404dc882529d764cc4598ff7a8b90a = L.marker(
+            var icon_302680d35288d032559c1ac6e9a9c36c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_aa73cc036f4a65a2cf4496369540b76f.setIcon(icon_302680d35288d032559c1ac6e9a9c36c);
+        
+    
+        var popup_047f5e8418096d01334ecbafa794e5a3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_59bae4e1ebd6dc5c75b1b6dca4766714 = $(`<div id="html_59bae4e1ebd6dc5c75b1b6dca4766714" style="width: 100.0%; height: 100.0%;">Dépôt (Parcieux)</div>`)[0];
+                popup_047f5e8418096d01334ecbafa794e5a3.setContent(html_59bae4e1ebd6dc5c75b1b6dca4766714);
+            
+        
+
+        marker_aa73cc036f4a65a2cf4496369540b76f.bindPopup(popup_047f5e8418096d01334ecbafa794e5a3)
+        ;
+
+        
+    
+    
+            var marker_58cf658e3ade88e3a2a17dd53bdb0577 = L.marker(
+                [48.6937223, 6.1834097],
+                {}
+            ).addTo(map_e71adb9f87718c7fb854d0db62324009);
+        
+    
+            var icon_b4140a8ed1a8e29707550de70b235da4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#f20c0c", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_58cf658e3ade88e3a2a17dd53bdb0577.setIcon(icon_b4140a8ed1a8e29707550de70b235da4);
+        
+    
+        var popup_a5a84911ea0642c172c7fdd47a84b26c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2753486752986029230af2f632ae7eb0 = $(`<div id="html_2753486752986029230af2f632ae7eb0" style="width: 100.0%; height: 100.0%;">Nancy (Demande : 9 unités)</div>`)[0];
+                popup_a5a84911ea0642c172c7fdd47a84b26c.setContent(html_2753486752986029230af2f632ae7eb0);
+            
+        
+
+        marker_58cf658e3ade88e3a2a17dd53bdb0577.bindPopup(popup_a5a84911ea0642c172c7fdd47a84b26c)
+        ;
+
+        
+    
+    
+            var marker_0da21ce93be8c2751918266e42464032 = L.marker(
+                [49.2479, 3.98601],
+                {}
+            ).addTo(map_e71adb9f87718c7fb854d0db62324009);
+        
+    
+            var icon_0b3fae0c28b19ee4483a1fd391aa8d47 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#f20c0c", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_0da21ce93be8c2751918266e42464032.setIcon(icon_0b3fae0c28b19ee4483a1fd391aa8d47);
+        
+    
+        var popup_fe9d2660e89d9f242d80573610d303f1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cd65db63e934389832b49b0298fc6d0f = $(`<div id="html_cd65db63e934389832b49b0298fc6d0f" style="width: 100.0%; height: 100.0%;">Tinqueux (Demande : 9 unités)</div>`)[0];
+                popup_fe9d2660e89d9f242d80573610d303f1.setContent(html_cd65db63e934389832b49b0298fc6d0f);
+            
+        
+
+        marker_0da21ce93be8c2751918266e42464032.bindPopup(popup_fe9d2660e89d9f242d80573610d303f1)
+        ;
+
+        
+    
+    
+            var marker_d2d23b5a6b3ec63aaa481646e5dd91e6 = L.marker(
+                [44.67998, 0.89374],
+                {}
+            ).addTo(map_e71adb9f87718c7fb854d0db62324009);
+        
+    
+            var icon_d1635d90ffb83befea97a858a5ae76f1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#f20c0c", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d2d23b5a6b3ec63aaa481646e5dd91e6.setIcon(icon_d1635d90ffb83befea97a858a5ae76f1);
+        
+    
+        var popup_1e92b5ed734dae002fdce743af3739fd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_84ee09125cafe4178b87ac5fcf8a987d = $(`<div id="html_84ee09125cafe4178b87ac5fcf8a987d" style="width: 100.0%; height: 100.0%;">Monpazier (Demande : 6 unités)</div>`)[0];
+                popup_1e92b5ed734dae002fdce743af3739fd.setContent(html_84ee09125cafe4178b87ac5fcf8a987d);
+            
+        
+
+        marker_d2d23b5a6b3ec63aaa481646e5dd91e6.bindPopup(popup_1e92b5ed734dae002fdce743af3739fd)
+        ;
+
+        
+    
+    
+            var marker_3e77681bf0a0e461054710341e8e1c59 = L.marker(
                 [45.4401467, 4.3873058],
                 {}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
+            ).addTo(map_e71adb9f87718c7fb854d0db62324009);
         
     
-        var popup_8464f027b4b380185bfd52f0e8763d57 = L.popup({"maxWidth": "100%"});
+            var icon_50640edbd0945df5747a3d339e8c45b3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "#f20c0c", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3e77681bf0a0e461054710341e8e1c59.setIcon(icon_50640edbd0945df5747a3d339e8c45b3);
+        
+    
+        var popup_62456414c92fbddd3cc5ac22d91843db = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_9c105f2d5dd270e4b6eb0efebc74a321 = $(`<div id="html_9c105f2d5dd270e4b6eb0efebc74a321" style="width: 100.0%; height: 100.0%;">Saint-Etienne - Camion n°1</div>`)[0];
-                popup_8464f027b4b380185bfd52f0e8763d57.setContent(html_9c105f2d5dd270e4b6eb0efebc74a321);
+                var html_a5d4c68ee087e2c6082659a64f93372b = $(`<div id="html_a5d4c68ee087e2c6082659a64f93372b" style="width: 100.0%; height: 100.0%;">Saint-Étienne (Demande : 3 unités)</div>`)[0];
+                popup_62456414c92fbddd3cc5ac22d91843db.setContent(html_a5d4c68ee087e2c6082659a64f93372b);
             
         
 
-        marker_ca404dc882529d764cc4598ff7a8b90a.bindPopup(popup_8464f027b4b380185bfd52f0e8763d57)
+        marker_3e77681bf0a0e461054710341e8e1c59.bindPopup(popup_62456414c92fbddd3cc5ac22d91843db)
         ;
 
         
     
     
-            marker_ca404dc882529d764cc4598ff7a8b90a.bindTooltip(
-                `<div>
-                     Saint-Etienne
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_da67cf13e883c7f94a2d1686312ee589 = L.marker(
-                [44.9332277, 4.8920811],
-                {}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
-        
-    
-        var popup_d1a7c203b2f12724eed7a06acf006c87 = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_f6a507c078540dba13552c7c8ccfb4da = $(`<div id="html_f6a507c078540dba13552c7c8ccfb4da" style="width: 100.0%; height: 100.0%;">Valence - Camion n°1</div>`)[0];
-                popup_d1a7c203b2f12724eed7a06acf006c87.setContent(html_f6a507c078540dba13552c7c8ccfb4da);
-            
-        
-
-        marker_da67cf13e883c7f94a2d1686312ee589.bindPopup(popup_d1a7c203b2f12724eed7a06acf006c87)
-        ;
-
-        
-    
-    
-            marker_da67cf13e883c7f94a2d1686312ee589.bindTooltip(
-                `<div>
-                     Valence
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_55b007eaa7f64c8a30edc3aef1a8d6a3 = L.marker(
-                [44.805615, -0.6308396],
-                {}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
-        
-    
-        var popup_296ea3e1f88bdccb2db51a1ad4a5a664 = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_52d535961e23405dd22ba0fa8339cdf6 = $(`<div id="html_52d535961e23405dd22ba0fa8339cdf6" style="width: 100.0%; height: 100.0%;">Pessac - Camion n°1</div>`)[0];
-                popup_296ea3e1f88bdccb2db51a1ad4a5a664.setContent(html_52d535961e23405dd22ba0fa8339cdf6);
-            
-        
-
-        marker_55b007eaa7f64c8a30edc3aef1a8d6a3.bindPopup(popup_296ea3e1f88bdccb2db51a1ad4a5a664)
-        ;
-
-        
-    
-    
-            marker_55b007eaa7f64c8a30edc3aef1a8d6a3.bindTooltip(
-                `<div>
-                     Pessac
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_a2e2d101ebfbffcc6378f65b47de78ae = L.marker(
-                [45.8354243, 1.2644847],
-                {}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
-        
-    
-        var popup_e3716e066c01ecac262ec15273f66742 = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_5e2cf31622c3a80987607206f23a6bab = $(`<div id="html_5e2cf31622c3a80987607206f23a6bab" style="width: 100.0%; height: 100.0%;">Limoges - Camion n°1</div>`)[0];
-                popup_e3716e066c01ecac262ec15273f66742.setContent(html_5e2cf31622c3a80987607206f23a6bab);
-            
-        
-
-        marker_a2e2d101ebfbffcc6378f65b47de78ae.bindPopup(popup_e3716e066c01ecac262ec15273f66742)
-        ;
-
-        
-    
-    
-            marker_a2e2d101ebfbffcc6378f65b47de78ae.bindTooltip(
-                `<div>
-                     Limoges
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_0507155ffa346234583276224d256387 = L.marker(
-                [45.4401467, 4.3873058],
-                {}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
-        
-    
-        var popup_eddef5f06797342e9cda11ffe93bd941 = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_6d8bada5cfb3068c5e5d6af91dd53b92 = $(`<div id="html_6d8bada5cfb3068c5e5d6af91dd53b92" style="width: 100.0%; height: 100.0%;">Saint-Etienne - Camion n°1</div>`)[0];
-                popup_eddef5f06797342e9cda11ffe93bd941.setContent(html_6d8bada5cfb3068c5e5d6af91dd53b92);
-            
-        
-
-        marker_0507155ffa346234583276224d256387.bindPopup(popup_eddef5f06797342e9cda11ffe93bd941)
-        ;
-
-        
-    
-    
-            marker_0507155ffa346234583276224d256387.bindTooltip(
-                `<div>
-                     Saint-Etienne
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var poly_line_cdca18861bc4862f64a90f675c06b507 = L.polyline(
-                [[45.4401467, 4.3873058], [47.3900474, 0.6889268], [48.55199445, 6.4141941637648054], [47.6379599, 6.8628942], [45.4401467, 4.3873058]],
-                {"bubblingMouseEvents": true, "color": "#3865b3", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3865b3", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 5}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
-        
-    
-            var marker_a37f70481970dadfbc5fdddccce63869 = L.marker(
-                [45.4401467, 4.3873058],
-                {}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
-        
-    
-        var popup_cfbca86fe193c053c1166986d32961e4 = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_6129f51a5d6a09473c7bc06ee03a4bf1 = $(`<div id="html_6129f51a5d6a09473c7bc06ee03a4bf1" style="width: 100.0%; height: 100.0%;">Saint-Etienne - Camion n°2</div>`)[0];
-                popup_cfbca86fe193c053c1166986d32961e4.setContent(html_6129f51a5d6a09473c7bc06ee03a4bf1);
-            
-        
-
-        marker_a37f70481970dadfbc5fdddccce63869.bindPopup(popup_cfbca86fe193c053c1166986d32961e4)
-        ;
-
-        
-    
-    
-            marker_a37f70481970dadfbc5fdddccce63869.bindTooltip(
-                `<div>
-                     Saint-Etienne
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_fbc8490442b9a5308222b242bca87bc3 = L.marker(
-                [47.3900474, 0.6889268],
-                {}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
-        
-    
-        var popup_57e3b058ed12cf4627869e2e610521ba = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_acac5db8cf0faecca08e5fbc6c18b80f = $(`<div id="html_acac5db8cf0faecca08e5fbc6c18b80f" style="width: 100.0%; height: 100.0%;">Tours - Camion n°2</div>`)[0];
-                popup_57e3b058ed12cf4627869e2e610521ba.setContent(html_acac5db8cf0faecca08e5fbc6c18b80f);
-            
-        
-
-        marker_fbc8490442b9a5308222b242bca87bc3.bindPopup(popup_57e3b058ed12cf4627869e2e610521ba)
-        ;
-
-        
-    
-    
-            marker_fbc8490442b9a5308222b242bca87bc3.bindTooltip(
-                `<div>
-                     Tours
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_c1a20d21d538532f0cc43a20bab56ea7 = L.marker(
-                [48.55199445, 6.4141941637648054],
-                {}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
-        
-    
-        var popup_6e9213ba3f93bdcf89d52b296018c4b0 = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_a08d363199365431d51546b2c26a0334 = $(`<div id="html_a08d363199365431d51546b2c26a0334" style="width: 100.0%; height: 100.0%;">City - Camion n°2</div>`)[0];
-                popup_6e9213ba3f93bdcf89d52b296018c4b0.setContent(html_a08d363199365431d51546b2c26a0334);
-            
-        
-
-        marker_c1a20d21d538532f0cc43a20bab56ea7.bindPopup(popup_6e9213ba3f93bdcf89d52b296018c4b0)
-        ;
-
-        
-    
-    
-            marker_c1a20d21d538532f0cc43a20bab56ea7.bindTooltip(
-                `<div>
-                     City
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_7018e3ecfc956bb20d950782134f8f42 = L.marker(
-                [47.6379599, 6.8628942],
-                {}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
-        
-    
-        var popup_e11ac44412377a622ec79c4c9912e56f = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_71941d49d4b6fb07d5eee1126f421b12 = $(`<div id="html_71941d49d4b6fb07d5eee1126f421b12" style="width: 100.0%; height: 100.0%;">Belfort - Camion n°2</div>`)[0];
-                popup_e11ac44412377a622ec79c4c9912e56f.setContent(html_71941d49d4b6fb07d5eee1126f421b12);
-            
-        
-
-        marker_7018e3ecfc956bb20d950782134f8f42.bindPopup(popup_e11ac44412377a622ec79c4c9912e56f)
-        ;
-
-        
-    
-    
-            marker_7018e3ecfc956bb20d950782134f8f42.bindTooltip(
-                `<div>
-                     Belfort
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_a2398ed9b4082db16fb04c3e0c5cd79e = L.marker(
-                [45.4401467, 4.3873058],
-                {}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
-        
-    
-        var popup_caab1fbeb54d2a2d9b22e4b84c8347ab = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_545ca16e1c552cb97a9b805e23c244eb = $(`<div id="html_545ca16e1c552cb97a9b805e23c244eb" style="width: 100.0%; height: 100.0%;">Saint-Etienne - Camion n°2</div>`)[0];
-                popup_caab1fbeb54d2a2d9b22e4b84c8347ab.setContent(html_545ca16e1c552cb97a9b805e23c244eb);
-            
-        
-
-        marker_a2398ed9b4082db16fb04c3e0c5cd79e.bindPopup(popup_caab1fbeb54d2a2d9b22e4b84c8347ab)
-        ;
-
-        
-    
-    
-            marker_a2398ed9b4082db16fb04c3e0c5cd79e.bindTooltip(
-                `<div>
-                     Saint-Etienne
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var poly_line_9286ccdb08ffdd2f518b35c6185189aa = L.polyline(
-                [[45.4401467, 4.3873058], [48.8492238, 2.5524906], [48.9229803, 2.4455201], [45.4401467, 4.3873058]],
-                {"bubblingMouseEvents": true, "color": "#8b0ba0", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#8b0ba0", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 5}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
-        
-    
-            var marker_62625319148eb5aada1aadd25277fa1a = L.marker(
-                [45.4401467, 4.3873058],
-                {}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
-        
-    
-        var popup_c32c12e4cb8e3f403e416ec67029cbab = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_366313f83752ea21b96bca186fed90d4 = $(`<div id="html_366313f83752ea21b96bca186fed90d4" style="width: 100.0%; height: 100.0%;">Saint-Etienne - Camion n°3</div>`)[0];
-                popup_c32c12e4cb8e3f403e416ec67029cbab.setContent(html_366313f83752ea21b96bca186fed90d4);
-            
-        
-
-        marker_62625319148eb5aada1aadd25277fa1a.bindPopup(popup_c32c12e4cb8e3f403e416ec67029cbab)
-        ;
-
-        
-    
-    
-            marker_62625319148eb5aada1aadd25277fa1a.bindTooltip(
-                `<div>
-                     Saint-Etienne
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_5e9390c562706770e03612cda4acde2c = L.marker(
-                [48.8492238, 2.5524906],
-                {}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
-        
-    
-        var popup_de876e00afb13f504809bb66494b66ba = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_13576981e1a73e149b9512ae11ab9f0f = $(`<div id="html_13576981e1a73e149b9512ae11ab9f0f" style="width: 100.0%; height: 100.0%;">Noisy-le-Grand - Camion n°3</div>`)[0];
-                popup_de876e00afb13f504809bb66494b66ba.setContent(html_13576981e1a73e149b9512ae11ab9f0f);
-            
-        
-
-        marker_5e9390c562706770e03612cda4acde2c.bindPopup(popup_de876e00afb13f504809bb66494b66ba)
-        ;
-
-        
-    
-    
-            marker_5e9390c562706770e03612cda4acde2c.bindTooltip(
-                `<div>
-                     Noisy-le-Grand
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_43fca04c7754f492368a366ad83e1d41 = L.marker(
-                [48.9229803, 2.4455201],
-                {}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
-        
-    
-        var popup_572ac259f82a0d4113148e4ce3fb12d2 = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_fb9f10b1b4758ad0ec81e3e0a363c221 = $(`<div id="html_fb9f10b1b4758ad0ec81e3e0a363c221" style="width: 100.0%; height: 100.0%;">Drancy - Camion n°3</div>`)[0];
-                popup_572ac259f82a0d4113148e4ce3fb12d2.setContent(html_fb9f10b1b4758ad0ec81e3e0a363c221);
-            
-        
-
-        marker_43fca04c7754f492368a366ad83e1d41.bindPopup(popup_572ac259f82a0d4113148e4ce3fb12d2)
-        ;
-
-        
-    
-    
-            marker_43fca04c7754f492368a366ad83e1d41.bindTooltip(
-                `<div>
-                     Drancy
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_76aa074df4f76b488d0f6af98234cd7d = L.marker(
-                [45.4401467, 4.3873058],
-                {}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
-        
-    
-        var popup_660f9a0e3febd8d5751e186476976609 = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_1bb4fbd3bf63ed1ffc61385e7a3ffe72 = $(`<div id="html_1bb4fbd3bf63ed1ffc61385e7a3ffe72" style="width: 100.0%; height: 100.0%;">Saint-Etienne - Camion n°3</div>`)[0];
-                popup_660f9a0e3febd8d5751e186476976609.setContent(html_1bb4fbd3bf63ed1ffc61385e7a3ffe72);
-            
-        
-
-        marker_76aa074df4f76b488d0f6af98234cd7d.bindPopup(popup_660f9a0e3febd8d5751e186476976609)
-        ;
-
-        
-    
-    
-            marker_76aa074df4f76b488d0f6af98234cd7d.bindTooltip(
-                `<div>
-                     Saint-Etienne
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var poly_line_973e6fbef63c4d948e6ee62d5d2a3ff5 = L.polyline(
-                [[45.4401467, 4.3873058], [43.7009358, 7.2683912], [45.4401467, 4.3873058]],
-                {"bubblingMouseEvents": true, "color": "#b5280d", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#b5280d", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 5}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
-        
-    
-            var marker_6cd603c41397adf5af1eb6968bbc03a3 = L.marker(
-                [45.4401467, 4.3873058],
-                {}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
-        
-    
-        var popup_c82be05c239f5f4a6080288feb4a3f7e = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_820490da40b8897b14dbf69e2474574c = $(`<div id="html_820490da40b8897b14dbf69e2474574c" style="width: 100.0%; height: 100.0%;">Saint-Etienne - Camion n°4</div>`)[0];
-                popup_c82be05c239f5f4a6080288feb4a3f7e.setContent(html_820490da40b8897b14dbf69e2474574c);
-            
-        
-
-        marker_6cd603c41397adf5af1eb6968bbc03a3.bindPopup(popup_c82be05c239f5f4a6080288feb4a3f7e)
-        ;
-
-        
-    
-    
-            marker_6cd603c41397adf5af1eb6968bbc03a3.bindTooltip(
-                `<div>
-                     Saint-Etienne
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_889031335a72151b441a4ab2a6e65d33 = L.marker(
-                [43.7009358, 7.2683912],
-                {}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
-        
-    
-        var popup_7187f7e51c16eaed2780c884ed4b9a2d = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_b39abe5120657ca87f811fdb904fec49 = $(`<div id="html_b39abe5120657ca87f811fdb904fec49" style="width: 100.0%; height: 100.0%;">Nice - Camion n°4</div>`)[0];
-                popup_7187f7e51c16eaed2780c884ed4b9a2d.setContent(html_b39abe5120657ca87f811fdb904fec49);
-            
-        
-
-        marker_889031335a72151b441a4ab2a6e65d33.bindPopup(popup_7187f7e51c16eaed2780c884ed4b9a2d)
-        ;
-
-        
-    
-    
-            marker_889031335a72151b441a4ab2a6e65d33.bindTooltip(
-                `<div>
-                     Nice
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_4cd46b1a8a752dc7580d7cd3575a1759 = L.marker(
-                [45.4401467, 4.3873058],
-                {}
-            ).addTo(map_fe499f390cc7c4363e9bfdfac65ac497);
-        
-    
-        var popup_10d79b2c9df36eaac91dc6de9f7a97ba = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_b07b7c81fc5ec7f5391a9f6d71d785e2 = $(`<div id="html_b07b7c81fc5ec7f5391a9f6d71d785e2" style="width: 100.0%; height: 100.0%;">Saint-Etienne - Camion n°4</div>`)[0];
-                popup_10d79b2c9df36eaac91dc6de9f7a97ba.setContent(html_b07b7c81fc5ec7f5391a9f6d71d785e2);
-            
-        
-
-        marker_4cd46b1a8a752dc7580d7cd3575a1759.bindPopup(popup_10d79b2c9df36eaac91dc6de9f7a97ba)
-        ;
-
-        
-    
-    
-            marker_4cd46b1a8a752dc7580d7cd3575a1759.bindTooltip(
-                `<div>
-                     Saint-Etienne
-                 </div>`,
-                {"sticky": true}
-            );
+            var poly_line_ff94ba78c124e58b142a02af88133b71 = L.polyline(
+                [[45.9152, 4.82419], [48.6937223, 6.1834097], [49.2479, 3.98601], [44.67998, 0.89374], [45.4401467, 4.3873058], [45.9152, 4.82419]],
+                {"bubblingMouseEvents": true, "color": "#f20c0c", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#f20c0c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_e71adb9f87718c7fb854d0db62324009);
         
 </script>
 </html>

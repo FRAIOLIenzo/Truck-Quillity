@@ -116,7 +116,7 @@ def tabou_route():
 
     random.seed(48)
 
-    city_names = data
+    city_names = data['cityList']
     villes = get_city_coordinates(city_names)
     distances = generate_distance_matrix(villes)
     distance_matrix = distances
@@ -126,13 +126,13 @@ def tabou_route():
 
     # Initialisation des paramètres
     nb_villes = len(nom_ville)
-    capacite_max = 50
+    capacite_max = data['algoSettings']['capacityTabou']
     path = generate_path(nb_villes, capacite_max, ville_d, nom_ville)
     solution_initiale = path
 
 
     # Run multi start
-    nb_test = 100
+    nb_test = data['algoSettings']['nbStarts']
     sol_max, val_max, nb_test, solutions, best_solutions, poids = multi_start(nb_villes, solution_initiale, distance_matrix, nb_test, nom_ville, ville_d, capacite_max)
     stop = tp.process_time()
 
@@ -153,7 +153,7 @@ def genetique_route():
     data = request.json
     t0 = tp.time()
     # Exemple d'utilisation
-    city_names = data
+    city_names = data['cityList']
     selected_cities = get_cities_from_names(city_names)
 
     # Définir le dépôt
@@ -163,7 +163,7 @@ def genetique_route():
     # Générer des demandes aléatoires
     random.seed(48)
     generate_random_demands(selected_cities, min_demand=1, max_demand=10)
-    vehicle_capacity = 50
+    vehicle_capacity = data['algoSettings']['capacityGenetic']
 
 
     # Calcul du nombre minimal de camions nécessaires
