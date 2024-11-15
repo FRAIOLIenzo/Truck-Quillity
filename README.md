@@ -15,6 +15,7 @@ This project is a school project from 4 [CESI](https://www.cesi.fr/) students :
 - CHAOUCHE YLIES
 - ENZO FRAIOLI
 - THÉOPHILE NOËL
+- CLÉMENT ÉVANGELISTI
 
 ---
 
@@ -65,5 +66,5 @@ Truck-Quility provides an easy-to-use solution for companies to tackle the compl
 
     - Open the Notebook_L2 Folder
     - Open the Notebook File
-    - Watch the entire progress of our project
+    - Watch the entire progress of our project and statistics
 
