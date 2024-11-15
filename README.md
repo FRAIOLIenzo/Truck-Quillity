@@ -61,3 +61,9 @@ Truck-Quility provides an easy-to-use solution for companies to tackle the compl
    - Open "index.html"
    - Play with the interfaces
 
+3. Notebook:
+
+    - Open the Notebook_L2 Folder
+    - Open the Notebook File
+    - Watch the entire progress of our project
+
