@@ -57,7 +57,7 @@ Truck-Quility provides an easy-to-use solution for companies to tackle the compl
 
 2. Execution:
 
-   - Execute the file API.py to run the python server
-   - Open index.html
+   - Execute the file "API.py" to run the python server
+   - Open "index.html"
    - Play with the interfaces
 
