@@ -10,7 +10,7 @@ Truck-Quility is a web application designed to help logistics and transportation
 
 ## Contributors
 
-This project is a school project from 4 [CESI](https://www.cesi.fr/) students :
+This project is a school project from 5 [CESI](https://www.cesi.fr/) students :
 - BERGBAUER ARTHUR
 - CHAOUCHE YLIES
 - ENZO FRAIOLI
