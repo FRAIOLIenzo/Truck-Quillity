@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
-    <title>Truck Quillite</title>
+    <title>Truck Quillity</title>
   </head>
   <body>
     <nav class="navbar">
@@ -271,31 +271,6 @@
       </div>
       </div>
 
-
-      <div class="menuAlgorithmes" id="menuAlgorithmes">
-        <div class="menuAlgorithmesHeader">
-          <div class="menuAlgorithmesHeaderText">
-            <span>Algorithms</span>
-          </div>
-
-          <img
-            src="pictures/menu-open.svg"
-            alt="menuOpen"
-            class="menuAlgorithmesHeaderIcon"
-            onclick="closeMenu()"
-          />
-        </div>
-      </div>
-
-      <div class="menuClose" id="menuClose">
-        <img
-          src="pictures/menu-close.svg"
-          alt="menuOpen"
-          class="menuCloseIcon"
-          onclick="openLastClosedMenu()"
-        />
-      </div>
-
       <div class="overlay" id="overlay"></div>
       <div class="popupAjouterVille" id="popupAjouterVille">
         <div class="popupAjouterVilleHeader">
@@ -346,6 +321,67 @@
           <div class="loaderPopup"></div>
         </div>
       </div>
+      
+      <div class="menuAlgorithmes" id="menuAlgorithmes">
+        <div class="menuAlgorithmesHeader">
+          <div class="menuAlgorithmesHeaderText">
+            <span>Algorithms</span>
+          </div>
+          <img
+            src="pictures/menu-open.svg"
+            alt="menuOpen"
+            class="menuAlgorithmesHeaderIcon"
+            onclick="closeMenu()"
+          />
+        </div>
+        <div class="containerSave">
+          <span class="TitleAnt">Ant Constraints</span>
+          <div class="menuAlgoContainer">
+            <div class="menuAlgoContainerText">
+              <span>Number of ants</span>
+              <input
+                type="number"
+                id="menuAlgoNbFourmis"
+                class="menuAlgoNbFourmis"
+                value="180"
+              />
+            </div>
+            <div class="menuAlgoContainerText">
+              <span>Number of iterations</span>
+              <input
+                type="number"
+                id="menuAlgoNbIterations"
+                class="menuAlgoNbIterations"
+                value="900"
+              />
+            </div>
+            <div class="menuAlgoContainerText">
+              <span>Truck Capacity</span>
+              <input
+                type="number"
+                id="menuAlgoCapacity"
+                class="menuAlgoCapacity"
+                value="50"
+              />
+            </div>
+        </div>
+        <div class="menuAlgoBoutonContainer">
+          <button class="menuAlgoBoutonSave" onclick="sauvegarderAlgo()">
+            Save
+          </button>
+        </div>
+      </div>
+
+      <div class="menuClose" id="menuClose">
+        <img
+          src="pictures/menu-close.svg"
+          alt="menuOpen"
+          class="menuCloseIcon"
+          onclick="openLastClosedMenu()"
+        />
+      </div>
+
+
 
       <div class="popupAjouterVille" id="popupAfficherVille">
         <div class="popupAjouterVilleHeader">

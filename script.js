@@ -170,6 +170,7 @@ function handleKeyDown(event) {
 }
 
 function openPopupAjouterVille() {
+  console.log("Opening popup");
   document.getElementById("popupAjouterVille").style.display = "block";
   document.getElementById("overlay").style.display = "block";
 }
@@ -382,8 +383,10 @@ function lancerItineraire() {
   const selectedAlgo = document
     .getElementById("menuGestionChoixAlgo")
     .value.toLowerCase();
-    console.log("selectedAlgo", selectedAlgo);
-    console.log(document.querySelector(".menuGestionBoutonLancer").textContent)
+    
+  const algoSettings = sauvegarderAlgo();
+  console.log("selectedAlgo", selectedAlgo);   
+  console.log("TESTESTEST",JSON.stringify({ cityList, algoSettings }));
   if (
     document.querySelector(".menuGestionBoutonLancer").textContent !==
       "Refine routes" 
@@ -397,7 +400,7 @@ function lancerItineraire() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(cityList),
+      body: JSON.stringify({ cityList, algoSettings }),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -487,4 +490,19 @@ function afficherInfo() {
 function closePopupAfficherCity() {
   document.getElementById("popupAfficherVille").style.display = "none";
   document.getElementById("overlay").style.display = "none";
+}
+
+
+function sauvegarderAlgo() {
+  const nbFourmis = document.getElementById("menuAlgoNbFourmis").value;
+  const nbIterations = document.getElementById("menuAlgoNbIterations").value;
+  const capacity = document.getElementById("menuAlgoCapacity").value;
+
+  const algoSettings = {
+    nbFourmis: parseInt(nbFourmis, 10),
+    nbIterations: parseInt(nbIterations, 10),
+    capacity: parseInt(capacity, 10),
+  };
+  console.log("Algorithm settings saved:", algoSettings);
+  return algoSettings;
 }

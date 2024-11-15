@@ -68,16 +68,16 @@ def fourmie_route():
     t0 = tp.time()
     
     # Declare global variables at the module level
-    nb_fourmis = 180
-    max_iteration = 900
+    nb_fourmis = data['algoSettings']['nbFourmis']
+    max_iteration = data['algoSettings']['nbIterations']
     t_evaporation = 0.1  
     i_phero, i_visi, depot_phero = 1, 2, 100  
-    capacite_max = 50
+    capacite_max = data['algoSettings']['capacity']
     cache_probabilites = {}
 
     random.seed(48)
 
-    city_names = data
+    city_names = data['cityList']
     villes = get_city_coordinates(city_names)
     distances = generate_distance_matrix(villes)
     nom_ville = [city[0] for city in villes]

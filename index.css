@@ -450,7 +450,8 @@ body {
 }
 
 .popupAjouterVilleBoutonContainer,
-.menuGestionBoutonContainer {
+.menuGestionBoutonContainer,
+.menuAlgoBoutonContainer {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -461,7 +462,8 @@ body {
 }
 
 .popupAjouterVilleBoutonAjouter,
-.menuGestionBoutonLancer {
+.menuGestionBoutonLancer,
+.menuAlgoBoutonSave {
   background-color: #102c57;
   border: none;
   color: #fefaf6;
@@ -472,7 +474,8 @@ body {
   width: 120px;
 }
 
-.menuGestionBoutonLancer {
+.menuGestionBoutonLancer,
+.menuAlgoBoutonSave {
   width: 200px;
 }
 
@@ -490,7 +493,8 @@ body {
 
 .popupAjouterVilleBoutonAjouter:hover,
 .popupAjouterVilleBoutonAnnuler:hover,
-.menuGestionBoutonLancer:hover {
+.menuGestionBoutonLancer:hover,
+.menuAlgoBoutonSave:hover {
   cursor: pointer;
 }
 
@@ -594,4 +598,52 @@ body {
 
 .menuGestionChoixAlgo:hover {
   cursor: pointer;
+}
+
+.menuAlgoContainer {
+  margin: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: #102c57;
+  color: #fefaf6;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 16px;
+  padding: 10px;
+}
+
+.menuAlgoContainerText {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.menuAlgoContainerText span {
+  margin-right: 10px;
+  user-select: none;
+}
+
+.menuAlgoContainerText input {
+  background-color: #fefaf6;
+  border: 1px solid #102c57;
+  border-radius: 12px;
+  height: 30px;
+  padding: 0px 10px;
+  color: #102c57;
+  font-weight: bold;
+  width: 100px;
+}
+
+.menuAlgoContainerText input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.TitleAnt {
+  font-size: 18px;
+  margin-left: 10px;
+  font-weight: bold;
+  color: #102c57;
+  user-select: none;
+  text-decoration: underline;
 }
