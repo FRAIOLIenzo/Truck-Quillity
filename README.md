@@ -67,4 +67,9 @@ Truck-Quility provides an easy-to-use solution for companies to tackle the compl
     - Open the Notebook_L2 Folder
     - Open the Notebook File
     - Watch the entire progress of our project and statistics
+  
+---
+
+This project is licensed under the Creative Commons BY-NC-ND 4.0 License. See the LICENSE file for details.
+
 
