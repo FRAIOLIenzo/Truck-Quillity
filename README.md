@@ -70,6 +70,6 @@ Truck-Quility provides an easy-to-use solution for companies to tackle the compl
   
 ---
 
-This project is licensed under the Creative Commons BY-NC-ND 4.0 License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 
